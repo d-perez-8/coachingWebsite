@@ -4,7 +4,6 @@
   "description": "Around - Multipurpose Bootstrap HTML Template",
   "main": "index.html",
   "scripts": {
-    "build": "npm run build",
     "demo": "echo \"for Vercel static deployment\" && exit 0"
   },
   "author": "https://createx.studio/",
