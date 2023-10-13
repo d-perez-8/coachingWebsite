@@ -1,10 +1,10 @@
 {
-  "name": "around-html",
-  "version": "3.1.0",
-  "description": "Around - Multipurpose Bootstrap HTML Template",
+  "name": "coaching-comes-next-coaching",
+  "version": "0.1s",
+  "description": "Career Coaching for Young Professionals",
   "main": "index.html",
   "scripts": {
-    "demo": "echo \"for Vercel static deployment\" && exit 0"
+    "devStart": "nodemon server.js"
   },
   "author": "https://createx.studio/",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
+    "nodemon": "^3.0.1",
     "sass": "^1.56.1"
   },
   "dependencies": {
@@ -33,6 +34,8 @@
     "bootstrap": "^5.2.3",
     "chart.js": "^4.0.1",
     "cleave.js": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "flatpickr": "^4.6.13",
     "fullcalendar": "^5.11.3",
     "imagesloaded": "^5.0.0",
@@ -48,6 +51,7 @@
     "shufflejs": "^6.1.0",
     "simplebar": "^5.3.9",
     "smooth-scroll": "^16.1.3",
+    "stripe": "^14.1.0",
     "swiper": "^8.4.5",
     "timezz": "^7.0.0"
   },
