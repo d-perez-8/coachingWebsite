@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>What Comes After Coaching | Contacts</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="What Comes After Coaching">
+    <meta name="keywords" content="career, coaching, mentorship, career coaching, career mentorship, business, corporate, coworking space, services, coaching agency, multipurpose, product landing, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="What Comes After Coaching">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" color="#6366f1" href="assets/favicon/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="white">
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+      
+      
+    </script>
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+      
+    </script>
+    <!-- Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- Vendor styles-->
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <!-- Page wrapper-->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+      <header class="navbar navbar-expand-lg fixed-top navbar-ignore-dark-mode ignore-dark-mode">
+        <div class="container">
+          <a class="navbar-brand pe-sm-3" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+              </span>What Comes After Coaching</a>
+          <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+            <input class="form-check-input" type="checkbox" id="theme-mode">
+            <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+            <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+          </div><a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="fs-xl me-2 ms-n1"></i>Schedule</a>
+          <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+          <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                <div class="dropdown-menu overflow-hidden p-0">
+                  <div class="d-lg-flex">
+                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li><a class="dropdown-item" href="index.html">Initial Consultation</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0 w-20" style="background-image: url(assets/img/landing/meeting-types/initialConsultation.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-mobile-app-showcase.html">Goal-setting</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/goalSetting.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-product.html">Resume/CV and <br>Cover Letter</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/resumeBuilding.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="landing-saas-v1.html">Career Exploration</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/careerExploration.jpg); background-position: right;"></span></li>
+                        <li><a class="dropdown-item" href="landing-saas-v2.html">Development and <br>Advancement</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/developmentAndAdvancement.jpg);"></span></li>
+                      </ul>
+                    </div>
+                    <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">Payments</a></li>
+            </ul>
+            <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class=""></i>Schedule</a></div>
+          </nav>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Contact details-->
+      <section class="bg-secondary py-5">
+        <div class="container pt-5 pb-lg-2 pb-xl-4 py-xxl-5">
+          <!-- Breadcrumb-->
+          <nav aria-label="breadcrumb">
+            <ol class="pt-lg-3 pb-lg-4 pb-2 breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contact</li>
+            </ol>
+          </nav>
+          <!-- Page title-->
+          <h1 class="display-2">Contact</h1>
+          <p class="fs-lg pb-4 mb-2 mb-sm-3">Get in touch with me by giving a call or completing the form below!</p>
+          <!-- Details cards-->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4 pb-2 pb-sm-4 pb-lg-5">
+            <!-- Address-->
+            <div class="col">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <h4 class="card-title mb-4">Areas Serviced</h4>
+                  <p class="fs-lg fw-medium pb-3 mb-3">Zoom Only</p>
+                  <p class="d-block fs-sm text-muted mb-1">Open to all clients residing in the United States or its territories.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Phone-->
+            <div class="col">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <h4 class="card-title mb-4">Phone</h4>
+                  <ul class="list-unstyled mb-0">
+                    <li class="pb-1 mb-2"><span class="d-block fs-sm text-muted mb-1">Main Phone</span><a class="nav-link fs-lg p-0" href="tel:+18182549036">+1 (818) 254-9036</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Schedule-->
+            <div class="col">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <h4 class="card-title mb-4">Schedule</h4>
+                  <ul class="list-unstyled mb-0">
+                    <li class="pb-1 mb-2"><span class="d-block fs-sm text-muted mb-1">Tuesday &amp; Thursday</span>
+                      <div class="d-flex align-items-center"><span class="text-nav fs-lg fw-medium">6:00 PM</span><span class="border-top mx-4" style="width: 28px; height: 1px;"></span><span class="text-nav fs-lg fw-medium">9:00 PM</span></div>
+                    </li>
+                    <li><span class="d-block fs-sm text-muted mb-1">Saturday</span>
+                      <div class="d-flex align-items-center"><span class="text-nav fs-lg fw-medium">9:00 AM</span><span class="border-top mx-4" style="width: 28px; height: 1px;"></span><span class="text-nav fs-lg fw-medium">12:00 PM</span></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Email-->
+            <div class="col">
+              <div class="card border-0 h-100">
+                <div class="card-body">
+                  <h4 class="card-title mb-4">Email</h4>
+                  <ul class="list-unstyled mb-0">
+                    <li class="pb-1 mb-2"><span class="d-block fs-sm text-muted mb-1">Main Email</span><a class="nav-link fs-lg p-0" href="mailto:whatcomesnextcoaching@gmail.com" target="_blank">whatcomesnextcoaching<br>@gmail.com</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="height: 250px;"></div>
+      </section>
+      <!-- Contact form-->
+      <section class="container dark-mode" style="margin-top: -260px;">
+        <div class="card border-0 bg-primary position-relative py-lg-4 py-xl-5">
+          <!-- Decorative shapes-->
+          <svg class="position-absolute end-0 mt-n2" width="242" height="331" viewBox="0 0 242 331" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M172.014 250.127C137.236 227.74 112.349 192.144 144.586 153.591C157.686 137.932 176.759 127.973 196.524 122.046C234.647 110.639 277.027 113.361 313.349 129.576C338.19 140.666 361.129 159.183 369.934 184.502C383.476 223.496 359.75 260.161 321.569 273.118C288.832 284.223 247.685 279.513 214.885 269.837C201.003 265.743 185.745 258.966 172.014 250.127Z" fill="#121519" fill-opacity=".07"></path>
+            <path d="M20.3265 69.264C19.7064 43.0736 29.8071 17.1878 62.3851 19.8622C75.6229 20.9505 87.9525 27.2066 98.3563 35.3132C118.426 50.9253 132.424 73.896 136.952 98.6413C140.044 115.562 138.424 134.218 127.978 148C111.901 169.236 83.4531 170.283 62.5246 155.209C44.5807 142.281 32.0983 119.217 25.3391 98.6799C22.4836 89.9885 20.5616 79.6021 20.3265 69.264Z" fill="#121519" fill-opacity=".07"></path>
+          </svg>
+          <svg class="position-absolute start-0 bottom-0 ms-3" width="169" height="217" viewBox="0 0 169 217" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M34.2574 90.0177C29.666 97.6253 26.6254 106.591 24.9502 114.96C19.9522 140.043 26.4112 168.792 49.6162 181.885C66.0705 191.17 91.0017 189.904 108.062 183.692C125.725 177.266 135.045 168.04 142.29 150.389C151.409 128.174 150.912 99.6904 125.93 91.6429C115.423 88.254 104.723 86.5065 94.2249 82.5889C84.6622 79.0248 74.8545 72.1766 64.4411 71.6149C50.8011 70.8777 40.9122 79.0146 34.2574 90.0177Z" fill="#121519" fill-opacity="0.07"></path>
+            <path d="M147.005 75.6331C152.135 70.7783 156.106 64.2374 159.153 57.9073C166.014 43.6372 174.127 22.1368 160.207 9.68505C152.924 3.17188 139.243 3.86644 130.324 5.29774C118.428 7.20428 107.295 8.85077 96.5031 14.783C85.8056 20.6599 79.0155 33.6997 77.0014 45.6686C75.4978 54.5776 79.63 63.6672 84.7391 70.7453C91.8208 80.5571 103.503 84.2003 114.817 84.3975C121.101 84.5081 127.716 84.0527 133.89 82.8121C138.932 81.7962 143.273 79.1597 147.005 75.6331Z" fill="#121519" fill-opacity="0.07"></path>
+          </svg>
+          <div class="card-body position-relative zindex-2 py-5">
+            <form class="mx-auto" style="max-width: 800px;">
+              <h2 class="h1 card-title text-center pb-4">Have A Question?</h2>
+              <div class="row g-4">
+                <div class="col-sm-6">
+                  <label class="form-label fs-base" for="name">Name*</label>
+                  <input class="form-control form-control-lg" type="text" placeholder="Your name" required id="name">
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label fs-base" for="company">Company</label>
+                  <input class="form-control form-control-lg" type="text" placeholder="Your company name" id="company">
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label fs-base" for="email">Email*</label>
+                  <input class="form-control form-control-lg" type="email" placeholder="Email address" required id="email">
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label fs-base" for="phone">Phone</label>
+                  <input class="form-control form-control-lg" type="text" placeholder="Phone number" id="phone">
+                </div>
+                <div class="col-sm-12">
+                  <label class="form-label fs-base" for="message">How can we help?</label>
+                  <textarea class="form-control form-control-lg" rows="6" placeholder="Enter your message here..." required id="message"></textarea>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="initial-consultation">
+                    <label class="form-check-label fs-base" for="initial-consultation">Initial Consultation</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="payment">
+                    <label class="form-check-label fs-base" for="payment">Payment</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="general-question">
+                    <label class="form-check-label fs-base" for="general-question">General</label>
+                  </div>
+                </div>
+                <div class="col-sm-12 text-center pt-4">
+                  <button class="btn btn-lg btn-light" type="submit">Send Messange</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="footer bg-secondary py-5">
+      <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="border-bottom text-center pb-4"><a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+              </span><span>What Comes After Coaching</span></a>
+          <ul class="nav justify-content-center py-1 pb-sm-2">
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Meetings</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Schedule</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="d-sm-flex align-items-center justify-content-between pt-4 mt-2 mt-sm-0">
+          <div class="d-flex justify-content-center order-sm-2 mb-4 mb-sm-0"></div>
+          <p class="fs-sm order-sm-1 text-center mb-0"><span class="opacity-70">&copy; All rights reserved. Made by </span><a class="nav-link d-inline fw-normal p-0" href="https://dandevelopsweb.netlify.app/" target="_blank" rel="noopener">dandevelopsweb</a></p>
+        </div>
+      </div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <!-- Main theme script-->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>

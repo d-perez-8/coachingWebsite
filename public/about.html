@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>What Comes After Coaching</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="What Comes After Coaching">
+    <meta name="keywords" content="career, coaching, mentorship, career coaching, career mentorship, business, corporate, coworking space, services, coaching agency, multipurpose, product landing, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="What Comes After Coaching">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" color="#6366f1" href="assets/favicon/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="white">
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+      
+      
+    </script>
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+      
+    </script>
+    <!-- Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- Vendor styles-->
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css"/>
+    <link rel="stylesheet" media="screen" href="assets/vendor/fullcalendar/main.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <!-- Page wrapper-->
+    <main class="page-wrapper">
+      <div class="dark-mode">
+        <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+        <header class="navbar navbar-expand-lg fixed-top navbar-ignore-dark-mode ignore-dark-mode">
+          <div class="container">
+            <a class="navbar-brand pe-sm-3" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+                </span>What Comes After Coaching</a>
+            <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+              <input class="form-check-input" type="checkbox" id="theme-mode">
+              <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+              <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+            </div><a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="fs-xl me-2 ms-n1"></i>Schedule</a>
+            <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                  <div class="dropdown-menu overflow-hidden p-0">
+                    <div class="d-lg-flex">
+                      <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                        <ul class="list-unstyled mb-0">
+                          <li><a class="dropdown-item" href="index.html">Initial Consultation</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0 w-20" style="background-image: url(assets/img/landing/meeting-types/initialConsultation.jpg);"></span></li>
+                          <li><a class="dropdown-item" href="landing-mobile-app-showcase.html">Goal-setting</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/goalSetting.jpg);"></span></li>
+                          <li><a class="dropdown-item" href="landing-product.html">Resume/CV and <br>Cover Letter</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/resumeBuilding.jpg);"></span></li>
+                          <li><a class="dropdown-item" href="landing-saas-v1.html">Career Exploration</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/careerExploration.jpg); background-position: right;"></span></li>
+                          <li><a class="dropdown-item" href="landing-saas-v2.html">Development and <br>Advancement</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/developmentAndAdvancement.jpg);"></span></li>
+                        </ul>
+                      </div>
+                      <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link " href="#testimonials" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Testimonials</a>
+                  <!-- <ul class="dropdown-menu">
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="portfolio-list-v1.html">List View v.1</a></li>
+                        <li><a class="dropdown-item" href="portfolio-list-v2.html">List View v.2</a></li>
+                        <li><a class="dropdown-item" href="portfolio-grid-v1.html">Grid View v.1</a></li>
+                        <li><a class="dropdown-item" href="portfolio-grid-v2.html">Grid View v.2</a></li>
+                        <li><a class="dropdown-item" href="portfolio-slider.html">Slider View</a></li>
+                        <li><a class="dropdown-item" href="portfolio-single-v1.html">Single Project v.1</a></li>
+                        <li><a class="dropdown-item" href="portfolio-single-v2.html">Single Project v.2</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="shop-catalog.html">Catalog (Listing)</a></li>
+                        <li><a class="dropdown-item" href="shop-single.html">Product Page</a></li>
+                        <li><a class="dropdown-item" href="shop-checkout.html">Checkout</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="blog-grid-sidebar.html">Grid View with Sidebar</a></li>
+                        <li><a class="dropdown-item" href="blog-grid.html">Grid View no Sidebar</a></li>
+                        <li><a class="dropdown-item" href="blog-list-sidebar.html">List View with Sidebar</a></li>
+                        <li><a class="dropdown-item" href="blog-list.html">List View no Sidebar</a></li>
+                        <li><a class="dropdown-item" href="blog-single-v1.html">Single post v.1</a></li>
+                        <li><a class="dropdown-item" href="blog-single-v2.html">Single post v.2</a></li>
+                        <li><a class="dropdown-item" href="blog-single-v3.html">Single post v.3</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="about-agency.html">About - Agency</a></li>
+                        <li><a class="dropdown-item" href="about-product.html">About - Product</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="services-v1.html">Services v.1</a></li>
+                        <li><a class="dropdown-item" href="services-v2.html">Services v.2</a></li>
+                        <li><a class="dropdown-item" href="services-v3.html">Services v.3</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contacts</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="contacts-v1.html">Contacts v.1</a></li>
+                        <li><a class="dropdown-item" href="contacts-v2.html">Contacts v.2</a></li>
+                        <li><a class="dropdown-item" href="contacts-v3.html">Contacts v.3</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Specialty Pages</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="404-v1.html">404 Error v.1</a></li>
+                        <li><a class="dropdown-item" href="404-v2.html">404 Error v.2</a></li>
+                        <li><a class="dropdown-item" href="404-v3.html">404 Error v.3</a></li>
+                      </ul>
+                    </li>
+                  </ul> -->
+                </li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">Payments</a></li>
+              </ul>
+              <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class=""></i>Schedule</a></div>
+            </nav>
+          </div>
+        </header>
+      </div>
+      <!-- Page content-->
+      <!-- Hero-->
+      <section class="bg-dark position-relative py-5">
+        <div class="d-none d-dark-mode-block position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255,255,255, .02);"></div>
+        <div class="container dark-mode position-relative zindex-2 py-5 mb-4 mb-sm-5">
+          <div class="row pb-5 mb-2 mb-sm-0 mb-lg-3">
+            <div class="col-lg-10 col-xl-9">
+              <!-- Breadcrumb-->
+              <nav aria-label="breadcrumb">
+                <ol class="pt-lg-3 pb-lg-4 pb-2 breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">About</li>
+                </ol>
+              </nav>
+              <h1 class="display-2 pb-2 pb-sm-3">I believe in every individiual's success</h1>
+              <ul class="list-unstyled d-flex flex-wrap mb-0">
+                <li class="d-flex py-1 me-4"><i class="ai-check-alt text-primary lead me-2"></i>Personalized Career Development Strategies</li>
+                <li class="d-flex py-1 me-4"><i class="ai-check-alt text-primary lead me-2"></i>Professional Growth and Transition</li>
+                <li class="d-flex py-1"><i class="ai-check-alt text-primary lead me-2"></i>Effective Job Search Techniques</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About-->
+      <section class="container position-relative zindex-3" style="margin-top: -135px;">
+        <div class="rounded-5 overflow-hidden"> 
+          <div class="jarallax ratio ratio-16x9" data-jarallax data-speed="0.6">
+            <div class="jarallax-img" style="background-image: url(assets/img/about/agency/parallax-image.jpg);"></div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-n2 mt-sm-0 mt-md-2 mt-lg-4 mt-xl-5">
+          <div class="col-md-6 col-lg-5">
+            <div class="fs-sm text-uppercase mb-3">Who am I</div>
+            <h2 class="display-6">I am a Career Counsoler who develops strategies for young professionals</h2>
+          </div>
+          <div class=" pt-1 pt-sm-2 pt-md-5">
+            <p class="fs-xl">As a career coach with a master's degree in career counseling, I've dedicated over <strong>30 years</strong> of my career to helping 18-25 year-old "emerging adults" at a world-renowned research university transition toward full adult independence.</p>
+            <p class="fs-xl">In this university setting, I've hired, supervised, and coached <strong>hundreds of students</strong>, honing their marketable skills and equipping them for various careers both inside and outside of higher education.</p>
+            <p class="fs-xl">In addition to my university experience, I've broadened my expertise by serving as an academic and career counselor at different community colleges. These roles exposed me to a broad spectrum of students, each confronting their own set of challenges on their path to adulthood. It enabled me to better understand and guide those exploring vocational career paths and those who needed additional academic preparation before pursuing a four-year degree post-high school.</p>
+            <p class="fs-xl">My passion lies in assisting and guiding young adults as they navigate the often-challenging transition from adolescence to adulthood. I believe in the power of personalized coaching, skill-building exercises, and practical job search strategies to help my clients identify their unique strengths and explore potential career paths.</p>
+            <p class="fs-xl">Recognizing that this can be an overwhelming and uncertain time for both young adults and their parents, I am committed to creating a supportive and nurturing environment throughout the coaching process. I pride myself on my ability to connect with my clients on a personal level, understand their unique needs, and help them navigate through their fears and insecurities in the world of work.</p>
+            <p class="fs-xl">With a holistic approach to career coaching, I not only assist my clients in achieving their professional goals but also focus on developing their confidence, resilience, and life skills, so they can effectively move into the future. Whether it's exploring college and career options, preparing for job interviews, or navigating the complexities of the modern job market, I am here to support and guide them every step of the way.</p>
+            <p class="fs-xl mb-0">Work with me, and together, we'll help you unlock your child’s potential, align their career choice with your interests and values, and help them step confidently into the future.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Approach-->
+      <section class="pt-5 mt-md-2 mt-xl-4 mt-xxl-5">
+        <div class="container pt-2 pt-sm-4 pt-lg-5 mt-xxl-2">
+          <div class="fs-sm text-uppercase mb-3">Why work with me</div>
+          <h2 class="display-6 pb-3 mb-lg-4">Seeing Your Child Struggle with Life's Next Big Step?</h2>
+          <h3 class="display-10 pb-3 mb-lg-4">Together, let's guide them to a purposeful and independent future.</h3>
+        </div>
+      </section>
+      <!-- Why work with me -->
+      <section class="container pt-5 mt-1 mt-sm-2 mt-xl-4 mt-xxl-5">
+        <div class="row align-items-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-2 mt-xxl-3">
+          <div class="col-md-6 col-xl-5 pb-3 pb-md-0 mb-4 mb-md-0">
+            <div class="ratio ratio-1x1 d-flex align-items-center position-relative rounded-circle overflow-hidden bg-size-cover mx-auto" style="max-width: 530px; background-image: url(assets/img/about/agency/steps-image.jpg);">
+              <div class="bg-black position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
+              <div class="dark-mode position-relative zindex-2 p-4">
+                <div class="text-center mx-auto" style="max-width: 275px;"><span class="d-block fs-sm text-uppercase mb-3">How we work</span>
+                  <h2 class="display-6 mb-0">The key to success</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-5 offset-xl-1">
+            <div class="ps-md-4 ps-xl-0">
+              <div class="steps steps-hoverable">
+                <div class="step py-3 py-xl-4">
+                  <div class="step-number">
+                    <div class="step-number-inner">01</div>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 pb-1 mb-2">Expertise &amp; Experience:</h3>
+                    <p class="mb-0">- Master&#39;s degree in career counseling</p>
+                    <p class="mb-0">- A three-decade career in higher education</p>
+                    <p class="mb-0">- Guided hundreds of emerging adults on their transformative journey to adult independence</p>
+                  </div>
+                </div>
+                <div class="step py-3 py-xl-4">
+                  <div class="step-number">
+                    <div class="step-number-inner">02</div>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 pb-1 mb-2">Empathic &amp; Supportive:</h3>
+                    <p class="mb-0">- I address the fears young adults face during this time of transaction</p>
+                    <p class="mb-0">- My approach to career coaching is holistic, with a deep understanding of the feelings of overwhelm and uncertainty besetting young adults and their concerned parents</p>
+                    <p class="mb-0">- My commitment extends beyond career guidance. Empathy is the cornerstone of my approach.</p>
+                  </div>
+                </div>
+                <div class="step py-3 py-xl-4">
+                  <div class="step-number">
+                    <div class="step-number-inner">03</div>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 pb-1 mb-2">Life skills Development &amp; Uncovering Hidden Talents:</h3>
+                    <p class="mb-0">- Focus on developing clients' confidence, resilience, and life skills.</p>
+                    <p class="mb-0">- Harness their unique strengths, interests, and passions to cultivate a sense of purpose and direction.</p>
+                    <p class="mb-0">- Together we create a roadmap to authentic professional fulfillment and achievement.</p>
+                  </div>
+                </div>
+                <div class="step py-3 py-xl-4">
+                  <div class="step-number">
+                    <div class="step-number-inner">04</div>
+                  </div>
+                  <div class="step-body">
+                    <h3 class="h5 pb-1 mb-2">Career Guidance</h3>
+                    <h4 class="h6 pb-1 mb-2">I&#39;m here every step of the way with my clients as</h4>
+                    <p class="mb-0">- We explore academic and career avenues</p>
+                    <p class="mb-0">- Gear up for interviews</p>
+                    <p class="mb-0">- Decode the intricacies of the modern job market</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container pt-2 pt-sm-4 pt-lg-5 mt-xxl-2">
+            <h3 class="display-10 pb-3 mb-lg-4 pt-5">Parent-Child Collaboration:</h3>
+            <p class="fs-xl">Parental involvement is indispensable. A collaboration that includes you, your child, and me leads to more informed, well-rounded decisions. Our partnership will provide a foundation for your child's career and establish a communication bridge, ensuring decisions are made with collective wisdom. </p>
+            <h3 class="display-10 pb-3 mb-lg-4 pt-5">Why Act Now:</h3>
+            <p class="fs-xl">Postponing these decisions can have repercussions. Each day of ambiguity can translate into missed opportunities, potentially stalling personal and professional growth. However, taking immediate, informed action? That's akin to planting a seed for a prosperous future. Initiate this process now, and together, we can chart a path that promises clarity, satisfaction, and success for your child. </p>
+            
+            <p class="fs-xl">Reflect on the crucial phase your child is navigating. If you envision an experienced partner for them, one who can transform challenges into growth opportunities, I invite you to collaborate with me. Let's put your child on the path to growth, fulfillment, and solid success together.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials-->
+      <section class="pt-5 mt-1 mt-sm-2 mt-xl-4 mt-xxl-5 mb-4">
+        <div class="container pt-3 pt-md-4 pt-lg-5 mt-xl-2 mt-xxl-3">
+          <div class="fs-sm text-uppercase mb-3">Testimonials</div>
+          <h2 class="display-6 pb-3 mb-lg-4">What clients say</h2>
+          <div class="card border-0 bg-secondary overflow-hidden">
+            <div class="card-body position-relative zindex-2 px-lg-0 py-lg-5">
+              <div class="row py-2 py-sm-1 py-md-3 py-lg-4 py-xl-5">
+                <div class="col-md-4 col-lg-3 offset-lg-1 mb-3 mb-md-0">
+                  <!-- Binded items-->
+                  <div class="binded-content">
+                    <!-- Item-->
+                    <div class="binded-item active" id="author1"><img class="d-block rounded-circle mb-3" src="assets/img/avatar/21.jpg" width="86" alt="Lilianna Bocouse">
+                      <h4 class="mb-0">Lilianna Bocouse</h4>
+                      <p class="fs-lg text-muted mb-0">Head of Marketing</p>
+                    </div>
+                    <!-- Item-->
+                    <div class="binded-item" id="author2"><img class="d-block rounded-circle mb-3" src="assets/img/avatar/33.jpg" width="86" alt="Darell Steward">
+                      <h4 class="mb-0">Darell Steward</h4>
+                      <p class="fs-lg text-muted mb-0">Project Manager</p>
+                    </div>
+                    <!-- Item-->
+                    <div class="binded-item" id="author3"><img class="d-block rounded-circle mb-3" src="assets/img/avatar/34.jpg" width="86" alt="Annette Black">
+                      <h4 class="mb-0">Annette Black</h4>
+                      <p class="fs-lg text-muted mb-0">Lead Designer</p>
+                    </div>
+                    <!-- Item-->
+                    <div class="binded-item" id="author4"><img class="d-block rounded-circle mb-3" src="assets/img/avatar/35.jpg" width="86" alt="Ralph Edwards">
+                      <h4 class="mb-0">Ralph Edwards</h4>
+                      <p class="fs-lg text-muted mb-0">CEO, Co-Founder</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8 col-lg-7">
+                  <!-- Swiper slider-->
+                  <div class="swiper" data-swiper-options="{
+                  &quot;spaceBetween&quot;: 40,
+                  &quot;loop&quot;: true,
+                  &quot;autoHeight&quot;: true,
+                  &quot;bindedContent&quot;: true,
+                  &quot;pagination&quot;: {
+                    &quot;el&quot;: &quot;#testimonials-bullets&quot;,
+                    &quot;clickable&quot;: true
+                  }
+                }">
+                    <div class="swiper-wrapper">
+                      <!-- Item-->
+                      <div class="swiper-slide" data-swiper-binded="#author1">
+                        <p class="text-dark lead mb-0">“Around provides us with the detailed and accurate data we need to make strategic decisions. All tools are constantly being improved and contain a lot of useful and interesting information. Thanks to Around, we can constantly analyze our big data quickly and efficiently.”</p>
+                      </div>
+                      <!-- Item-->
+                      <div class="swiper-slide" data-swiper-binded="#author2">
+                        <p class="text-dark lead mb-0">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac pretium dui. Aliquam rutrum justo lorem, in efficitur odio efficitur vel. Integer mattis, neque malesuada sagittis porttitor, enim tortor ullamcorper diam, id eleifend sem mauris at turpis. Curabitur sed nisi nec ligula dictum maximus eu ut ante.”</p>
+                      </div>
+                      <!-- Item-->
+                      <div class="swiper-slide" data-swiper-binded="#author3">
+                        <p class="text-dark lead mb-0">“Quisque rutrum sit amet magna sit amet tristique. Vivamus rhoncus ac purus vitae convallis. Aliquam erat volutpat. Proin egestas, mauris ut semper semper, ipsum felis mattis ligula, et porttitor ante arcu nec ante. Aliquam congue est eu turpis sollicitudin, et ullamcorper tortor aliquam.”</p>
+                      </div>
+                      <!-- Item-->
+                      <div class="swiper-slide" data-swiper-binded="#author4">
+                        <p class="text-dark lead mb-0">“Vestibulum faucibus lectus eget augue pharetra, quis semper lectus gravida. Vestibulum pretium in elit sed iaculis. Curabitur elementum turpis at ipsum molestie, id maximus odio tincidunt. Praesent id lacinia orci. Phasellus at varius arcu. Ut nec lobortis velit. Mauris vel risus quis lacus placerat fringilla.”</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Swiper pagination (bullets)-->
+          <div class="swiper-pagination position-relative bottom-0 pt-4 mt-2 mt-md-3" id="testimonials-bullets"></div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="footer bg-secondary py-5">
+      <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="border-bottom text-center pb-4"><a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+              </span><span>What Comes After Coaching</span></a>
+          <ul class="nav justify-content-center py-1 pb-sm-2">
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Meetings</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Schedule</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="d-sm-flex align-items-center justify-content-between pt-4 mt-2 mt-sm-0">
+          <div class="d-flex justify-content-center order-sm-2 mb-4 mb-sm-0"></div>
+          <p class="fs-sm order-sm-1 text-center mb-0"><span class="opacity-70">&copy; All rights reserved. Made by </span><a class="nav-link d-inline fw-normal p-0" href="https://dandevelopsweb.netlify.app/" target="_blank" rel="noopener">dandevelopsweb</a></p>
+        </div>
+      </div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+    <!-- Main theme script-->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>
