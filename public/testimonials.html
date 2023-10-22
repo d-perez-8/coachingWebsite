@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>What Comes After Coaching</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="What Comes After Coaching">
+    <meta name="keywords" content="career, coaching, mentorship, career coaching, career mentorship, business, corporate, coworking space, services, coaching agency, multipurpose, product landing, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="What Comes After Coaching">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" color="#6366f1" href="/assets/favicon/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="white">
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+      
+      
+    </script>
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+      
+    </script>
+    <!-- Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- Vendor styles-->
+    <link rel="stylesheet" media="screen" href="/assets/vendor/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" media="screen" href="/assets/vendor/lightgallery/css/lightgallery-bundle.min.css"/>
+    <link rel="stylesheet" media="screen" href="/assets/vendor/fullcalendar/main.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="/assets/css/theme.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <!-- Page wrapper-->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+      <header class="navbar navbar-expand-lg fixed-top navbar-ignore-dark-mode ignore-dark-mode">
+        <div class="container">
+          <a class="navbar-brand pe-sm-3" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+              </span>What Comes After Coaching</a>
+          <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+            <input class="form-check-input" type="checkbox" id="theme-mode">
+            <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+            <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+          </div><a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="fs-xl me-2 ms-n1"></i>Schedule</a>
+          <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+          <nav class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                <div class="dropdown-menu overflow-hidden p-0">
+                  <div class="d-lg-flex">
+                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li><a class="dropdown-item" href="services.html#personalizedCareerDiscovery">Personalized Career <br> Discovery</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0 w-20" style="background-image: url(assets/img/landing/meeting-types/discover.jpg); background-position: 50%;"></span></li>
+                        <li><a class="dropdown-item" href="services.html#visionaryGoalMapping">Visionary Goal Mapping</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/goalSetting.jpg); background-position: 50%;"></span></li>
+                        <li><a class="dropdown-item" href="services.html#essentialSoftSkills">Essential Soft Skills<br>Cultivation</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/cultivation.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="services.html#timeMasteryTechniques">Time Mastery Techniques</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/time.jpg); background-position: right;"></span></li>
+                        <li><a class="dropdown-item" href="services.html#resumeMastery">Resume Mastery</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/resumeBuilding.jpg);"></span></li>
+                        <li><a class="dropdown-item" href="services.html#realWorldInterviewMastery">Real-world Interview <br> Mastery</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/jobInterview.jpg); background-position: 60%;"></span></li>
+                        <li><a class="dropdown-item" href="services.html#modernJobHuntTechniques">Modern Job Hunting <br> Techniques</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/landing/meeting-types/initialConsultation.jpg); background-position: 50%;"></span></li>
+                      </ul>
+                    </div>
+                    <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Payments</a></li>
+            </ul>
+            <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class=""></i>Schedule</a></div>
+          </nav>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Services-->
+      <section class="container py-4 py-sm-5 my-md-2 my-lg-3 my-xl-4 my-xxl-5">
+        <!-- Sean D. -->
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 offset-xl-1 order-md-2 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/avatar/sean.png" alt="Sean D."></div>
+          <div class="col-md-6 col-xl-5 order-md-1">
+            <div class="pe-md-4 pe-xl-0">
+              <h2 class="h1 pb-2 pb-lg-3">Sean D.</h2>
+              <p class="pb-2 pb-lg-0 mb-4 mb-lg-5">Thomas's guidance over the years has been enormously important in understanding my own goals and overcoming the difficulties I've had in pursuing them. He takes a genuine interest not only in your career, but also in how it relates to the other aspects of your life. He has a way of re-articulating your priorities in a way which simplifies and clarifies them, and he structures a coherent and practical approach to working through the obstacles getting in your way. What Thomas offers is that rarest of combinations: genuine intelligence and creativity alongside a deep engagement in what you're trying to achieve—not just in your job but in your life.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Karen O. -->
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/avatar/karen.png" alt="Karen O."></div>
+          <div class="col-md-6 col-xl-5 offset-xl-1">
+            <div class="ps-md-4 pe-xl-0">
+              <h2 class="h1 pb-2 pb-lg-3">Karen O.</h2>
+              <p class="pb-2 pb-lg-0 mb-4 mb-lg-5">As a first-generation student at UCLA, my focus during my undergraduate studies was solely on doing well academically. It wasn't until my second year, when I crossed paths with Thomas, that everything changed. He ignited a fire within me, making me realize the vital significance of career planning. Questions like "What is my ultimate goal?" and "What steps am I taking to reach my dream job?" had never been posed to me before. With Thomas's guidance, I began to dream big and, more importantly, take concrete steps toward pursuing my ideal career.</p>
+              <p>Even now, as a graduate student, Thomas continues to be a pillar of support for my career trajectory. His professional advice has been invaluable, especially when he recently provided me with outstanding feedback on my resume while I search for Graduate internship opportunities. It is clear that Thomas is genuinely passionate about helping young adults discover their lifelong passions and careers. His genuine care and empathy will undoubtedly instill the confidence you need to achieve your career aspirations. With Thomas by your side, you'll be empowered to conquer your dreams.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Carmen C. -->
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 offset-xl-1 order-md-2 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/avatar/carmen.png" alt="Carmen C."></div>
+          <div class="col-md-6 col-xl-5 order-md-1">
+            <div class="pe-md-4 pe-xl-0">
+              <h2 class="h1 pb-2 pb-lg-3">Carmen C.</h2>
+              <p class="pb-2 pb-lg-0 mb-4 mb-lg-5">Thomas was my first supervisor after graduating college and we have kept in touch for almost two decades. In addition to being a wonderful boss, he has mentored and coached me throughout my many career journeys in government, politics, and nonprofits. My biggest career challenges include managing up and sideways. Thomas starts with understanding the organization's structure to pinpoint the dysfunction. He is very patient in listening to my thoughts and frustrations and helps me think through resolving the issue. Over time, I have grown to be a better, more confident leader and manager thanks to Thomas's advice. If you are considering a career coach, reach out to him immediately! </p>
+            </div>
+          </div>
+        </div>
+        <!-- Sandra R. -->
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+            <div class="col-md-6 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/avatar/sandraR.png" alt="Sandra R."></div>
+            <div class="col-md-6 col-xl-5 offset-xl-1">
+              <div class="ps-md-4 pe-xl-0">
+                <h2 class="h1 pb-2 pb-lg-3">Sandra R.</h2>
+                <p class="pb-2 pb-lg-0 mb-4 mb-lg-5">As a 2020 college graduate, I faced a lot of uncertainty due to the world-wide COVID-19 pandemic. I had the opportunity to work under Thomas' leadership at UCLA, and throughout this time he was a consistent and stellar mentor. He organized biweekly meetings to chat about my career goals, took the time to read and revise my resume, and helped me prepare for interviews. I have had the pleasure of knowing him for 5 years now, and have seen him mentor multiple UCLA students and seasoned professionals alike. I would highly recommend him to anyone seeking career advice and guidance!</p>
+              </div>
+            </div>
+        </div>
+        <!-- Paitzar G. -->
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+            <div class="col-md-6 offset-xl-1 order-md-2 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/avatar/01.jpg" alt="Carmen C."></div>
+            <div class="col-md-6 col-xl-5 order-md-1">
+              <div class="pe-md-4 pe-xl-0">
+                <h2 class="h1 pb-2 pb-lg-3">Paitzar G.</h2>
+                <p class="pb-2 pb-lg-0 mb-4 mb-lg-5">Working with Thomas Rodriguez has been one of the most transformational experiences I have had and I can truly say that he is one of the most influential people who continues to support me in my quest to find and obtain a successful career. Upon graduating from college, I was overwhelmed, confused, stressed, and even ashamed of not knowing what I wanted to do with my career. I was stuck trying to decide between working with preschool age children vs working in higher education. I didn't know if I should go back to get a masters or what I would even get a masters in. Beyond helping me with job searches, resume writing, interview skills, and the other technical elements that come with career exploration and job opportunities, what stands out most from my interactions with Thomas is how much he genuinely cares about helping others learn and grow in a holistic and empathetic approach. This is exactly what Thomas did for me- he helped me flourish in all aspects of my life. He created a space that allowed me to be vulnerable, made me feel seen, addressed my concerns, and encouraged me. Thomas taught me all I know about the importance of networking and building my community, challenged me to restructure how I see problems and to think critically to solve them, and most importantly, he empowered me with the tools, knowledge, support, and confidence I needed to be unapologetic in chasing my career goals. I began our career meetings as a scared, timid, unconfident graduate and transformed into a powerful, organized, confident counselor with a clear direction of what I want from my career and how to achieve my goals.</p>
+              </div>
+            </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="footer bg-secondary py-5">
+        <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
+          <div class="border-bottom text-center pb-4"><a class="navbar-brand d-inline-flex text-nav py-0 mb-3 mb-md-4" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+                </span><span>What Comes After Coaching</span></a>
+            <ul class="nav justify-content-center py-1 pb-sm-2">
+              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Meetings</a></li>
+              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Testimonials</a></li>
+              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Schedule</a></li>
+              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Pricing</a></li>
+              <li class="nav-item"><a class="nav-link py-2 px-3 mx-1" href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="d-sm-flex align-items-center justify-content-between pt-4 mt-2 mt-sm-0">
+            <div class="d-flex justify-content-center order-sm-2 mb-4 mb-sm-0"></div>
+            <p class="fs-sm order-sm-1 text-center mb-0"><span class="opacity-70">&copy; All rights reserved. Made by </span><a class="nav-link d-inline fw-normal p-0" href="https://dandevelopsweb.netlify.app/" target="_blank" rel="noopener">dandevelopsweb</a></p>
+          </div>
+        </div>
+      </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Main theme script-->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>
