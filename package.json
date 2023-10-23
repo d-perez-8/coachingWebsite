@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "devStart": "nodemon server.js",
-    "dev": "node server.js"
+    "build": "node server.js"
   },
   "author": "https://createx.studio/",
   "license": "ISC",
