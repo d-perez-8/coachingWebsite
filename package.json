@@ -4,7 +4,8 @@
   "description": "Career Coaching for Young Professionals",
   "main": "index.html",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "dev": "node server.js"
   },
   "author": "https://createx.studio/",
   "license": "ISC",
