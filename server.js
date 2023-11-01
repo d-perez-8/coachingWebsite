@@ -1,21 +1,36 @@
 require("dotenv").config();
 
-// This is your test secret API key.
-const stripe = require("stripe")(
-  "pk_test_51NZLHbJDAvhaBoGUEm2FIyGv5MyBq9S1mwHNVmc3P1nDv7qZtRkyp2Up7zpfMeIoYoLF1JArM4jc9PCYDVQxFBYd00WMdZXjAT"
-);
 const express = require("express");
 const app = express();
 app.use(express.static("public"));
 
 const YOUR_DOMAIN = "http://localhost:3000";
+// This is your test secret API key.
+const stripe = require("stripe")(
+  "pk_test_51NZLHbJDAvhaBoGUEm2FIyGv5MyBq9S1mwHNVmc3P1nDv7qZtRkyp2Up7zpfMeIoYoLF1JArM4jc9PCYDVQxFBYd00WMdZXjAT"
+);
 
 app.post("/create-checkout-session", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: "price_1O3NcVJDAvhaBoGUha5W9Ezr",
+        // Free Discovery Session
+        price: "price_1O5xAmJDAvhaBoGUi8DDYjbS",
+        quantity: 1,
+      },
+      {
+        // Single session
+        price: "price_1O5xGVJDAvhaBoGU4XTOQYha",
+        quantity: 1,
+      },
+      {
+        // Double Session
+        price: "price_1O5xHPJDAvhaBoGU0SpZgf5b",
+        quantity: 1,
+      },
+      {
+        // 4-Session Package
+        price: "price_1O5xJ4JDAvhaBoGUCZ6JBHQG",
         quantity: 1,
       },
     ],
