@@ -23,12 +23,12 @@ as running it via `npm run`.
 
 Run without positional arguments or `--call`, this allows you to
 interactively run commands in the same sort of shell environment that
-`package.json` scripts are run.  Interactive mode is not supported in CI
+`package.json` scripts are run. Interactive mode is not supported in CI
 environments when standard input is a TTY, to prevent hangs.
 
 Whatever packages are specified by the `--package` option will be
 provided in the `PATH` of the executed command, along with any locally
-installed package executables.  The `--package` option may be
+installed package executables. The `--package` option may be
 specified multiple times, to execute the supplied command in an environment
 where all specified packages are available.
 
@@ -40,12 +40,12 @@ installed to a folder in the npm cache, which is added to the `PATH`
 environment variable in the executed process.
 
 Package names provided without a specifier will be matched with whatever
-version exists in the local project.  Package names with a specifier will
+version exists in the local project. Package names with a specifier will
 only be considered a match if they have the exact same name and version as
 the local dependency.
 
 If no `-c` or `--call` option is provided, then the positional arguments
-are used to generate the command string.  If no `--package` options
+are used to generate the command string. If no `--package` options
 are provided, then npm will attempt to determine the executable name from
 the package specifier provided as the first positional argument according
 to the following heuristic:
@@ -65,8 +65,8 @@ the first command argument.
 
 ### `npx` vs `npm exec`
 
-When run via the `npx` binary, all flags and options *must* be set prior to
-any positional arguments.  When run via `npm exec`, a double-hyphen `--`
+When run via the `npx` binary, all flags and options _must_ be set prior to
+any positional arguments. When run via `npm exec`, a double-hyphen `--`
 flag can be used to suppress npm's parsing of switches and options that
 should be sent to the executed command.
 
@@ -94,7 +94,7 @@ $ npm exec foo@latest bar --package=@npmcli/foo
 ```
 
 In this case, npm will parse the `--package` option first, resolving the
-`@npmcli/foo` package.  Then, it will execute the following command in that
+`@npmcli/foo` package. Then, it will execute the following command in that
 context:
 
 ```
@@ -102,7 +102,7 @@ $ foo@latest bar
 ```
 
 The double-hyphen character is recommended to explicitly tell npm to stop
-parsing command line options and switches.  The following command would
+parsing command line options and switches. The following command would
 thus be equivalent to the `npx` command above:
 
 ```
@@ -113,15 +113,15 @@ $ npm exec -- foo@latest bar --package=@npmcli/foo
 
 #### `package`
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 The package or packages to install for [`npm exec`](/commands/npm-exec)
 
 #### `call`
 
-* Default: ""
-* Type: String
+- Default: ""
+- Type: String
 
 Optional companion option for `npm exec`, `npx` that allows for specifying a
 custom command to be run along with the installed packages.
@@ -130,11 +130,10 @@ custom command to be run along with the installed packages.
 npm exec --package yo --package generator-node --call "yo node"
 ```
 
-
 #### `workspace`
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 Enable running a command in the context of the configured workspaces of the
 current project while filtering by running only the workspaces defined by
@@ -142,9 +141,9 @@ this configuration option.
 
 Valid values for the `workspace` config are either:
 
-* Workspace names
-* Path to a workspace directory
-* Path to a parent workspace directory (will result in selecting all
+- Workspace names
+- Path to a workspace directory
+- Path to a parent workspace directory (will result in selecting all
   workspaces within that folder)
 
 When set for the `npm init` command, this may be set to the folder of a
@@ -155,8 +154,8 @@ This value is not exported to the environment for child processes.
 
 #### `workspaces`
 
-* Default: null
-* Type: null or Boolean
+- Default: null
+- Type: null or Boolean
 
 Set to true to run the command in the context of **all** configured
 workspaces.
@@ -165,16 +164,16 @@ Explicitly setting this to false will cause commands like `install` to
 ignore workspaces altogether. When not set explicitly:
 
 - Commands that operate on the `node_modules` tree (install, update, etc.)
-will link workspaces into the `node_modules` folder. - Commands that do
-other things (test, exec, publish, etc.) will operate on the root project,
-_unless_ one or more workspaces are specified in the `workspace` config.
+  will link workspaces into the `node_modules` folder. - Commands that do
+  other things (test, exec, publish, etc.) will operate on the root project,
+  _unless_ one or more workspaces are specified in the `workspace` config.
 
 This value is not exported to the environment for child processes.
 
 #### `include-workspace-root`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Include the workspace root when workspaces are enabled for a command.
 
@@ -276,7 +275,7 @@ This last command will run the `eslint` command in both `./packages/a` and
 ### Compatibility with Older npx Versions
 
 The `npx` binary was rewritten in npm v7.0.0, and the standalone `npx`
-package deprecated at that time.  `npx` uses the `npm exec`
+package deprecated at that time. `npx` uses the `npm exec`
 command instead of a separate argument parser and install process, with
 some affordances to maintain backwards compatibility with the arguments it
 accepted in previous versions.
@@ -285,16 +284,16 @@ This resulted in some shifts in its functionality:
 
 - Any `npm` config value may be provided.
 - To prevent security and user-experience problems from mistyping package
-  names, `npx` prompts before installing anything.  Suppress this
+  names, `npx` prompts before installing anything. Suppress this
   prompt with the `-y` or `--yes` option.
 - The `--no-install` option is deprecated, and will be converted to `--no`.
 - Shell fallback functionality is removed, as it is not advisable.
 - The `-p` argument is a shorthand for `--parseable` in npm, but shorthand
-  for `--package` in npx.  This is maintained, but only for the `npx`
+  for `--package` in npx. This is maintained, but only for the `npx`
   executable.
-- The `--ignore-existing` option is removed.  Locally installed bins are
+- The `--ignore-existing` option is removed. Locally installed bins are
   always present in the executed process `PATH`.
-- The `--npm` option is removed.  `npx` will always use the `npm` it ships
+- The `--npm` option is removed. `npx` will always use the `npm` it ships
   with.
 - The `--node-arg` and `-n` options are removed.
 - The `--always-spawn` option is redundant, and thus removed.
@@ -304,7 +303,7 @@ This resulted in some shifts in its functionality:
 ### A note on caching
 
 The npm cli utilizes its internal package cache when using the package
-name specified.  You can use the following to change how and when the
+name specified. You can use the following to change how and when the
 cli uses this cache. See [`npm cache`](/commands/npm-cache) for more on
 how the cache works.
 
@@ -315,7 +314,7 @@ immediately even if the package is already in the cache.
 
 #### prefer-offline
 
-Bypasses staleness checks for packages.  Missing data will still be
+Bypasses staleness checks for packages. Missing data will still be
 requested from the server. To force full offline mode, use `offline`.
 
 #### offline
@@ -325,8 +324,8 @@ an error.
 
 #### workspace
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 Enable running a command in the context of the configured workspaces of the
 current project while filtering by running only the workspaces defined by
@@ -334,30 +333,30 @@ this configuration option.
 
 Valid values for the `workspace` config are either:
 
-* Workspace names
-* Path to a workspace directory
-* Path to a parent workspace directory (will result to selecting all of the
+- Workspace names
+- Path to a workspace directory
+- Path to a parent workspace directory (will result to selecting all of the
   nested workspaces)
 
 This value is not exported to the environment for child processes.
 
 #### workspaces
 
-* Alias: `--ws`
-* Type: Boolean
-* Default: `false`
+- Alias: `--ws`
+- Type: Boolean
+- Default: `false`
 
 Run scripts in the context of all configured workspaces for the current
 project.
 
 ### See Also
 
-* [npm run-script](/commands/npm-run-script)
-* [npm scripts](/using-npm/scripts)
-* [npm test](/commands/npm-test)
-* [npm start](/commands/npm-start)
-* [npm restart](/commands/npm-restart)
-* [npm stop](/commands/npm-stop)
-* [npm config](/commands/npm-config)
-* [npm workspaces](/using-npm/workspaces)
-* [npx](/commands/npx)
+- [npm run-script](/commands/npm-run-script)
+- [npm scripts](/using-npm/scripts)
+- [npm test](/commands/npm-test)
+- [npm start](/commands/npm-start)
+- [npm restart](/commands/npm-restart)
+- [npm stop](/commands/npm-stop)
+- [npm config](/commands/npm-config)
+- [npm workspaces](/using-npm/workspaces)
+- [npx](/commands/npx)

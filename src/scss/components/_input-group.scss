@@ -2,7 +2,6 @@
 // Input group
 // --------------------------------------------------
 
-
 .input-group {
   --#{$prefix}input-group-padding-y: #{$input-group-padding-y};
   --#{$prefix}input-group-padding-x: #{$input-group-padding-x};
@@ -10,8 +9,10 @@
   --#{$prefix}input-group-border-width: #{$input-border-width};
   --#{$prefix}input-group-border-radius: #{$input-group-border-radius};
 
-  padding: var(--#{$prefix}input-group-padding-y) var(--#{$prefix}input-group-padding-x);
-  border: var(--#{$prefix}input-group-border-width) solid var(--#{$prefix}input-group-border-color);
+  padding: var(--#{$prefix}input-group-padding-y)
+    var(--#{$prefix}input-group-padding-x);
+  border: var(--#{$prefix}input-group-border-width) solid
+    var(--#{$prefix}input-group-border-color);
   @include border-radius(var(--#{$prefix}input-group-border-radius));
   .form-control,
   .form-select {
@@ -19,8 +20,8 @@
     border-radius: 0 !important;
   }
 
-  [class^='ai-'],
-  [class*=' ai-'] {
+  [class^="ai-"],
+  [class*=" ai-"] {
     font-size: 1.25em;
   }
 
@@ -35,7 +36,6 @@
     }
   }
 }
-
 
 // Sizing
 
@@ -57,7 +57,6 @@
     --#{$prefix}btn-border-radius: #{$btn-border-radius-sm};
   }
 }
-
 
 // Textual addon
 

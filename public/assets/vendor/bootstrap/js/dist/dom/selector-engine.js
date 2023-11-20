@@ -1,13 +1,18 @@
 /*!
-  * Bootstrap selector-engine.js v5.2.3 (https://getbootstrap.com/)
-  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
+ * Bootstrap selector-engine.js v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('../util/index')) :
-  typeof define === 'function' && define.amd ? define(['../util/index'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.SelectorEngine = factory(global.Index));
-})(this, (function (index) { 'use strict';
+  typeof exports === "object" && typeof module !== "undefined"
+    ? (module.exports = factory(require("../util/index")))
+    : typeof define === "function" && define.amd
+    ? define(["../util/index"], factory)
+    : ((global =
+        typeof globalThis !== "undefined" ? globalThis : global || self),
+      (global.SelectorEngine = factory(global.Index)));
+})(this, function (index) {
+  "use strict";
 
   /**
    * --------------------------------------------------------------------------
@@ -21,7 +26,9 @@
 
   const SelectorEngine = {
     find(selector, element = document.documentElement) {
-      return [].concat(...Element.prototype.querySelectorAll.call(element, selector));
+      return [].concat(
+        ...Element.prototype.querySelectorAll.call(element, selector),
+      );
     },
 
     findOne(selector, element = document.documentElement) {
@@ -29,7 +36,9 @@
     },
 
     children(element, selector) {
-      return [].concat(...element.children).filter(child => child.matches(selector));
+      return []
+        .concat(...element.children)
+        .filter((child) => child.matches(selector));
     },
 
     parents(element, selector) {
@@ -74,13 +83,24 @@
     },
 
     focusableChildren(element) {
-      const focusables = ['a', 'button', 'input', 'textarea', 'select', 'details', '[tabindex]', '[contenteditable="true"]'].map(selector => `${selector}:not([tabindex^="-"])`).join(',');
-      return this.find(focusables, element).filter(el => !index.isDisabled(el) && index.isVisible(el));
-    }
-
+      const focusables = [
+        "a",
+        "button",
+        "input",
+        "textarea",
+        "select",
+        "details",
+        "[tabindex]",
+        '[contenteditable="true"]',
+      ]
+        .map((selector) => `${selector}:not([tabindex^="-"])`)
+        .join(",");
+      return this.find(focusables, element).filter(
+        (el) => !index.isDisabled(el) && index.isVisible(el),
+      );
+    },
   };
 
   return SelectorEngine;
-
-}));
+});
 //# sourceMappingURL=selector-engine.js.map

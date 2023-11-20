@@ -20,20 +20,19 @@ overridden by specifying a different default registry or using a
 scope-configured registry (see
 [`package.json`](/configuring-npm/package-json)).
 
-
 A `package` is interpreted the same way as other commands (like
 `npm install` and can be:
 
-* a) a folder containing a program described by a
+- a) a folder containing a program described by a
   [`package.json`](/configuring-npm/package-json) file
-* b) a gzipped tarball containing (a)
-* c) a url that resolves to (b)
-* d) a `<name>@<version>` that is published on the registry (see
+- b) a gzipped tarball containing (a)
+- c) a url that resolves to (b)
+- d) a `<name>@<version>` that is published on the registry (see
   [`registry`](/using-npm/registry)) with (c)
-* e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/npm-dist-tag)) that
+- e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/npm-dist-tag)) that
   points to (d)
-* f) a `<name>` that has a "latest" tag satisfying (e)
-* g) a `<git remote url>` that resolves to (a)
+- f) a `<name>` that has a "latest" tag satisfying (e)
+- g) a `<git remote url>` that resolves to (a)
 
 The publish will fail if the package name and version combination already
 exists in the specified registry.
@@ -52,21 +51,21 @@ to the registry.
 
 ### Files included in package
 
-To see what will be included in your package, run `npx npm-packlist`.  All
+To see what will be included in your package, run `npx npm-packlist`. All
 files are included by default, with the following exceptions:
 
 - Certain files that are relevant to package installation and distribution
-  are always included.  For example, `package.json`, `README.md`,
+  are always included. For example, `package.json`, `README.md`,
   `LICENSE`, and so on.
 
 - If there is a "files" list in
   [`package.json`](/configuring-npm/package-json), then only the files
-  specified will be included.  (If directories are specified, then they
+  specified will be included. (If directories are specified, then they
   will be walked recursively and their contents included, subject to the
   same ignore rules.)
 
 - If there is a `.gitignore` or `.npmignore` file, then ignored files in
-  that and all child directories will be excluded from the package.  If
+  that and all child directories will be excluded from the package. If
   _both_ files exist, then the `.gitignore` is ignored, and only the
   `.npmignore` is used.
 
@@ -80,7 +79,6 @@ files are included by default, with the following exceptions:
 
 - Symbolic links are never included in npm packages.
 
-
 See [`developers`](/using-npm/developers) for full details on what's
 included in the published package, as well as details on how the package is
 built.
@@ -89,8 +87,8 @@ built.
 
 #### `tag`
 
-* Default: "latest"
-* Type: String
+- Default: "latest"
+- Type: String
 
 If you ask npm to install a package and don't tell it a specific version,
 then it will install the specified tag.
@@ -103,9 +101,9 @@ tarball that will be compared with the local files by default.
 
 #### `access`
 
-* Default: 'public' for new packages, existing packages it will not change the
+- Default: 'public' for new packages, existing packages it will not change the
   current level
-* Type: null, "restricted", or "public"
+- Type: null, "restricted", or "public"
 
 If do not want your scoped package to be publicly viewable (and installable)
 set `--access=restricted`.
@@ -119,8 +117,8 @@ status` would.
 
 #### `dry-run`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Indicates that you don't want npm to make any changes and that it should
 only report what it would have done. This can be passed into any of the
@@ -132,8 +130,8 @@ Note: This is NOT honored by other network related commands, eg `dist-tags`,
 
 #### `otp`
 
-* Default: null
-* Type: null or String
+- Default: null
+- Type: null or String
 
 This is a one-time password from a two-factor authenticator. It's needed
 when publishing or changing package permissions with `npm access`.
@@ -143,8 +141,8 @@ password, npm will prompt on the command line for one.
 
 #### `workspace`
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 Enable running a command in the context of the configured workspaces of the
 current project while filtering by running only the workspaces defined by
@@ -152,9 +150,9 @@ this configuration option.
 
 Valid values for the `workspace` config are either:
 
-* Workspace names
-* Path to a workspace directory
-* Path to a parent workspace directory (will result in selecting all
+- Workspace names
+- Path to a workspace directory
+- Path to a parent workspace directory (will result in selecting all
   workspaces within that folder)
 
 When set for the `npm init` command, this may be set to the folder of a
@@ -165,8 +163,8 @@ This value is not exported to the environment for child processes.
 
 #### `workspaces`
 
-* Default: null
-* Type: null or Boolean
+- Default: null
+- Type: null or Boolean
 
 Set to true to run the command in the context of **all** configured
 workspaces.
@@ -175,16 +173,16 @@ Explicitly setting this to false will cause commands like `install` to
 ignore workspaces altogether. When not set explicitly:
 
 - Commands that operate on the `node_modules` tree (install, update, etc.)
-will link workspaces into the `node_modules` folder. - Commands that do
-other things (test, exec, publish, etc.) will operate on the root project,
-_unless_ one or more workspaces are specified in the `workspace` config.
+  will link workspaces into the `node_modules` folder. - Commands that do
+  other things (test, exec, publish, etc.) will operate on the root project,
+  _unless_ one or more workspaces are specified in the `workspace` config.
 
 This value is not exported to the environment for child processes.
 
 #### `include-workspace-root`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Include the workspace root when workspaces are enabled for a command.
 
@@ -196,13 +194,13 @@ This value is not exported to the environment for child processes.
 
 ### See Also
 
-* [package spec](/using-npm/package-spec)
-* [npm-packlist package](http://npm.im/npm-packlist)
-* [npm registry](/using-npm/registry)
-* [npm scope](/using-npm/scope)
-* [npm adduser](/commands/npm-adduser)
-* [npm owner](/commands/npm-owner)
-* [npm deprecate](/commands/npm-deprecate)
-* [npm dist-tag](/commands/npm-dist-tag)
-* [npm pack](/commands/npm-pack)
-* [npm profile](/commands/npm-profile)
+- [package spec](/using-npm/package-spec)
+- [npm-packlist package](http://npm.im/npm-packlist)
+- [npm registry](/using-npm/registry)
+- [npm scope](/using-npm/scope)
+- [npm adduser](/commands/npm-adduser)
+- [npm owner](/commands/npm-owner)
+- [npm deprecate](/commands/npm-deprecate)
+- [npm dist-tag](/commands/npm-dist-tag)
+- [npm pack](/commands/npm-pack)
+- [npm profile](/commands/npm-profile)

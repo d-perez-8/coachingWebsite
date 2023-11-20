@@ -1,18 +1,38 @@
 /*!
-  * Bootstrap template-factory.js v5.2.3 (https://getbootstrap.com/)
-  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
+ * Bootstrap template-factory.js v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./sanitizer'), require('./index'), require('../dom/selector-engine'), require('./config')) :
-  typeof define === 'function' && define.amd ? define(['./sanitizer', './index', '../dom/selector-engine', './config'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TemplateFactory = factory(global.Sanitizer, global.Index, global.SelectorEngine, global.Config));
-})(this, (function (sanitizer, index, SelectorEngine, Config) { 'use strict';
+  typeof exports === "object" && typeof module !== "undefined"
+    ? (module.exports = factory(
+        require("./sanitizer"),
+        require("./index"),
+        require("../dom/selector-engine"),
+        require("./config"),
+      ))
+    : typeof define === "function" && define.amd
+    ? define(
+        ["./sanitizer", "./index", "../dom/selector-engine", "./config"],
+        factory,
+      )
+    : ((global =
+        typeof globalThis !== "undefined" ? globalThis : global || self),
+      (global.TemplateFactory = factory(
+        global.Sanitizer,
+        global.Index,
+        global.SelectorEngine,
+        global.Config,
+      )));
+})(this, function (sanitizer, index, SelectorEngine, Config) {
+  "use strict";
 
-  const _interopDefaultLegacy = e => e && typeof e === 'object' && 'default' in e ? e : { default: e };
+  const _interopDefaultLegacy = (e) =>
+    e && typeof e === "object" && "default" in e ? e : { default: e };
 
-  const SelectorEngine__default = /*#__PURE__*/_interopDefaultLegacy(SelectorEngine);
-  const Config__default = /*#__PURE__*/_interopDefaultLegacy(Config);
+  const SelectorEngine__default =
+    /*#__PURE__*/ _interopDefaultLegacy(SelectorEngine);
+  const Config__default = /*#__PURE__*/ _interopDefaultLegacy(Config);
 
   /**
    * --------------------------------------------------------------------------
@@ -24,29 +44,29 @@
    * Constants
    */
 
-  const NAME = 'TemplateFactory';
+  const NAME = "TemplateFactory";
   const Default = {
     allowList: sanitizer.DefaultAllowlist,
     content: {},
     // { selector : text ,  selector2 : text2 , }
-    extraClass: '',
+    extraClass: "",
     html: false,
     sanitize: true,
     sanitizeFn: null,
-    template: '<div></div>'
+    template: "<div></div>",
   };
   const DefaultType = {
-    allowList: 'object',
-    content: 'object',
-    extraClass: '(string|function)',
-    html: 'boolean',
-    sanitize: 'boolean',
-    sanitizeFn: '(null|function)',
-    template: 'string'
+    allowList: "object",
+    content: "object",
+    extraClass: "(string|function)",
+    html: "boolean",
+    sanitize: "boolean",
+    sanitizeFn: "(null|function)",
+    template: "string",
   };
   const DefaultContentType = {
-    entry: '(string|element|function|null)',
-    selector: '(string|element)'
+    entry: "(string|element|function|null)",
+    selector: "(string|element)",
   };
   /**
    * Class definition
@@ -57,7 +77,6 @@
       super();
       this._config = this._getConfig(config);
     } // Getters
-
 
     static get Default() {
       return Default;
@@ -71,9 +90,10 @@
       return NAME;
     } // Public
 
-
     getContent() {
-      return Object.values(this._config.content).map(config => this._resolvePossibleFunction(config)).filter(Boolean);
+      return Object.values(this._config.content)
+        .map((config) => this._resolvePossibleFunction(config))
+        .filter(Boolean);
     }
 
     hasContent() {
@@ -83,14 +103,12 @@
     changeContent(content) {
       this._checkContent(content);
 
-      this._config.content = { ...this._config.content,
-        ...content
-      };
+      this._config.content = { ...this._config.content, ...content };
       return this;
     }
 
     toHtml() {
-      const templateWrapper = document.createElement('div');
+      const templateWrapper = document.createElement("div");
       templateWrapper.innerHTML = this._maybeSanitize(this._config.template);
 
       for (const [selector, text] of Object.entries(this._config.content)) {
@@ -102,12 +120,11 @@
       const extraClass = this._resolvePossibleFunction(this._config.extraClass);
 
       if (extraClass) {
-        template.classList.add(...extraClass.split(' '));
+        template.classList.add(...extraClass.split(" "));
       }
 
       return template;
     } // Private
-
 
     _typeCheckConfig(config) {
       super._typeCheckConfig(config);
@@ -117,15 +134,21 @@
 
     _checkContent(arg) {
       for (const [selector, content] of Object.entries(arg)) {
-        super._typeCheckConfig({
-          selector,
-          entry: content
-        }, DefaultContentType);
+        super._typeCheckConfig(
+          {
+            selector,
+            entry: content,
+          },
+          DefaultContentType,
+        );
       }
     }
 
     _setContent(template, content, selector) {
-      const templateElement = SelectorEngine__default.default.findOne(selector, template);
+      const templateElement = SelectorEngine__default.default.findOne(
+        selector,
+        template,
+      );
 
       if (!templateElement) {
         return;
@@ -153,26 +176,30 @@
     }
 
     _maybeSanitize(arg) {
-      return this._config.sanitize ? sanitizer.sanitizeHtml(arg, this._config.allowList, this._config.sanitizeFn) : arg;
+      return this._config.sanitize
+        ? sanitizer.sanitizeHtml(
+            arg,
+            this._config.allowList,
+            this._config.sanitizeFn,
+          )
+        : arg;
     }
 
     _resolvePossibleFunction(arg) {
-      return typeof arg === 'function' ? arg(this) : arg;
+      return typeof arg === "function" ? arg(this) : arg;
     }
 
     _putElementInTemplate(element, templateElement) {
       if (this._config.html) {
-        templateElement.innerHTML = '';
+        templateElement.innerHTML = "";
         templateElement.append(element);
         return;
       }
 
       templateElement.textContent = element.textContent;
     }
-
   }
 
   return TemplateFactory;
-
-}));
+});
 //# sourceMappingURL=template-factory.js.map

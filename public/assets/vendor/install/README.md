@@ -4,8 +4,8 @@ The [CommonJS module syntax](http://wiki.commonjs.org/wiki/Modules/1.1) is one o
 
 Much less of a consensus has developed around the best way to deliver CommonJS modules to a web browser, where the synchronous semantics of `require` pose a non-trivial implementation challenge. This module loader contributes to that confusion, yet also demonstrates that an amply-featured module loader need not stretch into the hundreds or thousands of lines.
 
-Installation
----
+## Installation
+
 From NPM:
 
     npm install install
@@ -17,8 +17,7 @@ From GitHub:
     cd install
     npm install .
 
-Usage
----
+## Usage
 
 The first step is to create an `install` function by calling the
 `makeInstaller` method. Note that all of the options described below are
@@ -64,7 +63,7 @@ var require = install({
       // This require function uses the same lookup rules as Node, so it
       // will find "package" in the "node_modules" directory below.
       require("package").name,
-      "/node_modules/package/entry.js"
+      "/node_modules/package/entry.js",
     );
 
     exports.name = module.id;
@@ -83,9 +82,9 @@ var require = install({
 
       "entry.js"(require, exports, module) {
         exports.name = module.id;
-      }
-    }
-  }
+      },
+    },
+  },
 });
 ```
 

@@ -3,17 +3,16 @@
 // Based on https://github.com/fullcalendar/fullcalendar
 // --------------------------------------------------
 
-
 .fc-daygrid,
 .fc-timegrid,
 .fc-list {
-  padding: .5rem;
+  padding: 0.5rem;
   @include border-radius($border-radius-xl);
   background-color: var(--#{$prefix}gray-100);
 }
 
 .fc-col-header-cell {
-  padding: .75rem 0 !important;
+  padding: 0.75rem 0 !important;
   border-bottom: $border-width dashed var(--#{$prefix}gray-400) !important;
 }
 
@@ -42,8 +41,8 @@
   }
   @include media-breakpoint-up(lg) {
     padding: {
-      right: .25rem;
-      left: .25rem;
+      right: 0.25rem;
+      left: 0.25rem;
     }
   }
 }
@@ -56,8 +55,8 @@
   height: var(--#{$prefix}btn-size);
   padding: 0;
 
-  > [class^='bi-'],
-  > [class*=' bi-'] {
+  > [class^="bi-"],
+  > [class*=" bi-"] {
     font-size: 1.625em;
   }
 }
@@ -78,8 +77,8 @@
 
 .fc .fc-toolbar {
   overflow: auto;
-  margin-bottom: .75rem !important;
-  padding-bottom: .875rem;
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.875rem;
 }
 
 .fc-toolbar-title {
@@ -101,7 +100,8 @@
   --fc-event-border-color: var(--#{$prefix}primary);
   --fc-event-bg-color: var(--#{$prefix}primary);
 
-  &.text-nav, &.text-dark {
+  &.text-nav,
+  &.text-dark {
     .fc-event-main {
       color: currentColor;
     }
@@ -119,7 +119,7 @@
 
 .fc-daygrid-event-dot,
 .fc-list-event-dot {
-  --fc-event-border-color:  var(--#{$prefix}primary);
+  --fc-event-border-color: var(--#{$prefix}primary);
 }
 
 .event-custom-style {
@@ -144,10 +144,11 @@ tr.event-custom-style {
 }
 
 .fc-daygrid-event-harness {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .fc-timegrid-event-harness-inset .fc-timegrid-event,
-.fc-timegrid-event.fc-event-mirror, .fc-timegrid-more-link {
-  box-shadow: 0 0 0 1px rgba($white, .3);
+.fc-timegrid-event.fc-event-mirror,
+.fc-timegrid-more-link {
+  box-shadow: 0 0 0 1px rgba($white, 0.3);
 }

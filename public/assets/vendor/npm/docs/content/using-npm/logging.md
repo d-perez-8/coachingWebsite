@@ -14,7 +14,7 @@ All logs are written to a debug log, with the path to that file printed if the e
 
 The default location of the logs directory is a directory named `_logs` inside the npm cache. This can be changed with the `logs-dir` config option.
 
-For example, if you wanted to write all your logs to the current working directory, you could run: `npm install --logs-dir=.`.  This is especially helpful in debugging a specific `npm` issue as you can run
+For example, if you wanted to write all your logs to the current working directory, you could run: `npm install --logs-dir=.`. This is especially helpful in debugging a specific `npm` issue as you can run
 a command multiple times with different config values and then diff all the log files.
 
 Log files will be removed from the `logs-dir` when the number of log files exceeds `logs-max`, with the oldest logs being deleted first.
@@ -93,4 +93,4 @@ However, this behavior should not be relied on to keep all possible sensitive in
 
 ### See also
 
-* [config](/using-npm/config)
+- [config](/using-npm/config)

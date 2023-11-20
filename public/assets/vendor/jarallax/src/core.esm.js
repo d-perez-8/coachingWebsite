@@ -1,6 +1,6 @@
-import jarallaxLib from './core';
-import jarallaxVideoExt from './ext-video';
-import jarallaxElementExt from './deprecated/ext-element';
+import jarallaxLib from "./core";
+import jarallaxVideoExt from "./ext-video";
+import jarallaxElementExt from "./deprecated/ext-element";
 
 export const jarallax = jarallaxLib;
 

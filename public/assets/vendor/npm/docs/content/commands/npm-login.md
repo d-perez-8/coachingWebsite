@@ -26,7 +26,7 @@ To reset your password, go to <https://www.npmjs.com/forgot>
 To change your email address, go to <https://www.npmjs.com/email-edit>
 
 You may use this command multiple times with the same user account to
-authorize on a new machine.  When authenticating on a new machine,
+authorize on a new machine. When authenticating on a new machine,
 the username, password and email address must all match with
 your existing record.
 
@@ -34,15 +34,15 @@ your existing record.
 
 #### `registry`
 
-* Default: "https://registry.npmjs.org/"
-* Type: URL
+- Default: "https://registry.npmjs.org/"
+- Type: URL
 
 The base URL of the npm registry.
 
 #### `scope`
 
-* Default: the scope of the current project, if any, or ""
-* Type: String
+- Default: the scope of the current project, if any, or ""
+- Type: String
 
 Associate an operation with a scope for a scoped registry.
 
@@ -68,20 +68,19 @@ This will also cause `npm init` to create a scoped package.
 npm init --scope=@foo --yes
 ```
 
-
 #### `auth-type`
 
-* Default: "web"
-* Type: "legacy" or "web"
+- Default: "web"
+- Type: "legacy" or "web"
 
 What authentication strategy to use with `login`.
 
 ### See Also
 
-* [npm registry](/using-npm/registry)
-* [npm config](/commands/npm-config)
-* [npmrc](/configuring-npm/npmrc)
-* [npm owner](/commands/npm-owner)
-* [npm whoami](/commands/npm-whoami)
-* [npm token](/commands/npm-token)
-* [npm profile](/commands/npm-profile)
+- [npm registry](/using-npm/registry)
+- [npm config](/commands/npm-config)
+- [npmrc](/configuring-npm/npmrc)
+- [npm owner](/commands/npm-owner)
+- [npm whoami](/commands/npm-whoami)
+- [npm token](/commands/npm-token)
+- [npm profile](/commands/npm-profile)

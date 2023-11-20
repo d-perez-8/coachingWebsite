@@ -5,18 +5,18 @@
  * *******************************************************
  */
 
-import styles from '../sass/aos.scss';
+import styles from "../sass/aos.scss";
 
 // Modules & helpers
-import throttle from 'lodash.throttle';
-import debounce from 'lodash.debounce';
+import throttle from "lodash.throttle";
+import debounce from "lodash.debounce";
 
-import observer from './libs/observer';
+import observer from "./libs/observer";
 
-import detect from './helpers/detector';
-import handleScroll from './helpers/handleScroll';
-import prepare from './helpers/prepare';
-import elements from './helpers/elements';
+import detect from "./helpers/detector";
+import handleScroll from "./helpers/handleScroll";
+import prepare from "./helpers/prepare";
+import elements from "./helpers/elements";
 
 /**
  * Private variables
@@ -30,11 +30,11 @@ let initialized = false;
 let options = {
   offset: 120,
   delay: 0,
-  easing: 'ease',
+  easing: "ease",
   duration: 400,
   disable: false,
   once: false,
-  startEvent: 'DOMContentLoaded',
+  startEvent: "DOMContentLoaded",
   throttleDelay: 99,
   debounceDelay: 50,
   disableMutationObserver: false,
@@ -70,25 +70,26 @@ const refreshHard = function refreshHard() {
  * Disable AOS
  * Remove all attributes to reset applied styles
  */
-const disable = function() {
-  $aosElements.forEach(function(el, i) {
-    el.node.removeAttribute('data-aos');
-    el.node.removeAttribute('data-aos-easing');
-    el.node.removeAttribute('data-aos-duration');
-    el.node.removeAttribute('data-aos-delay');
+const disable = function () {
+  $aosElements.forEach(function (el, i) {
+    el.node.removeAttribute("data-aos");
+    el.node.removeAttribute("data-aos-easing");
+    el.node.removeAttribute("data-aos-duration");
+    el.node.removeAttribute("data-aos-delay");
   });
 };
-
 
 /**
  * Check if AOS should be disabled based on provided setting
  */
-const isDisabled = function(optionDisable) {
-  return optionDisable === true ||
-  (optionDisable === 'mobile' && detect.mobile()) ||
-  (optionDisable === 'phone' && detect.phone()) ||
-  (optionDisable === 'tablet' && detect.tablet()) ||
-  (typeof optionDisable === 'function' && optionDisable() === true);
+const isDisabled = function (optionDisable) {
+  return (
+    optionDisable === true ||
+    (optionDisable === "mobile" && detect.mobile()) ||
+    (optionDisable === "phone" && detect.phone()) ||
+    (optionDisable === "tablet" && detect.tablet()) ||
+    (typeof optionDisable === "function" && optionDisable() === true)
+  );
 };
 
 /**
@@ -134,25 +135,31 @@ const init = function init(settings) {
    * Set global settings on body, based on options
    * so CSS can use it
    */
-  document.querySelector('body').setAttribute('data-aos-easing', options.easing);
-  document.querySelector('body').setAttribute('data-aos-duration', options.duration);
-  document.querySelector('body').setAttribute('data-aos-delay', options.delay);
+  document
+    .querySelector("body")
+    .setAttribute("data-aos-easing", options.easing);
+  document
+    .querySelector("body")
+    .setAttribute("data-aos-duration", options.duration);
+  document.querySelector("body").setAttribute("data-aos-delay", options.delay);
 
   /**
    * Handle initializing
    */
-  if (options.startEvent === 'DOMContentLoaded' &&
-    ['complete', 'interactive'].indexOf(document.readyState) > -1) {
+  if (
+    options.startEvent === "DOMContentLoaded" &&
+    ["complete", "interactive"].indexOf(document.readyState) > -1
+  ) {
     // Initialize AOS if default startEvent was already fired
     refresh(true);
-  } else if (options.startEvent === 'load') {
+  } else if (options.startEvent === "load") {
     // If start event is 'Load' - attach listener to window
-    window.addEventListener(options.startEvent, function() {
+    window.addEventListener(options.startEvent, function () {
       refresh(true);
     });
   } else {
     // Listen to options.startEvent and initialize AOS
-    document.addEventListener(options.startEvent, function() {
+    document.addEventListener(options.startEvent, function () {
       refresh(true);
     });
   }
@@ -160,15 +167,24 @@ const init = function init(settings) {
   /**
    * Refresh plugin on window resize or orientation change
    */
-  window.addEventListener('resize', debounce(refresh, options.debounceDelay, true));
-  window.addEventListener('orientationchange', debounce(refresh, options.debounceDelay, true));
+  window.addEventListener(
+    "resize",
+    debounce(refresh, options.debounceDelay, true),
+  );
+  window.addEventListener(
+    "orientationchange",
+    debounce(refresh, options.debounceDelay, true),
+  );
 
   /**
    * Handle scroll event to animate elements on scroll
    */
-  window.addEventListener('scroll', throttle(() => {
-    handleScroll($aosElements, options.once);
-  }, options.throttleDelay));
+  window.addEventListener(
+    "scroll",
+    throttle(() => {
+      handleScroll($aosElements, options.once);
+    }, options.throttleDelay),
+  );
 
   /**
    * Observe [aos] elements
@@ -176,7 +192,7 @@ const init = function init(settings) {
    * it'll refresh plugin automatically
    */
   if (!options.disableMutationObserver) {
-    observer.ready('[data-aos]', refreshHard);
+    observer.ready("[data-aos]", refreshHard);
   }
 
   return $aosElements;
@@ -189,5 +205,5 @@ const init = function init(settings) {
 module.exports = {
   init,
   refresh,
-  refreshHard
+  refreshHard,
 };

@@ -64,7 +64,10 @@ We provide a version of Jarallax built as ESM (jarallax.esm.js and jarallax.esm.
 
 ```html
 <script type="module">
-  import { jarallax, jarallaxVideo } from "https://cdn.skypack.dev/jarallax@2.0?min";
+  import {
+    jarallax,
+    jarallaxVideo,
+  } from "https://cdn.skypack.dev/jarallax@2.0?min";
 
   // Optional video extension
   jarallaxVideo();
@@ -135,21 +138,24 @@ You can include it from `/dist/jarallax.css`.
 ```html
 <!-- Background Image Parallax -->
 <div class="jarallax">
-  <img class="jarallax-img" src="<background_image_url_here>" alt="">
+  <img class="jarallax-img" src="<background_image_url_here>" alt="" />
   Your content here...
 </div>
 
 <!-- Background Image Parallax with <picture> tag -->
 <div class="jarallax">
   <picture class="jarallax-img">
-    <source media="..." srcset="<alternative_background_image_url_here>">
-    <img src="<background_image_url_here>" alt="">
+    <source media="..." srcset="<alternative_background_image_url_here>" />
+    <img src="<background_image_url_here>" alt="" />
   </picture>
   Your content here...
 </div>
 
 <!-- Alternate: Background Image Parallax -->
-<div class="jarallax" style="background-image: url('<background_image_url_here>');">
+<div
+  class="jarallax"
+  style="background-image: url('<background_image_url_here>');"
+>
   Your content here...
 </div>
 ```
@@ -161,7 +167,7 @@ Note: automatic data-attribute initialization and jQuery integration are availab
 ### A. JavaScript way
 
 ```javascript
-jarallax(document.querySelectorAll('.jarallax'), {
+jarallax(document.querySelectorAll(".jarallax"), {
   speed: 0.2,
 });
 ```
@@ -170,7 +176,7 @@ jarallax(document.querySelectorAll('.jarallax'), {
 
 ```html
 <div data-jarallax data-speed="0.2" class="jarallax">
-  <img class="jarallax-img" src="<background_image_url_here>" alt="">
+  <img class="jarallax-img" src="<background_image_url_here>" alt="" />
   Your content here...
 </div>
 ```
@@ -180,7 +186,7 @@ Note: You can use all available options as data attributes. For example: `data-s
 ### C. jQuery way
 
 ```javascript
-$('.jarallax').jarallax({
+$(".jarallax").jarallax({
   speed: 0.2,
 });
 ```
@@ -190,8 +196,8 @@ $('.jarallax').jarallax({
 Sometimes to prevent existing namespace collisions you may call `.noConflict` on the script to revert the value of.
 
 ```javascript
-const jarallaxPlugin = $.fn.jarallax.noConflict() // return $.fn.jarallax to previously assigned value
-$.fn.newJarallax = jarallaxPlugin // give $().newJarallax the Jarallax functionality
+const jarallaxPlugin = $.fn.jarallax.noConflict(); // return $.fn.jarallax to previously assigned value
+$.fn.newJarallax = jarallaxPlugin; // give $().newJarallax the Jarallax functionality
 ```
 
 ## Background Video Usage Examples
@@ -199,12 +205,12 @@ $.fn.newJarallax = jarallaxPlugin // give $().newJarallax the Jarallax functiona
 ### A. JavaScript way
 
 ```javascript
-import { jarallax, jarallaxVideo } from 'jarallax';
+import { jarallax, jarallaxVideo } from "jarallax";
 jarallaxVideo();
 
-jarallax(document.querySelectorAll('.jarallax'), {
+jarallax(document.querySelectorAll(".jarallax"), {
   speed: 0.2,
-  videoSrc: 'https://www.youtube.com/watch?v=ab0TSkLe-E0'
+  videoSrc: "https://www.youtube.com/watch?v=ab0TSkLe-E0",
 });
 ```
 
@@ -216,17 +222,29 @@ jarallax(document.querySelectorAll('.jarallax'), {
 
 ```html
 <!-- Background YouTube Parallax -->
-<div class="jarallax" data-jarallax data-video-src="https://www.youtube.com/watch?v=ab0TSkLe-E0">
+<div
+  class="jarallax"
+  data-jarallax
+  data-video-src="https://www.youtube.com/watch?v=ab0TSkLe-E0"
+>
   Your content here...
 </div>
 
 <!-- Background Vimeo Parallax -->
-<div class="jarallax" data-jarallax data-video-src="https://vimeo.com/110138539">
+<div
+  class="jarallax"
+  data-jarallax
+  data-video-src="https://vimeo.com/110138539"
+>
   Your content here...
 </div>
 
 <!-- Background Self-Hosted Video Parallax -->
-<div class="jarallax" data-jarallax data-video-src="mp4:./video/local-video.mp4,webm:./video/local-video.webm,ogv:./video/local-video.ogv">
+<div
+  class="jarallax"
+  data-jarallax
+  data-video-src="mp4:./video/local-video.mp4,webm:./video/local-video.webm,ogv:./video/local-video.ogv"
+>
   Your content here...
 </div>
 ```
@@ -237,20 +255,20 @@ Note: self-hosted videos require 1 video type only, not necessarily using all mp
 
 Options can be passed in data attributes or in object when you initialize jarallax from script.
 
-Name | Type | Default | Description
-:--- | :--- | :------ | :----------
-type | string | `scroll` | scroll, scale, opacity, scroll-opacity, scale-opacity.
-speed | float | `0.5` | Parallax effect speed. Provide numbers from -1.0 to 2.0.
-imgSrc | path | `null` | Image url. By default used image from background.
-imgElement | dom / selector | `.jarallax-img` | Image tag that will be used as background.
-imgSize | string | `cover` | Image size. If you use `<img>` tag for background, you should add `object-fit` values, else use `background-size` values.
-imgPosition | string | `50% 50%` | Image position. If you use `<img>` tag for background, you should add `object-position` values, else use `background-position` values.
-imgRepeat | string | `no-repeat` | Image repeat. Supported only `background-position` values.
-keepImg | boolean | `false` | Keep `<img>` tag in it's default place after Jarallax inited.
-elementInViewport | dom | `null` | Use custom DOM / jQuery element to check if parallax block in viewport. More info here - [Issue 13](https://github.com/nk-o/jarallax/issues/13).
-zIndex | number | `-100` | z-index of parallax container.
-disableParallax | RegExp / function | - | Disable parallax on specific user agents (using regular expression) or with function return value. The image will be set on the background.
-disableVideo | RegExp / function | - | Disable video load on specific user agents (using regular expression) or with function return value. The image will be set on the background.
+| Name              | Type              | Default         | Description                                                                                                                                      |
+| :---------------- | :---------------- | :-------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| type              | string            | `scroll`        | scroll, scale, opacity, scroll-opacity, scale-opacity.                                                                                           |
+| speed             | float             | `0.5`           | Parallax effect speed. Provide numbers from -1.0 to 2.0.                                                                                         |
+| imgSrc            | path              | `null`          | Image url. By default used image from background.                                                                                                |
+| imgElement        | dom / selector    | `.jarallax-img` | Image tag that will be used as background.                                                                                                       |
+| imgSize           | string            | `cover`         | Image size. If you use `<img>` tag for background, you should add `object-fit` values, else use `background-size` values.                        |
+| imgPosition       | string            | `50% 50%`       | Image position. If you use `<img>` tag for background, you should add `object-position` values, else use `background-position` values.           |
+| imgRepeat         | string            | `no-repeat`     | Image repeat. Supported only `background-position` values.                                                                                       |
+| keepImg           | boolean           | `false`         | Keep `<img>` tag in it's default place after Jarallax inited.                                                                                    |
+| elementInViewport | dom               | `null`          | Use custom DOM / jQuery element to check if parallax block in viewport. More info here - [Issue 13](https://github.com/nk-o/jarallax/issues/13). |
+| zIndex            | number            | `-100`          | z-index of parallax container.                                                                                                                   |
+| disableParallax   | RegExp / function | -               | Disable parallax on specific user agents (using regular expression) or with function return value. The image will be set on the background.      |
+| disableVideo      | RegExp / function | -               | Disable video load on specific user agents (using regular expression) or with function return value. The image will be set on the background.    |
 
 ### Disable on mobile devices
 
@@ -259,22 +277,22 @@ You can disable parallax effect and/or video background on mobile devices using 
 Example:
 
 ```javascript
-jarallax(document.querySelectorAll('.jarallax'), {
+jarallax(document.querySelectorAll(".jarallax"), {
   disableParallax: /iPad|iPhone|iPod|Android/,
-  disableVideo: /iPad|iPhone|iPod|Android/
+  disableVideo: /iPad|iPhone|iPod|Android/,
 });
 ```
 
 Or using function. Example:
 
 ```javascript
-jarallax(document.querySelectorAll('.jarallax'), {
+jarallax(document.querySelectorAll(".jarallax"), {
   disableParallax: function () {
     return /iPad|iPhone|iPod|Android/.test(navigator.userAgent);
   },
   disableVideo: function () {
     return /iPad|iPhone|iPod|Android/.test(navigator.userAgent);
-  }
+  },
 });
 ```
 
@@ -282,42 +300,42 @@ jarallax(document.querySelectorAll('.jarallax'), {
 
 Required `jarallax/jarallax-video.js` file.
 
-Name | Type | Default | Description
-:--- | :--- | :------ | :----------
-videoSrc | string | `null` | You can use Youtube, Vimeo or Self-Hosted videos. Also you can use data attribute `data-jarallax-video`.
-videoStartTime | float | `0` | Start time in seconds when video will be started (this value will be applied also after loop).
-videoEndTime | float | `0` | End time in seconds when video will be ended.
-videoLoop | boolean | `true` | Loop video to play infinitely.
-videoPlayOnlyVisible | boolean | `true` | Play video only when it is visible on the screen.
-videoLazyLoading | boolean | `true` | Preload videos only when it is visible on the screen.
+| Name                 | Type    | Default | Description                                                                                              |
+| :------------------- | :------ | :------ | :------------------------------------------------------------------------------------------------------- |
+| videoSrc             | string  | `null`  | You can use Youtube, Vimeo or Self-Hosted videos. Also you can use data attribute `data-jarallax-video`. |
+| videoStartTime       | float   | `0`     | Start time in seconds when video will be started (this value will be applied also after loop).           |
+| videoEndTime         | float   | `0`     | End time in seconds when video will be ended.                                                            |
+| videoLoop            | boolean | `true`  | Loop video to play infinitely.                                                                           |
+| videoPlayOnlyVisible | boolean | `true`  | Play video only when it is visible on the screen.                                                        |
+| videoLazyLoading     | boolean | `true`  | Preload videos only when it is visible on the screen.                                                    |
 
 ## Events
 
 Events used the same way as Options.
 
-Name | Description
-:--- | :----------
-onScroll | Called when parallax working. Use first argument with calculations. More info [see below](#onscroll-event).
-onInit | Called after init end.
-onDestroy | Called after destroy.
-onCoverImage | Called after cover image.
+| Name         | Description                                                                                                 |
+| :----------- | :---------------------------------------------------------------------------------------------------------- |
+| onScroll     | Called when parallax working. Use first argument with calculations. More info [see below](#onscroll-event). |
+| onInit       | Called after init end.                                                                                      |
+| onDestroy    | Called after destroy.                                                                                       |
+| onCoverImage | Called after cover image.                                                                                   |
 
 ### Additional events for video extension
 
 Required `jarallax/jarallax-video.js` file.
 
-Name | Description
-:--- | :----------
-onVideoInsert | Called right after video is inserted in the parallax block. Video can be accessed by `this.$video`
-onVideoWorkerInit | Called after VideoWorker script initialized. Available parameter with videoWorkerObject.
+| Name              | Description                                                                                        |
+| :---------------- | :------------------------------------------------------------------------------------------------- |
+| onVideoInsert     | Called right after video is inserted in the parallax block. Video can be accessed by `this.$video` |
+| onVideoWorkerInit | Called after VideoWorker script initialized. Available parameter with videoWorkerObject.           |
 
 ### onScroll event
 
 ```javascript
-jarallax(document.querySelectorAll('.jarallax'), {
-  onScroll: function(calculations) {
+jarallax(document.querySelectorAll(".jarallax"), {
+  onScroll: function (calculations) {
     console.log(calculations);
-  }
+  },
 });
 ```
 
@@ -349,56 +367,56 @@ Calculations example:
 
 ## Methods
 
-Name | Result | Description
-:--- | :----- | :----------
-destroy | - | Destroy Jarallax and set block as it was before plugin init.
-isVisible | boolean | Check if parallax block is in viewport.
-onResize | - | Fit image and clip parallax container. Called on window resize and load.
-onScroll | - | Calculate parallax image position. Called on window scroll.
+| Name      | Result  | Description                                                              |
+| :-------- | :------ | :----------------------------------------------------------------------- |
+| destroy   | -       | Destroy Jarallax and set block as it was before plugin init.             |
+| isVisible | boolean | Check if parallax block is in viewport.                                  |
+| onResize  | -       | Fit image and clip parallax container. Called on window resize and load. |
+| onScroll  | -       | Calculate parallax image position. Called on window scroll.              |
 
 ### Call methods example
 
 #### A. JavaScript way
 
 ```javascript
-jarallax(document.querySelectorAll('.jarallax'), 'destroy');
+jarallax(document.querySelectorAll(".jarallax"), "destroy");
 ```
 
 #### B. jQuery way
 
 ```javascript
-$('.jarallax').jarallax('destroy');
+$(".jarallax").jarallax("destroy");
 ```
 
 ## For Developers
 
 ### Installation
 
-* Run `npm install` in the command line
+- Run `npm install` in the command line
 
 ### Building
 
-* `npm run dev` to run build and start local server with files watcher
-* `npm run build` to run build
+- `npm run dev` to run build and start local server with files watcher
+- `npm run build` to run build
 
 ### Linting
 
-* `npm run js-lint` to show eslint errors
-* `npm run js-lint-fix` to automatically fix some of the eslint errors
+- `npm run js-lint` to show eslint errors
+- `npm run js-lint-fix` to automatically fix some of the eslint errors
 
 ### Test
 
-* `npm run test` to run unit tests
+- `npm run test` to run unit tests
 
 ## Real Usage Examples
 
-* [AWB](https://wpbackgrounds.com/)
-* [Godlike](https://demo.nkdev.info/#godlike)
-* [Youplay](https://demo.nkdev.info/#youplay)
-* [Skylith](https://demo.nkdev.info/#skylith)
-* [Khaki](https://demo.nkdev.info/#khaki)
+- [AWB](https://wpbackgrounds.com/)
+- [Godlike](https://demo.nkdev.info/#godlike)
+- [Youplay](https://demo.nkdev.info/#youplay)
+- [Skylith](https://demo.nkdev.info/#skylith)
+- [Khaki](https://demo.nkdev.info/#khaki)
 
 ## Credits
 
-* Images <https://unsplash.com/>
-* Videos <https://videos.pexels.com/>
+- Images <https://unsplash.com/>
+- Videos <https://videos.pexels.com/>

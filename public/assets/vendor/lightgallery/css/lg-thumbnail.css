@@ -83,7 +83,8 @@
   }
 }
 
-.lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
+.lg-outer .lg-thumb-item.active,
+.lg-outer .lg-thumb-item:hover {
   border-color: #a90707;
 }
 
@@ -99,7 +100,7 @@
 }
 
 .lg-outer .lg-toggle-thumb:after {
-  content: '\e1ff';
+  content: "\e1ff";
 }
 
 .lg-outer.lg-animate-thumb .lg-thumb {

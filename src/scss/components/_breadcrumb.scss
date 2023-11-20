@@ -2,11 +2,13 @@
 // Breadcrumb
 // --------------------------------------------------
 
-
 .breadcrumb {
   --#{$prefix}breadcrumb-color: #{$breadcrumb-color};
   --#{$prefix}breadcrumb-font-weight: #{$breadcrumb-font-weight};
-  @include rfs($breadcrumb-divider-font-size, --#{$prefix}breadcrumb-divider-font-size);
+  @include rfs(
+    $breadcrumb-divider-font-size,
+    --#{$prefix}breadcrumb-divider-font-size
+  );
   --#{$prefix}breadcrumb-item-hover-color: #{$breadcrumb-hover-color};
 
   font-weight: var(--#{$prefix}breadcrumb-font-weight);
@@ -16,7 +18,7 @@
   display: flex;
   align-items: center;
   + .breadcrumb-item::before {
-    margin-top: .15em;
+    margin-top: 0.15em;
     font: {
       family: $icons-font-family;
       weight: normal;
@@ -27,7 +29,7 @@
   > a {
     display: flex;
     align-items: center;
-    color: var(--#{$prefix}breadcrumb-color);    
+    color: var(--#{$prefix}breadcrumb-color);
     text-decoration: none;
   }
   &:hover > a {

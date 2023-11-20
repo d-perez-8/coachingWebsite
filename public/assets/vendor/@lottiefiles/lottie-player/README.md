@@ -93,7 +93,7 @@ player.addEventListener("rendered", (e) => {
   player.load("https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json");
   // or load via a Bodymovin JSON string/object
   player.load(
-    '{"v":"5.3.4","fr":30,"ip":0,"op":38,"w":315,"h":600,"nm":"new", ... }'
+    '{"v":"5.3.4","fr":30,"ip":0,"op":38,"w":315,"h":600,"nm":"new", ... }',
   );
 });
 ```
@@ -177,14 +177,15 @@ Create a `lottie-player.js` file inside the `/plugins` folder and add the below 
 
 ```js
 import * as LottiePlayer from "@lottiefiles/lottie-player";
-```  
+```
+
 \
 Open `nuxt.config.js` file and add the following entry to register the newly created plugin:
 
 ```js
 export default {
-  plugins: [{ src: "~/plugins/lottie-player.js", mode: "client" }]
-}
+  plugins: [{ src: "~/plugins/lottie-player.js", mode: "client" }],
+};
 ```
 
 This is because the player script needs to be rendered on the browser/client side and we must configure Nuxt to load the script on the client side only.  
@@ -213,6 +214,7 @@ import * as LottiePlayer from "@lottiefiles/lottie-player";
 
 export default LottiePlayer;
 ```
+
 \
 Your plugin will be automatically available throughout your Nuxt application thanks to the [plugin auto-registration](https://v3.nuxtjs.org/guide/directory-structure/plugins). Note the `client` suffix in the name of the plugin - this tells Nuxt to load it only on the client side, as the Lottie Player script can only be rendered in the browser.
 

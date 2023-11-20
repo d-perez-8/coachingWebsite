@@ -37,22 +37,22 @@ npm prefix -g
 
 #### `global`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Operates in "global" mode, so that packages are installed into the `prefix`
 folder instead of the current working directory. See
 [folders](/configuring-npm/folders) for more on the differences in behavior.
 
-* packages are installed into the `{prefix}/lib/node_modules` folder, instead
+- packages are installed into the `{prefix}/lib/node_modules` folder, instead
   of the current working directory.
-* bin files are linked to `{prefix}/bin`
-* man pages are linked to `{prefix}/share/man`
+- bin files are linked to `{prefix}/bin`
+- man pages are linked to `{prefix}/share/man`
 
 ### See Also
 
-* [npm root](/commands/npm-root)
-* [npm bin](/commands/npm-bin)
-* [npm folders](/configuring-npm/folders)
-* [npm config](/commands/npm-config)
-* [npmrc](/configuring-npm/npmrc)
+- [npm root](/commands/npm-root)
+- [npm bin](/commands/npm-bin)
+- [npm folders](/configuring-npm/folders)
+- [npm config](/commands/npm-config)
+- [npmrc](/configuring-npm/npmrc)

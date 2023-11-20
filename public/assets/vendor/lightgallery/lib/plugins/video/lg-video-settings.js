@@ -2,14 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.videoSettings = void 0;
 exports.videoSettings = {
-    autoplayFirstVideo: true,
-    youTubePlayerParams: false,
-    vimeoPlayerParams: false,
-    wistiaPlayerParams: false,
-    gotoNextSlideOnVideoEnd: true,
-    autoplayVideoOnSlide: false,
-    videojs: false,
-    videojsTheme: '',
-    videojsOptions: {},
+  autoplayFirstVideo: true,
+  youTubePlayerParams: false,
+  vimeoPlayerParams: false,
+  wistiaPlayerParams: false,
+  gotoNextSlideOnVideoEnd: true,
+  autoplayVideoOnSlide: false,
+  videojs: false,
+  videojsTheme: "",
+  videojsOptions: {},
 };
 //# sourceMappingURL=lg-video-settings.js.map

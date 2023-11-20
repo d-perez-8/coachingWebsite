@@ -59,7 +59,7 @@ export interface JarallaxOptions {
   /**
    * Image repeat. Supported only background-position values.
    */
-  imgRepeat?: 'repeat' | 'no-repeat';
+  imgRepeat?: "repeat" | "no-repeat";
 
   /**
    * Keep <img> tag in it's default place after Jarallax inited.
@@ -153,7 +153,7 @@ export interface JarallaxOptions {
  */
 export function jarallax(
   elements: Element | Element[] | NodeListOf<Element> | JQuery<Element>,
-  userOptions: JarallaxOptions
+  userOptions: JarallaxOptions,
 ): void;
 
 /**
@@ -164,7 +164,7 @@ export function jarallax(
  */
 export function jarallax(
   elements: Element | Element[] | NodeListOf<Element> | JQuery<Element>,
-  methodName: 'destroy' | 'onResize' | 'onScroll'
+  methodName: "destroy" | "onResize" | "onScroll",
 ): void;
 
 /**
@@ -176,7 +176,7 @@ export function jarallax(
  */
 export function jarallax(
   elements: Element | Element[] | NodeListOf<Element> | JQuery<Element>,
-  methodName: 'isVisible'
+  methodName: "isVisible",
 ): boolean;
 
 export interface JQuery {
@@ -192,7 +192,7 @@ export interface JQuery {
    *
    * @param {"destroy" | "onResize" | "onScroll"} methodName
    */
-  jarallax(methodName: 'destroy' | 'onResize' | 'onScroll'): void;
+  jarallax(methodName: "destroy" | "onResize" | "onScroll"): void;
 
   /**
    * Check if an element is visible
@@ -200,5 +200,5 @@ export interface JQuery {
    * @param {"isVisible"} methodName
    * @returns {boolean}
    */
-  jarallax(methodName: 'isVisible'): boolean;
+  jarallax(methodName: "isVisible"): boolean;
 }

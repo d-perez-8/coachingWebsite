@@ -1,4 +1,3 @@
-
 # FullCalendar Standard Bundle
 
 FullCalendar is a full-sized drag & drop event calendar. This packages is an easily consumable combination of standard plugins. It makes the root namespace available as the `FullCalendar` browser global. [View the docs &raquo;](https://fullcalendar.io/docs/getting-started)

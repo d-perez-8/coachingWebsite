@@ -1,40 +1,47 @@
-import { AfterSlideDetail, HasVideoDetail, SlideItemLoadDetail } from './lg-events';
-import { LightGallerySettings } from './lg-settings';
-import { $LG } from './lgQuery';
-import { LightGallery } from './lightgallery';
+import {
+  AfterSlideDetail,
+  HasVideoDetail,
+  SlideItemLoadDetail,
+} from "./lg-events";
+import { LightGallerySettings } from "./lg-settings";
+import { $LG } from "./lgQuery";
+import { LightGallery } from "./lightgallery";
 declare global {
-    interface Window {
-        lgModules: any;
-        $LG: typeof $LG;
-        lightGallery: (el: HTMLElement, options: Partial<LightGallerySettings>) => LightGallery | undefined;
-    }
+  interface Window {
+    lgModules: any;
+    $LG: typeof $LG;
+    lightGallery: (
+      el: HTMLElement,
+      options: Partial<LightGallerySettings>,
+    ) => LightGallery | undefined;
+  }
 }
 export interface Coordinates {
-    pageX: number;
-    pageY: number;
+  pageX: number;
+  pageY: number;
 }
 export interface CustomEventHasVideo extends CustomEvent {
-    detail: HasVideoDetail;
+  detail: HasVideoDetail;
 }
 export interface CustomEventSlideItemLoad extends CustomEvent {
-    detail: SlideItemLoadDetail;
+  detail: SlideItemLoadDetail;
 }
 export interface CustomEventAfterSlide extends CustomEvent {
-    detail: AfterSlideDetail;
+  detail: AfterSlideDetail;
 }
-export declare type SlideDirection = 'next' | 'prev';
+export declare type SlideDirection = "next" | "prev";
 export interface Coords {
-    pageX: number;
-    pageY: number;
+  pageX: number;
+  pageY: number;
 }
 export interface VideoInfo {
-    html5?: boolean;
-    youtube?: string[];
-    vimeo?: string[];
-    wistia?: string[];
-    dailymotion?: string[];
+  html5?: boolean;
+  youtube?: string[];
+  vimeo?: string[];
+  wistia?: string[];
+  dailymotion?: string[];
 }
 export interface MediaContainerPosition {
-    top: number;
-    bottom: number;
+  top: number;
+  bottom: number;
 }

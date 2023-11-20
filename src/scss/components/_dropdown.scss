@@ -2,11 +2,11 @@
 // Dropdown
 // --------------------------------------------------
 
-
 // Caret
 
 .dropdown-toggle {
-  &::before, &::after {
+  &::before,
+  &::after {
     font: {
       family: $icons-font-family;
       size: 1.375em;
@@ -17,11 +17,11 @@
     line-height: 1;
   }
   &::after {
-    margin-right: -.25rem;
-    content: '\e937';
+    margin-right: -0.25rem;
+    content: "\e937";
   }
   &.fs-sm::after {
-    margin-top: -.0625rem !important;
+    margin-top: -0.0625rem !important;
   }
   &.btn:not(.btn-lg)::before,
   &.btn:not(.btn-lg)::after {
@@ -30,21 +30,23 @@
 }
 
 .dropup .dropdown-toggle::after {
-  content: '\e93a';
+  content: "\e93a";
 }
 .dropstart .dropdown-toggle::before {
-  margin-left: -.3125rem;
-  content: '\e938';
+  margin-left: -0.3125rem;
+  content: "\e938";
 }
 .dropend .dropdown-toggle::after {
-  margin-right: -.3125rem;
+  margin-right: -0.3125rem;
   font-size: 1.15em !important;
-  content: '\e939';
+  content: "\e939";
 }
 .dropdown-toggle-split {
-  &::before, &::after { margin: 0; }
+  &::before,
+  &::after {
+    margin: 0;
+  }
 }
-
 
 // Dropdown menu
 
@@ -64,7 +66,9 @@
     pointer-events: none;
   }
 
-  &.w-100 { min-width: 100%; }
+  &.w-100 {
+    min-width: 100%;
+  }
 }
 
 .dropdown-menu-dark {
@@ -81,11 +85,14 @@
 .dropdown-item {
   font-weight: var(--#{$prefix}dropdown-link-font-weight);
 
-  [class^='opacity-'], [class*=' opacity-'] {
-    transition: opacity .2s ease-in-out;
+  [class^="opacity-"],
+  [class*=" opacity-"] {
+    transition: opacity 0.2s ease-in-out;
   }
 
-  &:hover *, &.active *, &.show * {
+  &:hover *,
+  &.active *,
+  &.show * {
     opacity: 1 !important;
   }
 }
@@ -94,7 +101,6 @@ li:hover > .dropdown-item *,
 li.active > .dropdown-item * {
   opacity: 1 !important;
 }
-
 
 // Dropdown divider
 
@@ -114,14 +120,17 @@ hr.dropdown-divider {
   background-color: var(--#{$prefix}dropdown-divider-bg);
 }
 
-
 // Dropdown menu animation
 
 .dropdown-menu.show {
-  animation: fade-in .2s ease-in-out;
+  animation: fade-in 0.2s ease-in-out;
 }
 
-@keyframes fade-in  {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

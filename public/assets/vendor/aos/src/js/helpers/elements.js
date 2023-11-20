@@ -4,8 +4,8 @@
  * like 'position'
  */
 const createArrayWithElements = function (elements) {
-  elements = elements || document.querySelectorAll('[data-aos]');
-  return Array.prototype.map.call(elements, node => ({ node }));
+  elements = elements || document.querySelectorAll("[data-aos]");
+  return Array.prototype.map.call(elements, (node) => ({ node }));
 };
 
 export default createArrayWithElements;

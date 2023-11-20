@@ -18,7 +18,7 @@ Note: This command is unaware of workspaces.
 
 This lets you list, create and revoke authentication tokens.
 
-* `npm token list`:
+- `npm token list`:
   Shows a table of all active authentication tokens. You can request
   this as JSON with `--json` or tab-separated values with `--parseable`.
 
@@ -42,7 +42,7 @@ This lets you list, create and revoke authentication tokens.
 +--------+---------+------------+----------+----------------+
 ```
 
-* `npm token create [--read-only] [--cidr=<cidr-ranges>]`:
+- `npm token create [--read-only] [--cidr=<cidr-ranges>]`:
   Create a new authentication token. It can be `--read-only`, or accept
   a list of
   [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -67,43 +67,43 @@ This lets you list, create and revoke authentication tokens.
 +----------------+--------------------------------------+
 ```
 
-* `npm token revoke <token|id>`:
-  Immediately removes an authentication token from the registry.  You
-  will no longer be able to use it.  This can accept both complete
+- `npm token revoke <token|id>`:
+  Immediately removes an authentication token from the registry. You
+  will no longer be able to use it. This can accept both complete
   tokens (such as those you get back from `npm token create`, and those
   found in your `.npmrc`), and ids as seen in the parseable or json
-  output of `npm token list`.  This will NOT accept the truncated token
+  output of `npm token list`. This will NOT accept the truncated token
   found in the normal `npm token list` output.
 
 ### Configuration
 
 #### `read-only`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 This is used to mark a token as unable to publish when configuring limited
 access tokens with the `npm token create` command.
 
 #### `cidr`
 
-* Default: null
-* Type: null or String (can be set multiple times)
+- Default: null
+- Type: null or String (can be set multiple times)
 
 This is a list of CIDR address to be used when configuring limited access
 tokens with the `npm token create` command.
 
 #### `registry`
 
-* Default: "https://registry.npmjs.org/"
-* Type: URL
+- Default: "https://registry.npmjs.org/"
+- Type: URL
 
 The base URL of the npm registry.
 
 #### `otp`
 
-* Default: null
-* Type: null or String
+- Default: null
+- Type: null or String
 
 This is a one-time password from a two-factor authenticator. It's needed
 when publishing or changing package permissions with `npm access`.
@@ -113,10 +113,10 @@ password, npm will prompt on the command line for one.
 
 ### See Also
 
-* [npm adduser](/commands/npm-adduser)
-* [npm registry](/using-npm/registry)
-* [npm config](/commands/npm-config)
-* [npmrc](/configuring-npm/npmrc)
-* [npm owner](/commands/npm-owner)
-* [npm whoami](/commands/npm-whoami)
-* [npm profile](/commands/npm-profile)
+- [npm adduser](/commands/npm-adduser)
+- [npm registry](/using-npm/registry)
+- [npm config](/commands/npm-config)
+- [npmrc](/configuring-npm/npmrc)
+- [npm owner](/commands/npm-owner)
+- [npm whoami](/commands/npm-whoami)
+- [npm profile](/commands/npm-profile)

@@ -10,24 +10,24 @@ AOS is built using webpack.
 
 ### Setup
 
-- Install all dependencies: 
-  
+- Install all dependencies:
+
   ```
   npm install
   ```
 
 - Run dev server:
-  
+
   ```
   npm run dev
   ```
 
   This will run local webpack-dev-server and build AOS automatically.
 
-- Open browser and head to: 
+- Open browser and head to:
   [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/)
   Server loads content from `demo` folder.
-  
+
 Now you are ready to play with AOS. Browser should reload automatically as you change code in `src` folder.
 
 ### Testing
@@ -35,6 +35,7 @@ Now you are ready to play with AOS. Browser should reload automatically as you c
 Before you create Pull Request make sure all tests are passing.
 
 In order to do so run:
+
 ```
 npm test
 ```

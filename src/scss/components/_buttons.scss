@@ -2,7 +2,6 @@
 // Buttons
 // --------------------------------------------------
 
-
 // Global styles
 
 .btn {
@@ -10,16 +9,17 @@
   align-items: center;
   justify-content: center;
 
-  &:not([class^='btn-outline-']):not([class*=' btn-outline-']):not(.btn-secondary):not(.btn-light):not(.btn-link) {
+  &:not([class^="btn-outline-"]):not([class*=" btn-outline-"]):not(
+      .btn-secondary
+    ):not(.btn-light):not(.btn-link) {
     --#{$prefix}btn-color: #{$btn-color};
   }
 
-  > [class^='ai-'],
-  > [class*=' ai-'] {
+  > [class^="ai-"],
+  > [class*=" ai-"] {
     font-size: 1.25em;
   }
 }
-
 
 // Override solid buttons
 
@@ -37,17 +37,16 @@
 
 .btn-secondary,
 .btn-light {
-  --#{$prefix}btn-color: #{$gray-800}  !important;
+  --#{$prefix}btn-color: #{$gray-800} !important;
   --#{$prefix}btn-hover-color: #{$gray-900} !important;
   --#{$prefix}btn-active-color: #{$gray-900} !important;
   --#{$prefix}btn-disabled-color: #{$gray-700};
 }
 
-
 // Outline buttons
 
-[class^='btn-outline-'],
-[class*=' btn-outline-'] {
+[class^="btn-outline-"],
+[class*=" btn-outline-"] {
   --#{$prefix}btn-hover-color: #{$btn-color};
   --#{$prefix}btn-active-color: #{$btn-color};
 }
@@ -72,14 +71,12 @@
   --#{$prefix}btn-active-bg: #{$light};
 }
 
-
 // Link button
 
 .btn-link {
   --#{$prefix}btn-font-weight: #{$btn-font-weight};
   text-decoration: $btn-link-decoration;
 }
-
 
 // Icon button
 
@@ -111,17 +108,16 @@
 
   > .ai-play,
   > .ai-play-filled {
-    margin-left: .1875rem;
+    margin-left: 0.1875rem;
   }
 }
-
 
 // Button group
 
 .btn-group .btn {
-  --#{$prefix}btn-padding-x: #{$input-btn-padding-x * .75};
+  --#{$prefix}btn-padding-x: #{$input-btn-padding-x * 0.75};
   &.dropdown-toggle-split {
-    --#{$prefix}btn-padding-x: #{$input-btn-padding-x * .5};
+    --#{$prefix}btn-padding-x: #{$input-btn-padding-x * 0.5};
     padding: {
       right: var(--#{$prefix}btn-padding-x);
       left: var(--#{$prefix}btn-padding-x);
@@ -130,9 +126,9 @@
 }
 .btn-group-lg .btn,
 .btn-group .btn-lg {
-  --#{$prefix}btn-padding-x: #{$input-btn-padding-x-lg * .75};
+  --#{$prefix}btn-padding-x: #{$input-btn-padding-x-lg * 0.75};
   &.dropdown-toggle-split {
-    --#{$prefix}btn-padding-x: #{$input-btn-padding-x-lg * .5};
+    --#{$prefix}btn-padding-x: #{$input-btn-padding-x-lg * 0.5};
     padding: {
       right: var(--#{$prefix}btn-padding-x);
       left: var(--#{$prefix}btn-padding-x);
@@ -141,9 +137,9 @@
 }
 .btn-group-sm .btn,
 .btn-group .btn-sm {
-  --#{$prefix}btn-padding-x: #{$input-btn-padding-x-sm * .75};
+  --#{$prefix}btn-padding-x: #{$input-btn-padding-x-sm * 0.75};
   &.dropdown-toggle-split {
-    --#{$prefix}btn-padding-x: #{$input-btn-padding-x-sm * .5};
+    --#{$prefix}btn-padding-x: #{$input-btn-padding-x-sm * 0.5};
     padding: {
       right: var(--#{$prefix}btn-padding-x);
       left: var(--#{$prefix}btn-padding-x);
@@ -155,13 +151,11 @@
   margin-left: calc(var(--#{$prefix}border-width) * -1);
 }
 
-
 // Close button
 
 .btn-close {
   transition: $btn-close-transition;
 }
-
 
 // Show more button
 
@@ -171,9 +165,9 @@
   }
   &::after {
     display: inline-block;
-    margin-left: .25rem;
+    margin-left: 0.25rem;
     will-change: transform;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     transform: rotate(180deg);
     font: {
       family: $icons-font-family;
@@ -181,14 +175,19 @@
     }
     content: $ai-chevron-down;
   }
-  &.fs-2, &.fs-3,
-  &.fs-4, &.fs-5 {
+  &.fs-2,
+  &.fs-3,
+  &.fs-4,
+  &.fs-5 {
     &::after {
       font-size: 1em;
     }
   }
-  &.h2, &.h3, &.h4,
-  &.h5, &.h6 {
+  &.h2,
+  &.h3,
+  &.h4,
+  &.h5,
+  &.h6 {
     &::after {
       font-weight: $font-weight-medium;
     }
@@ -202,7 +201,6 @@
     }
   }
 }
-
 
 // Scroll to top button
 
@@ -234,14 +232,14 @@
 
   &::before {
     position: absolute;
-    top: .0625rem;
-    left: .0625rem;
-    width: calc(var(--#{$prefix}btn-scroll-top-size) - .125rem);
-    height: calc(var(--#{$prefix}btn-scroll-top-size) - .125rem);
+    top: 0.0625rem;
+    left: 0.0625rem;
+    width: calc(var(--#{$prefix}btn-scroll-top-size) - 0.125rem);
+    height: calc(var(--#{$prefix}btn-scroll-top-size) - 0.125rem);
     background-color: var(--#{$prefix}btn-scroll-top-bg);
     @include border-radius(50%);
     z-index: -1;
-    content: '';
+    content: "";
   }
 
   > svg {

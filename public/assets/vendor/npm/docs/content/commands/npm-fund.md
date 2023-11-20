@@ -67,20 +67,20 @@ test-workspaces-fund@1.0.0
 
 #### `json`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Whether or not to output JSON data, rather than the normal output.
 
-* In `npm pkg set` it enables parsing set values with JSON.parse() before
+- In `npm pkg set` it enables parsing set values with JSON.parse() before
   saving them to your `package.json`.
 
 Not supported by all npm commands.
 
 #### `browser`
 
-* Default: OS X: `"open"`, Windows: `"start"`, Others: `"xdg-open"`
-* Type: null, Boolean, or String
+- Default: OS X: `"open"`, Windows: `"start"`, Others: `"xdg-open"`
+- Type: null, Boolean, or String
 
 The browser that is called by npm commands to open websites.
 
@@ -91,17 +91,17 @@ Set to `true` to use default system URL opener.
 
 #### `unicode`
 
-* Default: false on windows, true on mac/unix systems with a unicode locale,
+- Default: false on windows, true on mac/unix systems with a unicode locale,
   as defined by the `LC_ALL`, `LC_CTYPE`, or `LANG` environment variables.
-* Type: Boolean
+- Type: Boolean
 
 When set to true, npm uses unicode characters in the tree output. When
 false, it uses ascii characters instead of unicode glyphs.
 
 #### `workspace`
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 Enable running a command in the context of the configured workspaces of the
 current project while filtering by running only the workspaces defined by
@@ -109,9 +109,9 @@ this configuration option.
 
 Valid values for the `workspace` config are either:
 
-* Workspace names
-* Path to a workspace directory
-* Path to a parent workspace directory (will result in selecting all
+- Workspace names
+- Path to a workspace directory
+- Path to a parent workspace directory (will result in selecting all
   workspaces within that folder)
 
 When set for the `npm init` command, this may be set to the folder of a
@@ -122,16 +122,16 @@ This value is not exported to the environment for child processes.
 
 #### `which`
 
-* Default: null
-* Type: null or Number
+- Default: null
+- Type: null or Number
 
 If there are multiple funding sources, which 1-indexed source URL to open.
 
 ## See Also
 
-* [package spec](/using-npm/package-spec)
-* [npm install](/commands/npm-install)
-* [npm docs](/commands/npm-docs)
-* [npm ls](/commands/npm-ls)
-* [npm config](/commands/npm-config)
-* [npm workspaces](/using-npm/workspaces)
+- [package spec](/using-npm/package-spec)
+- [npm install](/commands/npm-install)
+- [npm docs](/commands/npm-docs)
+- [npm ls](/commands/npm-ls)
+- [npm config](/commands/npm-config)
+- [npm workspaces](/using-npm/workspaces)

@@ -1,6 +1,10 @@
 @font-face {
-  font-family: 'lg';
-  src: url("../fonts/lg.woff2?io9a6k") format("woff2"), url("../fonts/lg.ttf?io9a6k") format("truetype"), url("../fonts/lg.woff?io9a6k") format("woff"), url("../fonts/lg.svg?io9a6k#lg") format("svg");
+  font-family: "lg";
+  src:
+    url("../fonts/lg.woff2?io9a6k") format("woff2"),
+    url("../fonts/lg.ttf?io9a6k") format("truetype"),
+    url("../fonts/lg.woff?io9a6k") format("woff"),
+    url("../fonts/lg.svg?io9a6k#lg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -8,7 +12,7 @@
 
 .lg-icon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'lg' !important;
+  font-family: "lg" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -21,7 +25,20 @@
 }
 
 .lg-container {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    "Liberation Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 .lg-next,
@@ -52,8 +69,8 @@
   color: #fff;
 }
 
-.lg-single-item .lg-next, .lg-single-item
-.lg-prev {
+.lg-single-item .lg-next,
+.lg-single-item .lg-prev {
   display: none;
 }
 
@@ -62,7 +79,7 @@
 }
 
 .lg-next:before {
-  content: '\e095';
+  content: "\e095";
 }
 
 .lg-prev {
@@ -70,7 +87,7 @@
 }
 
 .lg-prev:after {
-  content: '\e094';
+  content: "\e094";
 }
 
 @-webkit-keyframes lg-right-end {
@@ -225,7 +242,7 @@
 }
 
 .lg-toolbar .lg-close:after {
-  content: '\e070';
+  content: "\e070";
 }
 
 .lg-toolbar .lg-maximize {
@@ -233,11 +250,11 @@
 }
 
 .lg-toolbar .lg-maximize:after {
-  content: '\e90a';
+  content: "\e90a";
 }
 
 .lg-toolbar .lg-download:after {
-  content: '\e0f2';
+  content: "\e0f2";
 }
 
 .lg-sub-html {
@@ -272,7 +289,11 @@
 }
 
 .lg-media-overlap .lg-sub-html {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.6)
+  );
 }
 
 .lg-item .lg-sub-html {
@@ -302,14 +323,32 @@
 .lg-closing .lg-next,
 .lg-closing .lg-sub-html {
   opacity: 0;
-  -webkit-transition: -webkit-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear;
-  -moz-transition: -moz-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear;
-  -o-transition: -o-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear;
-  transition: transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s, color 0.08 linear;
+  -webkit-transition:
+    -webkit-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s,
+    color 0.08 linear;
+  -moz-transition:
+    -moz-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s,
+    color 0.08 linear;
+  -o-transition:
+    -o-transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s,
+    color 0.08 linear;
+  transition:
+    transform 0.08 cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.08 cubic-bezier(0, 0, 0.25, 1) 0s,
+    color 0.08 linear;
 }
 
-body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable) .lg-img-wrap,
-body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable) .lg-video-cont {
+body:not(.lg-from-hash)
+  .lg-outer.lg-start-zoom
+  .lg-item:not(.lg-zoomable)
+  .lg-img-wrap,
+body:not(.lg-from-hash)
+  .lg-outer.lg-start-zoom
+  .lg-item:not(.lg-zoomable)
+  .lg-video-cont {
   opacity: 0;
   -moz-transform: scale3d(0.5, 0.5, 0.5);
   -o-transform: scale3d(0.5, 0.5, 0.5);
@@ -317,14 +356,28 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable) .lg-v
   -webkit-transform: scale3d(0.5, 0.5, 0.5);
   transform: scale3d(0.5, 0.5, 0.5);
   will-change: transform, opacity;
-  -webkit-transition: -webkit-transform 250ms cubic-bezier(0, 0, 0.25, 1) 0s, opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
-  -moz-transition: -moz-transform 250ms cubic-bezier(0, 0, 0.25, 1) 0s, opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
-  -o-transition: -o-transform 250ms cubic-bezier(0, 0, 0.25, 1) 0s, opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
-  transition: transform 250ms cubic-bezier(0, 0, 0.25, 1) 0s, opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
+  -webkit-transition:
+    -webkit-transform 250ms cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
+  -moz-transition:
+    -moz-transform 250ms cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
+  -o-transition:
+    -o-transform 250ms cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
+  transition:
+    transform 250ms cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 250ms cubic-bezier(0, 0, 0.25, 1) !important;
 }
 
-body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-complete .lg-img-wrap,
-body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-complete .lg-video-cont {
+body:not(.lg-from-hash)
+  .lg-outer.lg-start-zoom
+  .lg-item:not(.lg-zoomable).lg-complete
+  .lg-img-wrap,
+body:not(.lg-from-hash)
+  .lg-outer.lg-start-zoom
+  .lg-item:not(.lg-zoomable).lg-complete
+  .lg-video-cont {
   opacity: 1;
   -moz-transform: scale3d(1, 1, 1);
   -o-transform: scale3d(1, 1, 1);
@@ -345,7 +398,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 .lg-group:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -374,10 +427,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 .lg-hide-sub-html .lg-sub-html {
   opacity: 0;
   will-change: transform, opacity;
-  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  -moz-transition: -moz-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  -o-transition: -o-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -webkit-transition:
+    -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition:
+    -moz-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -o-transition:
+    -o-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  transition:
+    transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .lg-show-in .lg-toolbar,
@@ -446,14 +507,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   opacity: 1;
 }
 
-.lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-prev-slide, .lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-next-slide, .lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-current {
+.lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-prev-slide,
+.lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-next-slide,
+.lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-current {
   -webkit-transition-duration: inherit !important;
   transition-duration: inherit !important;
   -webkit-transition-timing-function: inherit !important;
   transition-timing-function: inherit !important;
 }
 
-.lg-outer.lg-css3.lg-dragging .lg-item.lg-prev-slide, .lg-outer.lg-css3.lg-dragging .lg-item.lg-next-slide, .lg-outer.lg-css3.lg-dragging .lg-item.lg-current {
+.lg-outer.lg-css3.lg-dragging .lg-item.lg-prev-slide,
+.lg-outer.lg-css3.lg-dragging .lg-item.lg-next-slide,
+.lg-outer.lg-css3.lg-dragging .lg-item.lg-current {
   -webkit-transition-duration: 0s !important;
   transition-duration: 0s !important;
   opacity: 1;
@@ -501,7 +566,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 .lg-outer .lg-item:not(.lg-start-end-progress) {
-  background: url("../images/loading.gif") no-repeat scroll center center transparent;
+  background: url("../images/loading.gif") no-repeat scroll center center
+    transparent;
 }
 
 .lg-outer.lg-css3 .lg-prev-slide,
@@ -525,7 +591,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 .lg-outer .lg-item:before,
 .lg-outer .lg-img-wrap:before {
-  content: '';
+  content: "";
   display: inline-block;
   height: 100%;
   vertical-align: middle;
@@ -628,7 +694,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   opacity: 1;
 }
 
-.lg-css3.lg-fade .lg-item.lg-prev-slide, .lg-css3.lg-fade .lg-item.lg-next-slide, .lg-css3.lg-fade .lg-item.lg-current {
+.lg-css3.lg-fade .lg-item.lg-prev-slide,
+.lg-css3.lg-fade .lg-item.lg-next-slide,
+.lg-css3.lg-fade .lg-item.lg-current {
   -webkit-transition: opacity 0.1s ease 0s;
   -moz-transition: opacity 0.1s ease 0s;
   -o-transition: opacity 0.1s ease 0s;
@@ -636,7 +704,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 .lg-css3.lg-use-css3 .lg-item.lg-start-progress {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  -webkit-transition: -webkit-transform 1s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   -moz-transition: -moz-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   -o-transition: -o-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
@@ -669,11 +738,21 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   opacity: 1;
 }
 
-.lg-css3.lg-slide.lg-use-css3 .lg-item.lg-prev-slide, .lg-css3.lg-slide.lg-use-css3 .lg-item.lg-next-slide, .lg-css3.lg-slide.lg-use-css3 .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide.lg-use-css3 .lg-item.lg-prev-slide,
+.lg-css3.lg-slide.lg-use-css3 .lg-item.lg-next-slide,
+.lg-css3.lg-slide.lg-use-css3 .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-container {
@@ -709,7 +788,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 .lg-inline .lg-maximize:after {
-  content: '\e909';
+  content: "\e909";
 }
 
 .lg-components {

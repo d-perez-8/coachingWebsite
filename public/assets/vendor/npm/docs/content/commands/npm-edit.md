@@ -29,16 +29,16 @@ changes to your locally installed copy.
 
 #### `editor`
 
-* Default: The EDITOR or VISUAL environment variables, or
+- Default: The EDITOR or VISUAL environment variables, or
   '%SYSTEMROOT%\notepad.exe' on Windows, or 'vi' on Unix systems
-* Type: String
+- Type: String
 
 The command to run for `npm edit` and `npm config edit`.
 
 ### See Also
 
-* [npm folders](/configuring-npm/folders)
-* [npm explore](/commands/npm-explore)
-* [npm install](/commands/npm-install)
-* [npm config](/commands/npm-config)
-* [npmrc](/configuring-npm/npmrc)
+- [npm folders](/configuring-npm/folders)
+- [npm explore](/commands/npm-explore)
+- [npm install](/commands/npm-install)
+- [npm config](/commands/npm-config)
+- [npmrc](/configuring-npm/npmrc)

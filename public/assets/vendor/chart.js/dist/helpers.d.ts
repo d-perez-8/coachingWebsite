@@ -1,16 +1,66 @@
-import { Color } from '@kurkle/color';
-import { P as Point$1, f as ChartArea, e as ChartEvent, C as Chart, au as ChartMeta, b as PointElement, cn as TRBL, co as TRBLCorners, aZ as FontSpec, b9 as PointStyle, ck as Color$1, cp as RoundedRect } from './chunks/helpers.core.js';
-export { cg as EasingFunction, cE as MergeOptions, cL as _capitalize, cI as _deprecated, cB as _elementsEqual, cP as _isClickEvent, cD as _merger, cH as _mergerIf, cJ as _splitKey, cz as callback, cC as clone, cM as defined, cA as each, cv as finiteOrDefault, ct as isArray, cq as isFinite, cN as isFunction, cs as isNullOrUndef, cu as isObject, cF as merge, cG as mergeIf, n as noop, cK as resolveObjectKey, cO as setsEqual, cy as toDimension, cx as toPercentage, cr as uid, cw as valueOrDefault } from './chunks/helpers.core.js';
+import { Color } from "@kurkle/color";
+import {
+  P as Point$1,
+  f as ChartArea,
+  e as ChartEvent,
+  C as Chart,
+  au as ChartMeta,
+  b as PointElement,
+  cn as TRBL,
+  co as TRBLCorners,
+  aZ as FontSpec,
+  b9 as PointStyle,
+  ck as Color$1,
+  cp as RoundedRect,
+} from "./chunks/helpers.core.js";
+export {
+  cg as EasingFunction,
+  cE as MergeOptions,
+  cL as _capitalize,
+  cI as _deprecated,
+  cB as _elementsEqual,
+  cP as _isClickEvent,
+  cD as _merger,
+  cH as _mergerIf,
+  cJ as _splitKey,
+  cz as callback,
+  cC as clone,
+  cM as defined,
+  cA as each,
+  cv as finiteOrDefault,
+  ct as isArray,
+  cq as isFinite,
+  cN as isFunction,
+  cs as isNullOrUndef,
+  cu as isObject,
+  cF as merge,
+  cG as mergeIf,
+  n as noop,
+  cK as resolveObjectKey,
+  cO as setsEqual,
+  cy as toDimension,
+  cx as toPercentage,
+  cr as uid,
+  cw as valueOrDefault,
+} from "./chunks/helpers.core.js";
 
-declare function isPatternOrGradient(value: unknown): value is CanvasPattern | CanvasGradient;
+declare function isPatternOrGradient(
+  value: unknown,
+): value is CanvasPattern | CanvasGradient;
 declare function color(value: CanvasGradient): CanvasGradient;
 declare function color(value: CanvasPattern): CanvasPattern;
-declare function color(value: string | {
-    r: number;
-    g: number;
-    b: number;
-    a: number;
-} | [number, number, number] | [number, number, number, number]): Color;
+declare function color(
+  value:
+    | string
+    | {
+        r: number;
+        g: number;
+        b: number;
+        a: number;
+      }
+    | [number, number, number]
+    | [number, number, number, number],
+): Color;
 declare function getHoverColor(value: CanvasGradient): CanvasGradient;
 declare function getHoverColor(value: CanvasPattern): CanvasPattern;
 declare function getHoverColor(value: string): string;
@@ -29,13 +79,21 @@ type Point = Point$1;
  * @param cmp
  * @private
  */
-declare function _lookup(table: number[], value: number, cmp?: (value: number) => boolean): {
-    lo: number;
-    hi: number;
+declare function _lookup(
+  table: number[],
+  value: number,
+  cmp?: (value: number) => boolean,
+): {
+  lo: number;
+  hi: number;
 };
-declare function _lookup<T>(table: T[], value: number, cmp: (value: number) => boolean): {
-    lo: number;
-    hi: number;
+declare function _lookup<T>(
+  table: T[],
+  value: number,
+  cmp: (value: number) => boolean,
+): {
+  lo: number;
+  hi: number;
 };
 /**
  * Binary search
@@ -45,9 +103,14 @@ declare function _lookup<T>(table: T[], value: number, cmp: (value: number) => b
  * @param last - lookup last index
  * @private
  */
-declare const _lookupByKey: (table: Record<string, number>[], key: string, value: number, last?: boolean) => {
-    lo: number;
-    hi: number;
+declare const _lookupByKey: (
+  table: Record<string, number>[],
+  key: string,
+  value: number,
+  last?: boolean,
+) => {
+  lo: number;
+  hi: number;
 };
 /**
  * Reverse binary search
@@ -56,9 +119,13 @@ declare const _lookupByKey: (table: Record<string, number>[], key: string, value
  * @param value - value to find
  * @private
  */
-declare const _rlookupByKey: (table: Record<string, number>[], key: string, value: number) => {
-    lo: number;
-    hi: number;
+declare const _rlookupByKey: (
+  table: Record<string, number>[],
+  key: string,
+  value: number,
+) => {
+  lo: number;
+  hi: number;
 };
 /**
  * Return subset of `values` between `min` and `max` inclusive.
@@ -67,42 +134,57 @@ declare const _rlookupByKey: (table: Record<string, number>[], key: string, valu
  * @param min - min value
  * @param max - max value
  */
-declare function _filterBetween(values: number[], min: number, max: number): number[];
+declare function _filterBetween(
+  values: number[],
+  min: number,
+  max: number,
+): number[];
 interface ArrayListener<T> {
-    _onDataPush?(...item: T[]): void;
-    _onDataPop?(): void;
-    _onDataShift?(): void;
-    _onDataSplice?(index: number, deleteCount: number, ...items: T[]): void;
-    _onDataUnshift?(...item: T[]): void;
+  _onDataPush?(...item: T[]): void;
+  _onDataPop?(): void;
+  _onDataShift?(): void;
+  _onDataSplice?(index: number, deleteCount: number, ...items: T[]): void;
+  _onDataUnshift?(...item: T[]): void;
 }
 /**
  * Hooks the array methods that add or remove values ('push', pop', 'shift', 'splice',
  * 'unshift') and notify the listener AFTER the array has been altered. Listeners are
  * called on the '_onData*' callbacks (e.g. _onDataPush, etc.) with same arguments.
  */
-declare function listenArrayEvents<T>(array: T[], listener: ArrayListener<T>): void;
+declare function listenArrayEvents<T>(
+  array: T[],
+  listener: ArrayListener<T>,
+): void;
 /**
  * Removes the given array event listener and cleanup extra attached properties (such as
  * the _chartjs stub and overridden methods) if array doesn't have any more listeners.
  */
-declare function unlistenArrayEvents<T>(array: T[], listener: ArrayListener<T>): void;
+declare function unlistenArrayEvents<T>(
+  array: T[],
+  listener: ArrayListener<T>,
+): void;
 /**
  * @param items
  */
 declare function _arrayUnique<T>(items: T[]): T[];
 
 interface SplinePoint {
-    x: number;
-    y: number;
-    skip?: boolean;
-    cp1x?: number;
-    cp1y?: number;
-    cp2x?: number;
-    cp2y?: number;
+  x: number;
+  y: number;
+  skip?: boolean;
+  cp1x?: number;
+  cp1y?: number;
+  cp2x?: number;
+  cp2y?: number;
 }
-declare function splineCurve(firstPoint: SplinePoint, middlePoint: SplinePoint, afterPoint: SplinePoint, t: number): {
-    previous: SplinePoint;
-    next: SplinePoint;
+declare function splineCurve(
+  firstPoint: SplinePoint,
+  middlePoint: SplinePoint,
+  afterPoint: SplinePoint,
+  t: number,
+): {
+  previous: SplinePoint;
+  next: SplinePoint;
 };
 /**
  * This function calculates Bézier control points in a similar way than |splineCurve|,
@@ -110,11 +192,20 @@ declare function splineCurve(firstPoint: SplinePoint, middlePoint: SplinePoint, 
  * between the dataset discrete points due to the interpolation.
  * See : https://en.wikipedia.org/wiki/Monotone_cubic_interpolation
  */
-declare function splineCurveMonotone(points: SplinePoint[], indexAxis?: 'x' | 'y'): void;
+declare function splineCurveMonotone(
+  points: SplinePoint[],
+  indexAxis?: "x" | "y",
+): void;
 /**
  * @private
  */
-declare function _updateBezierControlPoints(points: SplinePoint[], options: any, area: ChartArea, loop: boolean, indexAxis: 'x' | 'y'): void;
+declare function _updateBezierControlPoints(
+  points: SplinePoint[],
+  options: any,
+  area: ChartArea,
+  loop: boolean,
+  indexAxis: "x" | "y",
+): void;
 
 /**
  * Note: typedefs are auto-exported, so use a made-up `dom` namespace where
@@ -138,13 +229,21 @@ declare function getStyle(el: HTMLElement, property: string): string;
  * @param chart
  * @returns x and y coordinates of the event
  */
-declare function getRelativePosition(event: Event | ChartEvent | TouchEvent | MouseEvent, chart: Chart): {
-    x: number;
-    y: number;
+declare function getRelativePosition(
+  event: Event | ChartEvent | TouchEvent | MouseEvent,
+  chart: Chart,
+): {
+  x: number;
+  y: number;
 };
-declare function getMaximumSize(canvas: HTMLCanvasElement, bbWidth?: number, bbHeight?: number, aspectRatio?: number): {
-    width: number;
-    height: number;
+declare function getMaximumSize(
+  canvas: HTMLCanvasElement,
+  bbWidth?: number,
+  bbHeight?: number,
+  aspectRatio?: number,
+): {
+  width: number;
+  height: number;
 };
 /**
  * @param chart
@@ -152,7 +251,11 @@ declare function getMaximumSize(canvas: HTMLCanvasElement, bbWidth?: number, bbH
  * @param forceStyle
  * @returns True if the canvas context size or transformation has changed.
  */
-declare function retinaScale(chart: Chart, forceRatio: number, forceStyle?: boolean): boolean | void;
+declare function retinaScale(
+  chart: Chart,
+  forceRatio: number,
+  forceStyle?: boolean,
+): boolean | void;
 /**
  * Detects support for options object argument in addEventListener.
  * https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
@@ -168,44 +271,75 @@ declare const supportsEventListenerOptions: boolean;
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
  * @returns Size in pixels or undefined if unknown.
  */
-declare function readUsedSize(element: HTMLElement, property: 'width' | 'height'): number | undefined;
+declare function readUsedSize(
+  element: HTMLElement,
+  property: "width" | "height",
+): number | undefined;
 
-declare function fontString(pixelSize: number, fontStyle: string, fontFamily: string): string;
+declare function fontString(
+  pixelSize: number,
+  fontStyle: string,
+  fontFamily: string,
+): string;
 /**
-* Request animation polyfill
-*/
-declare const requestAnimFrame: (((callback: FrameRequestCallback) => number) & typeof requestAnimationFrame) | ((callback: any) => any);
+ * Request animation polyfill
+ */
+declare const requestAnimFrame:
+  | (((callback: FrameRequestCallback) => number) &
+      typeof requestAnimationFrame)
+  | ((callback: any) => any);
 /**
  * Throttles calling `fn` once per animation frame
  * Latest arguments are used on the actual call
  */
-declare function throttled<TArgs extends Array<any>>(fn: (...args: TArgs) => void, thisArg: any): (...args: TArgs) => void;
+declare function throttled<TArgs extends Array<any>>(
+  fn: (...args: TArgs) => void,
+  thisArg: any,
+): (...args: TArgs) => void;
 /**
  * Debounces calling `fn` for `delay` ms
  */
-declare function debounce<TArgs extends Array<any>>(fn: (...args: TArgs) => void, delay: number): (...args: TArgs) => number;
+declare function debounce<TArgs extends Array<any>>(
+  fn: (...args: TArgs) => void,
+  delay: number,
+): (...args: TArgs) => number;
 /**
  * Converts 'start' to 'left', 'end' to 'right' and others to 'center'
  * @private
  */
-declare const _toLeftRightCenter: (align: 'start' | 'end' | 'center') => "center" | "right" | "left";
+declare const _toLeftRightCenter: (
+  align: "start" | "end" | "center",
+) => "center" | "right" | "left";
 /**
  * Returns `start`, `end` or `(start + end) / 2` depending on `align`. Defaults to `center`
  * @private
  */
-declare const _alignStartEnd: (align: 'start' | 'end' | 'center', start: number, end: number) => number;
+declare const _alignStartEnd: (
+  align: "start" | "end" | "center",
+  start: number,
+  end: number,
+) => number;
 /**
  * Returns `left`, `right` or `(left + right) / 2` depending on `align`. Defaults to `left`
  * @private
  */
-declare const _textX: (align: 'left' | 'right' | 'center', left: number, right: number, rtl: boolean) => number;
+declare const _textX: (
+  align: "left" | "right" | "center",
+  left: number,
+  right: number,
+  rtl: boolean,
+) => number;
 /**
  * Return start and count of visible points.
  * @private
  */
-declare function _getStartAndCountOfVisiblePoints(meta: ChartMeta<'line' | 'scatter'>, points: PointElement[], animationsDisabled: boolean): {
-    start: number;
-    count: number;
+declare function _getStartAndCountOfVisiblePoints(
+  meta: ChartMeta<"line" | "scatter">,
+  points: PointElement[],
+  animationsDisabled: boolean,
+): {
+  start: number;
+  count: number;
 };
 /**
  * Checks if the scale ranges have changed.
@@ -218,26 +352,45 @@ declare function _scaleRangesChanged(meta: any): boolean;
 /**
  * @private
  */
-declare function _pointInLine(p1: Point$1, p2: Point$1, t: number, mode?: any): {
-    x: number;
-    y: number;
+declare function _pointInLine(
+  p1: Point$1,
+  p2: Point$1,
+  t: number,
+  mode?: any,
+): {
+  x: number;
+  y: number;
 };
 /**
  * @private
  */
-declare function _steppedInterpolation(p1: Point$1, p2: Point$1, t: number, mode: 'middle' | 'after' | unknown): {
-    x: number;
-    y: number;
+declare function _steppedInterpolation(
+  p1: Point$1,
+  p2: Point$1,
+  t: number,
+  mode: "middle" | "after" | unknown,
+): {
+  x: number;
+  y: number;
 };
 /**
  * @private
  */
-declare function _bezierInterpolation(p1: SplinePoint, p2: SplinePoint, t: number, mode?: any): {
-    x: number;
-    y: number;
+declare function _bezierInterpolation(
+  p1: SplinePoint,
+  p2: SplinePoint,
+  t: number,
+  mode?: any,
+): {
+  x: number;
+  y: number;
 };
 
-declare function formatNumber(num: number, locale: string, options?: Intl.NumberFormatOptions): string;
+declare function formatNumber(
+  num: number,
+  locale: string,
+  options?: Intl.NumberFormatOptions,
+): string;
 
 /**
  * @alias Chart.helpers.options
@@ -256,8 +409,14 @@ declare function toLineHeight(value: number | string, size: number): number;
  * @param value
  * @param props
  */
-declare function _readValueToProps<K extends string>(value: number | Record<K, number>, props: K[]): Record<K, number>;
-declare function _readValueToProps<K extends string, T extends string>(value: number | Record<K & T, number>, props: Record<T, K>): Record<T, number>;
+declare function _readValueToProps<K extends string>(
+  value: number | Record<K, number>,
+  props: K[],
+): Record<K, number>;
+declare function _readValueToProps<K extends string, T extends string>(
+  value: number | Record<K & T, number>,
+  props: Record<T, K>,
+): Record<T, number>;
 /**
  * Converts the given value into a TRBL object.
  * @param value - If a number, set the value to all TRBL component,
@@ -266,7 +425,9 @@ declare function _readValueToProps<K extends string, T extends string>(value: nu
  * @returns The padding values (top, right, bottom, left)
  * @since 3.0.0
  */
-declare function toTRBL(value: number | TRBL | Point): Record<"top" | "right" | "bottom" | "left", number>;
+declare function toTRBL(
+  value: number | TRBL | Point,
+): Record<"top" | "right" | "bottom" | "left", number>;
 /**
  * Converts the given value into a TRBL corners object (similar with css border-radius).
  * @param value - If a number, set the value to all TRBL corner components,
@@ -274,7 +435,9 @@ declare function toTRBL(value: number | TRBL | Point): Record<"top" | "right" | 
  * @returns The TRBL corner values (topLeft, topRight, bottomLeft, bottomRight)
  * @since 3.0.0
  */
-declare function toTRBLCorners(value: number | TRBLCorners): Record<"topLeft" | "topRight" | "bottomLeft" | "bottomRight", number>;
+declare function toTRBLCorners(
+  value: number | TRBLCorners,
+): Record<"topLeft" | "topRight" | "bottomLeft" | "bottomRight", number>;
 /**
  * Converts the given value into a padding object with pre-computed width/height.
  * @param value - If a number, set the value to all TRBL component,
@@ -285,7 +448,7 @@ declare function toTRBLCorners(value: number | TRBLCorners): Record<"topLeft" | 
  */
 declare function toPadding(value?: number | TRBL): ChartArea;
 interface CanvasFontSpec extends FontSpec {
-    string: string;
+  string: string;
 }
 /**
  * Parses font options and returns the font object.
@@ -294,13 +457,16 @@ interface CanvasFontSpec extends FontSpec {
  * @return The font object.
  * @private
  */
-declare function toFont(options: Partial<FontSpec>, fallback?: Partial<FontSpec>): {
-    family: string;
-    lineHeight: number;
-    size: number;
-    style: "normal" | "italic" | "oblique" | "initial" | "inherit";
-    weight: string;
-    string: string;
+declare function toFont(
+  options: Partial<FontSpec>,
+  fallback?: Partial<FontSpec>,
+): {
+  family: string;
+  lineHeight: number;
+  size: number;
+  style: "normal" | "italic" | "oblique" | "initial" | "inherit";
+  weight: string;
+  string: string;
 };
 /**
  * Evaluates the given `inputs` sequentially and returns the first defined value.
@@ -313,21 +479,30 @@ declare function toFont(options: Partial<FontSpec>, fallback?: Partial<FontSpec>
  * @param info.cacheable - Will be set to `false` if option is not cacheable.
  * @since 2.7.0
  */
-declare function resolve(inputs: Array<unknown>, context?: object, index?: number, info?: {
+declare function resolve(
+  inputs: Array<unknown>,
+  context?: object,
+  index?: number,
+  info?: {
     cacheable: boolean;
-}): unknown;
+  },
+): unknown;
 /**
  * @param minmax
  * @param grace
  * @param beginAtZero
  * @private
  */
-declare function _addGrace(minmax: {
+declare function _addGrace(
+  minmax: {
     min: number;
     max: number;
-}, grace: number | string, beginAtZero: boolean): {
-    min: number;
-    max: number;
+  },
+  grace: number | string,
+  beginAtZero: boolean,
+): {
+  min: number;
+  max: number;
 };
 /**
  * Create a context inheriting parentContext
@@ -335,7 +510,10 @@ declare function _addGrace(minmax: {
  * @param context
  * @returns
  */
-declare function createContext<P extends T, T extends object>(parentContext: P, context: T): P extends null ? T : P & T;
+declare function createContext<P extends T, T extends object>(
+  parentContext: P,
+  context: T,
+): P extends null ? T : P & T;
 
 /**
  * @alias Chart.helpers.math
@@ -366,10 +544,14 @@ declare function almostWhole(x: number, epsilon: number): boolean;
 /**
  * @private
  */
-declare function _setMinAndMaxByKey(array: Record<string, number>[], target: {
+declare function _setMinAndMaxByKey(
+  array: Record<string, number>[],
+  target: {
     min: number;
     max: number;
-}, property: string): void;
+  },
+  property: string,
+): void;
 declare function toRadians(degrees: number): number;
 declare function toDegrees(radians: number): number;
 /**
@@ -380,9 +562,12 @@ declare function toDegrees(radians: number): number;
  * @private
  */
 declare function _decimalPlaces(x: number): number;
-declare function getAngleFromPoint(centrePoint: Point$1, anglePoint: Point$1): {
-    angle: number;
-    distance: number;
+declare function getAngleFromPoint(
+  centrePoint: Point$1,
+  anglePoint: Point$1,
+): {
+  angle: number;
+  distance: number;
 };
 declare function distanceBetweenPoints(pt1: Point$1, pt2: Point$1): number;
 /**
@@ -398,7 +583,12 @@ declare function _normalizeAngle(a: number): number;
 /**
  * @private
  */
-declare function _angleBetween(angle: number, start: number, end: number, sameAngleIsFullCircle?: boolean): boolean;
+declare function _angleBetween(
+  angle: number,
+  start: number,
+  end: number,
+  sameAngleIsFullCircle?: boolean,
+): boolean;
 /**
  * Limit `value` between `min` and `max`
  * @param value
@@ -419,20 +609,38 @@ declare function _int16Range(value: number): number;
  * @param [epsilon]
  * @private
  */
-declare function _isBetween(value: number, start: number, end: number, epsilon?: number): boolean;
+declare function _isBetween(
+  value: number,
+  start: number,
+  end: number,
+  epsilon?: number,
+): boolean;
 
 interface RTLAdapter {
-    x(x: number): number;
-    setWidth(w: number): void;
-    textAlign(align: 'center' | 'left' | 'right'): 'center' | 'left' | 'right';
-    xPlus(x: number, value: number): number;
-    leftForLtr(x: number, itemWidth: number): number;
+  x(x: number): number;
+  setWidth(w: number): void;
+  textAlign(align: "center" | "left" | "right"): "center" | "left" | "right";
+  xPlus(x: number, value: number): number;
+  leftForLtr(x: number, itemWidth: number): number;
 }
-declare function getRtlAdapter(rtl: boolean, rectX: number, width: number): RTLAdapter;
-declare function overrideTextDirection(ctx: CanvasRenderingContext2D, direction: 'ltr' | 'rtl'): void;
-declare function restoreTextDirection(ctx: CanvasRenderingContext2D, original?: [string, string]): void;
+declare function getRtlAdapter(
+  rtl: boolean,
+  rectX: number,
+  width: number,
+): RTLAdapter;
+declare function overrideTextDirection(
+  ctx: CanvasRenderingContext2D,
+  direction: "ltr" | "rtl",
+): void;
+declare function restoreTextDirection(
+  ctx: CanvasRenderingContext2D,
+  original?: [string, string],
+): void;
 
-declare function clearCanvas(canvas: HTMLCanvasElement, ctx?: CanvasRenderingContext2D): void;
+declare function clearCanvas(
+  canvas: HTMLCanvasElement,
+  ctx?: CanvasRenderingContext2D,
+): void;
 
 declare function clipArea(ctx: CanvasRenderingContext2D, area: ChartArea): void;
 
@@ -445,16 +653,32 @@ interface DrawPointOptions {
   borderWidth: number;
 }
 
-declare function drawPoint(ctx: CanvasRenderingContext2D, options: DrawPointOptions, x: number, y: number): void;
+declare function drawPoint(
+  ctx: CanvasRenderingContext2D,
+  options: DrawPointOptions,
+  x: number,
+  y: number,
+): void;
 
-declare function drawPointLegend(ctx: CanvasRenderingContext2D, options: DrawPointOptions, x: number, y: number, w: number): void;
+declare function drawPointLegend(
+  ctx: CanvasRenderingContext2D,
+  options: DrawPointOptions,
+  x: number,
+  y: number,
+  w: number,
+): void;
 
 /**
  * Converts the given font object into a CSS font string.
  * @param font a font object
  * @return The CSS font string. See https://developer.mozilla.org/en-US/docs/Web/CSS/font
  */
-declare function toFontString(font: { size: number; family: string; style?: string; weight?: string }): string | null;
+declare function toFontString(font: {
+  size: number;
+  family: string;
+  style?: string;
+  weight?: string;
+}): string | null;
 
 interface RenderTextOpts {
   /**
@@ -526,9 +750,100 @@ declare function renderText(
   x: number,
   y: number,
   font: CanvasFontSpec,
-  opts?: RenderTextOpts
+  opts?: RenderTextOpts,
 ): void;
 
-declare function addRoundedRectPath(ctx: CanvasRenderingContext2D, rect: RoundedRect): void;
+declare function addRoundedRectPath(
+  ctx: CanvasRenderingContext2D,
+  rect: RoundedRect,
+): void;
 
-export { ArrayListener, CanvasFontSpec, DrawPointOptions, HALF_PI, INFINITY, PI, PITAU, QUARTER_PI, RAD_PER_DEG, RTLAdapter, RenderTextOpts, SplinePoint, TAU, TWO_THIRDS_PI, _addGrace, _alignStartEnd, _angleBetween, _angleDiff, _arrayUnique, _bezierInterpolation, _decimalPlaces, _factorize, _filterBetween, _getParentNode, _getStartAndCountOfVisiblePoints, _int16Range, _isBetween, _isDomSupported, _limitValue, _lookup, _lookupByKey, _normalizeAngle, _pointInLine, _readValueToProps, _rlookupByKey, _scaleRangesChanged, _setMinAndMaxByKey, _steppedInterpolation, _textX, _toLeftRightCenter, _updateBezierControlPoints, addRoundedRectPath, almostEquals, almostWhole, clearCanvas, clipArea, color, createContext, debounce, distanceBetweenPoints, drawPoint, drawPointLegend, fontString, formatNumber, getAngleFromPoint, getHoverColor, getMaximumSize, getRelativePosition, getRtlAdapter, getStyle, isNumber, isPatternOrGradient, listenArrayEvents, log10, niceNum, overrideTextDirection, readUsedSize, renderText, requestAnimFrame, resolve, restoreTextDirection, retinaScale, sign, splineCurve, splineCurveMonotone, supportsEventListenerOptions, throttled, toDegrees, toFont, toFontString, toLineHeight, toPadding, toRadians, toTRBL, toTRBLCorners, unclipArea, unlistenArrayEvents };
+export {
+  ArrayListener,
+  CanvasFontSpec,
+  DrawPointOptions,
+  HALF_PI,
+  INFINITY,
+  PI,
+  PITAU,
+  QUARTER_PI,
+  RAD_PER_DEG,
+  RTLAdapter,
+  RenderTextOpts,
+  SplinePoint,
+  TAU,
+  TWO_THIRDS_PI,
+  _addGrace,
+  _alignStartEnd,
+  _angleBetween,
+  _angleDiff,
+  _arrayUnique,
+  _bezierInterpolation,
+  _decimalPlaces,
+  _factorize,
+  _filterBetween,
+  _getParentNode,
+  _getStartAndCountOfVisiblePoints,
+  _int16Range,
+  _isBetween,
+  _isDomSupported,
+  _limitValue,
+  _lookup,
+  _lookupByKey,
+  _normalizeAngle,
+  _pointInLine,
+  _readValueToProps,
+  _rlookupByKey,
+  _scaleRangesChanged,
+  _setMinAndMaxByKey,
+  _steppedInterpolation,
+  _textX,
+  _toLeftRightCenter,
+  _updateBezierControlPoints,
+  addRoundedRectPath,
+  almostEquals,
+  almostWhole,
+  clearCanvas,
+  clipArea,
+  color,
+  createContext,
+  debounce,
+  distanceBetweenPoints,
+  drawPoint,
+  drawPointLegend,
+  fontString,
+  formatNumber,
+  getAngleFromPoint,
+  getHoverColor,
+  getMaximumSize,
+  getRelativePosition,
+  getRtlAdapter,
+  getStyle,
+  isNumber,
+  isPatternOrGradient,
+  listenArrayEvents,
+  log10,
+  niceNum,
+  overrideTextDirection,
+  readUsedSize,
+  renderText,
+  requestAnimFrame,
+  resolve,
+  restoreTextDirection,
+  retinaScale,
+  sign,
+  splineCurve,
+  splineCurveMonotone,
+  supportsEventListenerOptions,
+  throttled,
+  toDegrees,
+  toFont,
+  toFontString,
+  toLineHeight,
+  toPadding,
+  toRadians,
+  toTRBL,
+  toTRBLCorners,
+  unclipArea,
+  unlistenArrayEvents,
+};

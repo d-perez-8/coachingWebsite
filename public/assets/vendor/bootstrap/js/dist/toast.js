@@ -1,18 +1,44 @@
 /*!
-  * Bootstrap toast.js v5.2.3 (https://getbootstrap.com/)
-  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
+ * Bootstrap toast.js v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./util/index'), require('./dom/event-handler'), require('./base-component'), require('./util/component-functions')) :
-  typeof define === 'function' && define.amd ? define(['./util/index', './dom/event-handler', './base-component', './util/component-functions'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Toast = factory(global.Index, global.EventHandler, global.BaseComponent, global.ComponentFunctions));
-})(this, (function (index, EventHandler, BaseComponent, componentFunctions) { 'use strict';
+  typeof exports === "object" && typeof module !== "undefined"
+    ? (module.exports = factory(
+        require("./util/index"),
+        require("./dom/event-handler"),
+        require("./base-component"),
+        require("./util/component-functions"),
+      ))
+    : typeof define === "function" && define.amd
+    ? define(
+        [
+          "./util/index",
+          "./dom/event-handler",
+          "./base-component",
+          "./util/component-functions",
+        ],
+        factory,
+      )
+    : ((global =
+        typeof globalThis !== "undefined" ? globalThis : global || self),
+      (global.Toast = factory(
+        global.Index,
+        global.EventHandler,
+        global.BaseComponent,
+        global.ComponentFunctions,
+      )));
+})(this, function (index, EventHandler, BaseComponent, componentFunctions) {
+  "use strict";
 
-  const _interopDefaultLegacy = e => e && typeof e === 'object' && 'default' in e ? e : { default: e };
+  const _interopDefaultLegacy = (e) =>
+    e && typeof e === "object" && "default" in e ? e : { default: e };
 
-  const EventHandler__default = /*#__PURE__*/_interopDefaultLegacy(EventHandler);
-  const BaseComponent__default = /*#__PURE__*/_interopDefaultLegacy(BaseComponent);
+  const EventHandler__default =
+    /*#__PURE__*/ _interopDefaultLegacy(EventHandler);
+  const BaseComponent__default =
+    /*#__PURE__*/ _interopDefaultLegacy(BaseComponent);
 
   /**
    * --------------------------------------------------------------------------
@@ -24,8 +50,8 @@
    * Constants
    */
 
-  const NAME = 'toast';
-  const DATA_KEY = 'bs.toast';
+  const NAME = "toast";
+  const DATA_KEY = "bs.toast";
   const EVENT_KEY = `.${DATA_KEY}`;
   const EVENT_MOUSEOVER = `mouseover${EVENT_KEY}`;
   const EVENT_MOUSEOUT = `mouseout${EVENT_KEY}`;
@@ -35,20 +61,20 @@
   const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
   const EVENT_SHOW = `show${EVENT_KEY}`;
   const EVENT_SHOWN = `shown${EVENT_KEY}`;
-  const CLASS_NAME_FADE = 'fade';
-  const CLASS_NAME_HIDE = 'hide'; // @deprecated - kept here only for backwards compatibility
+  const CLASS_NAME_FADE = "fade";
+  const CLASS_NAME_HIDE = "hide"; // @deprecated - kept here only for backwards compatibility
 
-  const CLASS_NAME_SHOW = 'show';
-  const CLASS_NAME_SHOWING = 'showing';
+  const CLASS_NAME_SHOW = "show";
+  const CLASS_NAME_SHOWING = "showing";
   const DefaultType = {
-    animation: 'boolean',
-    autohide: 'boolean',
-    delay: 'number'
+    animation: "boolean",
+    autohide: "boolean",
+    delay: "number",
   };
   const Default = {
     animation: true,
     autohide: true,
-    delay: 5000
+    delay: 5000,
   };
   /**
    * Class definition
@@ -64,7 +90,6 @@
       this._setListeners();
     } // Getters
 
-
     static get Default() {
       return Default;
     }
@@ -77,9 +102,11 @@
       return NAME;
     } // Public
 
-
     show() {
-      const showEvent = EventHandler__default.default.trigger(this._element, EVENT_SHOW);
+      const showEvent = EventHandler__default.default.trigger(
+        this._element,
+        EVENT_SHOW,
+      );
 
       if (showEvent.defaultPrevented) {
         return;
@@ -101,7 +128,6 @@
 
       this._element.classList.remove(CLASS_NAME_HIDE); // @deprecated
 
-
       index.reflow(this._element);
 
       this._element.classList.add(CLASS_NAME_SHOW, CLASS_NAME_SHOWING);
@@ -114,7 +140,10 @@
         return;
       }
 
-      const hideEvent = EventHandler__default.default.trigger(this._element, EVENT_HIDE);
+      const hideEvent = EventHandler__default.default.trigger(
+        this._element,
+        EVENT_HIDE,
+      );
 
       if (hideEvent.defaultPrevented) {
         return;
@@ -122,7 +151,6 @@
 
       const complete = () => {
         this._element.classList.add(CLASS_NAME_HIDE); // @deprecated
-
 
         this._element.classList.remove(CLASS_NAME_SHOWING, CLASS_NAME_SHOW);
 
@@ -148,7 +176,6 @@
       return this._element.classList.contains(CLASS_NAME_SHOW);
     } // Private
 
-
     _maybeScheduleHide() {
       if (!this._config.autohide) {
         return;
@@ -165,19 +192,17 @@
 
     _onInteraction(event, isInteracting) {
       switch (event.type) {
-        case 'mouseover':
-        case 'mouseout':
-          {
-            this._hasMouseInteraction = isInteracting;
-            break;
-          }
+        case "mouseover":
+        case "mouseout": {
+          this._hasMouseInteraction = isInteracting;
+          break;
+        }
 
-        case 'focusin':
-        case 'focusout':
-          {
-            this._hasKeyboardInteraction = isInteracting;
-            break;
-          }
+        case "focusin":
+        case "focusout": {
+          this._hasKeyboardInteraction = isInteracting;
+          break;
+        }
       }
 
       if (isInteracting) {
@@ -188,7 +213,10 @@
 
       const nextElement = event.relatedTarget;
 
-      if (this._element === nextElement || this._element.contains(nextElement)) {
+      if (
+        this._element === nextElement ||
+        this._element.contains(nextElement)
+      ) {
         return;
       }
 
@@ -196,10 +224,20 @@
     }
 
     _setListeners() {
-      EventHandler__default.default.on(this._element, EVENT_MOUSEOVER, event => this._onInteraction(event, true));
-      EventHandler__default.default.on(this._element, EVENT_MOUSEOUT, event => this._onInteraction(event, false));
-      EventHandler__default.default.on(this._element, EVENT_FOCUSIN, event => this._onInteraction(event, true));
-      EventHandler__default.default.on(this._element, EVENT_FOCUSOUT, event => this._onInteraction(event, false));
+      EventHandler__default.default.on(
+        this._element,
+        EVENT_MOUSEOVER,
+        (event) => this._onInteraction(event, true),
+      );
+      EventHandler__default.default.on(this._element, EVENT_MOUSEOUT, (event) =>
+        this._onInteraction(event, false),
+      );
+      EventHandler__default.default.on(this._element, EVENT_FOCUSIN, (event) =>
+        this._onInteraction(event, true),
+      );
+      EventHandler__default.default.on(this._element, EVENT_FOCUSOUT, (event) =>
+        this._onInteraction(event, false),
+      );
     }
 
     _clearTimeout() {
@@ -207,13 +245,12 @@
       this._timeout = null;
     } // Static
 
-
     static jQueryInterface(config) {
       return this.each(function () {
         const data = Toast.getOrCreateInstance(this, config);
 
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
+        if (typeof config === "string") {
+          if (typeof data[config] === "undefined") {
             throw new TypeError(`No method named "${config}"`);
           }
 
@@ -221,12 +258,10 @@
         }
       });
     }
-
   }
   /**
    * Data API implementation
    */
-
 
   componentFunctions.enableDismissTrigger(Toast);
   /**
@@ -236,6 +271,5 @@
   index.defineJQueryPlugin(Toast);
 
   return Toast;
-
-}));
+});
 //# sourceMappingURL=toast.js.map

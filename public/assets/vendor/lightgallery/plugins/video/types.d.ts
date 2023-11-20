@@ -1,8 +1,8 @@
 export interface VideoSource {
-    source: {
-        src: string;
-        type: string;
-    }[];
-    tracks: HTMLTrackElement[];
-    attributes: HTMLVideoElement;
+  source: {
+    src: string;
+    type: string;
+  }[];
+  tracks: HTMLTrackElement[];
+  attributes: HTMLVideoElement;
 }

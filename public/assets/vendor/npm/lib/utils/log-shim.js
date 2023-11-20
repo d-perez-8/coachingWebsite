@@ -1,19 +1,21 @@
-const NPMLOG = require('npmlog')
-const PROCLOG = require('proc-log')
+const NPMLOG = require("npmlog");
+const PROCLOG = require("proc-log");
 
 // Sets getter and optionally a setter
 // otherwise setting should throw
 const accessors = (obj, set) => (k) => ({
   get: () => obj[k],
-  set: set ? (v) => (obj[k] = v) : () => {
-    throw new Error(`Cant set ${k}`)
-  },
-})
+  set: set
+    ? (v) => (obj[k] = v)
+    : () => {
+        throw new Error(`Cant set ${k}`);
+      },
+});
 
 // Set the value to a bound function on the object
 const value = (obj) => (k) => ({
   value: (...args) => obj[k].apply(obj, args),
-})
+});
 
 const properties = {
   // npmlog getters/setters
@@ -46,14 +48,14 @@ const properties = {
   silly: value(PROCLOG),
   pause: value(PROCLOG),
   resume: value(PROCLOG),
-}
+};
 
 const descriptors = Object.entries(properties).reduce((acc, [k, v]) => {
-  acc[k] = { enumerable: true, ...v(k) }
-  return acc
-}, {})
+  acc[k] = { enumerable: true, ...v(k) };
+  return acc;
+}, {});
 
 // Create an object with the allowed properties rom npm log and all
 // the logging methods from proc log
 // XXX: this should go away and requires of this should be replaced with proc-log + new display
-module.exports = Object.freeze(Object.defineProperties({}, descriptors))
+module.exports = Object.freeze(Object.defineProperties({}, descriptors));

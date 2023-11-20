@@ -29,94 +29,99 @@
 // as an array.
 //
 
-const fs = require('fs/promises')
-const nopt = require('nopt')
+const fs = require("fs/promises");
+const nopt = require("nopt");
 
-const { definitions, shorthands } = require('../utils/config/index.js')
-const { aliases, commands, plumbing } = require('../utils/cmd-list.js')
-const aliasNames = Object.keys(aliases)
-const fullList = commands.concat(aliasNames).filter(c => !plumbing.includes(c))
-const configNames = Object.keys(definitions)
-const shorthandNames = Object.keys(shorthands)
-const allConfs = configNames.concat(shorthandNames)
-const { isWindowsShell } = require('../utils/is-windows.js')
+const { definitions, shorthands } = require("../utils/config/index.js");
+const { aliases, commands, plumbing } = require("../utils/cmd-list.js");
+const aliasNames = Object.keys(aliases);
+const fullList = commands
+  .concat(aliasNames)
+  .filter((c) => !plumbing.includes(c));
+const configNames = Object.keys(definitions);
+const shorthandNames = Object.keys(shorthands);
+const allConfs = configNames.concat(shorthandNames);
+const { isWindowsShell } = require("../utils/is-windows.js");
 const fileExists = async (file) => {
   try {
-    const stat = await fs.stat(file)
-    return stat.isFile()
+    const stat = await fs.stat(file);
+    return stat.isFile();
   } catch {
-    return false
+    return false;
   }
-}
+};
 
-const BaseCommand = require('../base-command.js')
+const BaseCommand = require("../base-command.js");
 
 class Completion extends BaseCommand {
-  static description = 'Tab Completion for npm'
-  static name = 'completion'
-  static ignoreImplicitWorkspace = false
+  static description = "Tab Completion for npm";
+  static name = "completion";
+  static ignoreImplicitWorkspace = false;
 
   // completion for the completion command
-  async completion (opts) {
+  async completion(opts) {
     if (opts.w > 2) {
-      return
+      return;
     }
 
-    const { resolve } = require('path')
+    const { resolve } = require("path");
     const [bashExists, zshExists] = await Promise.all([
-      fileExists(resolve(process.env.HOME, '.bashrc')),
-      fileExists(resolve(process.env.HOME, '.zshrc')),
-    ])
-    const out = []
+      fileExists(resolve(process.env.HOME, ".bashrc")),
+      fileExists(resolve(process.env.HOME, ".zshrc")),
+    ]);
+    const out = [];
     if (zshExists) {
-      out.push(['>>', '~/.zshrc'])
+      out.push([">>", "~/.zshrc"]);
     }
 
     if (bashExists) {
-      out.push(['>>', '~/.bashrc'])
+      out.push([">>", "~/.bashrc"]);
     }
 
-    return out
+    return out;
   }
 
-  async exec (args) {
+  async exec(args) {
     if (isWindowsShell) {
-      const msg = 'npm completion supported only in MINGW / Git bash on Windows'
+      const msg =
+        "npm completion supported only in MINGW / Git bash on Windows";
       throw Object.assign(new Error(msg), {
-        code: 'ENOTSUP',
-      })
+        code: "ENOTSUP",
+      });
     }
 
-    const { COMP_CWORD, COMP_LINE, COMP_POINT } = process.env
+    const { COMP_CWORD, COMP_LINE, COMP_POINT } = process.env;
 
     // if the COMP_* isn't in the env, then just dump the script.
-    if (COMP_CWORD === undefined ||
+    if (
+      COMP_CWORD === undefined ||
       COMP_LINE === undefined ||
-      COMP_POINT === undefined) {
-      return dumpScript()
+      COMP_POINT === undefined
+    ) {
+      return dumpScript();
     }
 
     // ok we're actually looking at the envs and outputting the suggestions
     // get the partial line and partial word,
     // if the point isn't at the end.
     // ie, tabbing at: npm foo b|ar
-    const w = +COMP_CWORD
-    const words = args.map(unescape)
-    const word = words[w]
-    const line = COMP_LINE
-    const point = +COMP_POINT
-    const partialLine = line.slice(0, point)
-    const partialWords = words.slice(0, w)
+    const w = +COMP_CWORD;
+    const words = args.map(unescape);
+    const word = words[w];
+    const line = COMP_LINE;
+    const point = +COMP_POINT;
+    const partialLine = line.slice(0, point);
+    const partialWords = words.slice(0, w);
 
     // figure out where in that last word the point is.
-    const partialWordRaw = args[w]
-    let i = partialWordRaw.length
+    const partialWordRaw = args[w];
+    let i = partialWordRaw.length;
     while (partialWordRaw.slice(0, i) !== partialLine.slice(-1 * i) && i > 0) {
-      i--
+      i--;
     }
 
-    const partialWord = unescape(partialWordRaw.slice(0, i))
-    partialWords.push(partialWord)
+    const partialWord = unescape(partialWordRaw.slice(0, i));
+    partialWords.push(partialWord);
 
     const opts = {
       words,
@@ -129,19 +134,21 @@ class Completion extends BaseCommand {
       partialWords,
       partialWord,
       raw: args,
-    }
+    };
 
-    if (partialWords.slice(0, -1).indexOf('--') === -1) {
-      if (word.charAt(0) === '-') {
-        return this.wrap(opts, configCompl(opts))
+    if (partialWords.slice(0, -1).indexOf("--") === -1) {
+      if (word.charAt(0) === "-") {
+        return this.wrap(opts, configCompl(opts));
       }
 
-      if (words[w - 1] &&
-        words[w - 1].charAt(0) === '-' &&
-        !isFlag(words[w - 1])) {
+      if (
+        words[w - 1] &&
+        words[w - 1].charAt(0) === "-" &&
+        !isFlag(words[w - 1])
+      ) {
         // awaiting a value for a non-bool config.
         // don't even try to do this for now
-        return this.wrap(opts, configValueCompl(opts))
+        return this.wrap(opts, configValueCompl(opts));
       }
     }
 
@@ -151,26 +158,30 @@ class Completion extends BaseCommand {
     // don't have to worry about the last arg being implicitly
     // boolean'ed, since the last block will catch that.
     const types = Object.entries(definitions).reduce((types, [key, def]) => {
-      types[key] = def.type
-      return types
-    }, {})
-    const parsed = opts.conf =
-      nopt(types, shorthands, partialWords.slice(0, -1), 0)
+      types[key] = def.type;
+      return types;
+    }, {});
+    const parsed = (opts.conf = nopt(
+      types,
+      shorthands,
+      partialWords.slice(0, -1),
+      0,
+    ));
     // check if there's a command already.
-    const cmd = parsed.argv.remain[1]
+    const cmd = parsed.argv.remain[1];
     if (!cmd) {
-      return this.wrap(opts, cmdCompl(opts, this.npm))
+      return this.wrap(opts, cmdCompl(opts, this.npm));
     }
 
-    Object.keys(parsed).forEach(k => this.npm.config.set(k, parsed[k]))
+    Object.keys(parsed).forEach((k) => this.npm.config.set(k, parsed[k]));
 
     // at this point, if words[1] is some kind of npm command,
     // then complete on it.
     // otherwise, do nothing
-    const impl = await this.npm.cmd(cmd)
+    const impl = await this.npm.cmd(cmd);
     if (impl.completion) {
-      const comps = await impl.completion(opts)
-      return this.wrap(opts, comps)
+      const comps = await impl.completion(opts);
+      return this.wrap(opts, comps);
     }
   }
 
@@ -180,35 +191,35 @@ class Completion extends BaseCommand {
   // If any of the items are arrays, then join them with a space.
   // Ie, returning ['a', 'b c', ['d', 'e']] would allow it to expand
   // to: 'a', 'b c', or 'd' 'e'
-  wrap (opts, compls) {
+  wrap(opts, compls) {
     // TODO this was dead code, leaving it in case we find some command we
     // forgot that requires this. if so *that command should fix its
     // completions*
     // compls = compls.map(w => !/\s+/.test(w) ? w : '\'' + w + '\'')
 
     if (opts.partialWord) {
-      compls = compls.filter(c => c.startsWith(opts.partialWord))
+      compls = compls.filter((c) => c.startsWith(opts.partialWord));
     }
 
     if (compls.length > 0) {
-      this.npm.output(compls.join('\n'))
+      this.npm.output(compls.join("\n"));
     }
   }
 }
 
 const dumpScript = async () => {
-  const { resolve } = require('path')
-  const p = resolve(__dirname, '..', 'utils', 'completion.sh')
+  const { resolve } = require("path");
+  const p = resolve(__dirname, "..", "utils", "completion.sh");
 
-  const d = (await fs.readFile(p, 'utf8')).replace(/^#!.*?\n/, '')
+  const d = (await fs.readFile(p, "utf8")).replace(/^#!.*?\n/, "");
   await new Promise((res, rej) => {
-    let done = false
-    process.stdout.on('error', er => {
+    let done = false;
+    process.stdout.on("error", (er) => {
       if (done) {
-        return
+        return;
       }
 
-      done = true
+      done = true;
 
       // Darwin is a pain sometimes.
       //
@@ -222,70 +233,73 @@ const dumpScript = async () => {
       // can never ever work on OS X.
       // TODO Ignoring coverage, see 'non EPIPE errors cause failures' test.
       /* istanbul ignore next */
-      if (er.errno === 'EPIPE') {
-        res()
+      if (er.errno === "EPIPE") {
+        res();
       } else {
-        rej(er)
+        rej(er);
       }
-    })
+    });
 
     process.stdout.write(d, () => {
       if (done) {
-        return
+        return;
       }
 
-      done = true
-      res()
-    })
-  })
-}
+      done = true;
+      res();
+    });
+  });
+};
 
-const unescape = w => w.charAt(0) === '\'' ? w.replace(/^'|'$/g, '')
-  : w.replace(/\\ /g, ' ')
+const unescape = (w) =>
+  w.charAt(0) === "'" ? w.replace(/^'|'$/g, "") : w.replace(/\\ /g, " ");
 
 // the current word has a dash.  Return the config names,
 // with the same number of dashes as the current word has.
-const configCompl = opts => {
-  const word = opts.word
-  const split = word.match(/^(-+)((?:no-)*)(.*)$/)
-  const dashes = split[1]
-  const no = split[2]
-  const flags = configNames.filter(isFlag)
-  return allConfs.map(c => dashes + c)
-    .concat(flags.map(f => dashes + (no || 'no-') + f))
-}
+const configCompl = (opts) => {
+  const word = opts.word;
+  const split = word.match(/^(-+)((?:no-)*)(.*)$/);
+  const dashes = split[1];
+  const no = split[2];
+  const flags = configNames.filter(isFlag);
+  return allConfs
+    .map((c) => dashes + c)
+    .concat(flags.map((f) => dashes + (no || "no-") + f));
+};
 
 // expand with the valid values of various config values.
 // not yet implemented.
-const configValueCompl = opts => []
+const configValueCompl = (opts) => [];
 
 // check if the thing is a flag or not.
-const isFlag = word => {
+const isFlag = (word) => {
   // shorthands never take args.
-  const split = word.match(/^(-*)((?:no-)+)?(.*)$/)
-  const no = split[2]
-  const conf = split[3]
-  const { type } = definitions[conf]
-  return no ||
+  const split = word.match(/^(-*)((?:no-)+)?(.*)$/);
+  const no = split[2];
+  const conf = split[3];
+  const { type } = definitions[conf];
+  return (
+    no ||
     type === Boolean ||
     (Array.isArray(type) && type.includes(Boolean)) ||
     shorthands[conf]
-}
+  );
+};
 
 // complete against the npm commands
 // if they all resolve to the same thing, just return the thing it already is
 const cmdCompl = (opts, npm) => {
-  const matches = fullList.filter(c => c.startsWith(opts.partialWord))
+  const matches = fullList.filter((c) => c.startsWith(opts.partialWord));
   if (!matches.length) {
-    return matches
+    return matches;
   }
 
-  const derefs = new Set([...matches.map(c => npm.deref(c))])
+  const derefs = new Set([...matches.map((c) => npm.deref(c))]);
   if (derefs.size === 1) {
-    return [...derefs]
+    return [...derefs];
   }
 
-  return fullList
-}
+  return fullList;
+};
 
-module.exports = Completion
+module.exports = Completion;

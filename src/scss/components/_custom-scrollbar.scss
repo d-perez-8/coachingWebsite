@@ -3,7 +3,6 @@
 // based on https://github.com/Grsmto/simplebar
 // --------------------------------------------------
 
-
 [data-simplebar] {
   --#{$prefix}scrollbar-width: #{$scrollbar-width};
   --#{$prefix}scrollbar-bg: #{$scrollbar-bg};
@@ -24,19 +23,19 @@
 }
 
 .simplebar-track {
-  transition: opacity .15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
   @include border-radius(var(--#{$prefix}scrollbar-border-radius));
   background-color: var(--#{$prefix}scrollbar-track-bg);
   overflow: initial;
   opacity: 0;
 
   &.simplebar-vertical {
-    right: calc(var(--#{$prefix}scrollbar-width) * .5);
+    right: calc(var(--#{$prefix}scrollbar-width) * 0.5);
     width: var(--#{$prefix}scrollbar-track-width);
     .simplebar-scrollbar {
       left: 50%;
       width: var(--#{$prefix}scrollbar-width);
-      margin-left: calc(var(--#{$prefix}scrollbar-width) * -.5);
+      margin-left: calc(var(--#{$prefix}scrollbar-width) * -0.5);
       &:before {
         top: 0;
         bottom: 0;
@@ -45,12 +44,12 @@
   }
 
   &.simplebar-horizontal {
-    bottom: calc(var(--#{$prefix}scrollbar-width) * .5);
+    bottom: calc(var(--#{$prefix}scrollbar-width) * 0.5);
     height: var(--#{$prefix}scrollbar-track-width);
     .simplebar-scrollbar {
       height: var(--#{$prefix}scrollbar-width);
       top: 50%;
-      margin-top: calc(var(--#{$prefix}scrollbar-width) * -.5);
+      margin-top: calc(var(--#{$prefix}scrollbar-width) * -0.5);
       bottom: 0;
       &::before {
         right: 0;
@@ -61,6 +60,6 @@
 }
 
 .simplebar-wrapper:hover ~ .simplebar-track,
-[data-simplebar-auto-hide='false'] .simplebar-track {
+[data-simplebar-auto-hide="false"] .simplebar-track {
   opacity: 1;
 }

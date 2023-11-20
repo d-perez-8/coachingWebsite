@@ -3,28 +3,28 @@
 // supports anyways.
 
 const formatBytes = (bytes, space = true) => {
-  let spacer = ''
+  let spacer = "";
   if (space) {
-    spacer = ' '
+    spacer = " ";
   }
 
   if (bytes < 1000) {
     // B
-    return `${bytes}${spacer}B`
+    return `${bytes}${spacer}B`;
   }
 
   if (bytes < 1000000) {
     // kB
-    return `${(bytes / 1000).toFixed(1)}${spacer}kB`
+    return `${(bytes / 1000).toFixed(1)}${spacer}kB`;
   }
 
   if (bytes < 1000000000) {
     // MB
-    return `${(bytes / 1000000).toFixed(1)}${spacer}MB`
+    return `${(bytes / 1000000).toFixed(1)}${spacer}MB`;
   }
 
   // GB
-  return `${(bytes / 1000000000).toFixed(1)}${spacer}GB`
-}
+  return `${(bytes / 1000000000).toFixed(1)}${spacer}GB`;
+};
 
-module.exports = formatBytes
+module.exports = formatBytes;

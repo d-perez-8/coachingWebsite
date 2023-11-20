@@ -7,7 +7,7 @@ description: Specifics of npm's package.json handling
 ### Description
 
 This document is all you need to know about what's required in your
-package.json file.  It must be actual JSON, not just a JavaScript object
+package.json file. It must be actual JSON, not just a JavaScript object
 literal.
 
 A lot of the behavior described in this document is affected by the config
@@ -15,10 +15,10 @@ settings described in [`config`](/using-npm/config).
 
 ### name
 
-If you plan to publish your package, the *most* important things in your
+If you plan to publish your package, the _most_ important things in your
 package.json are the name and version fields as they will be required. The
 name and version together form an identifier that is assumed to be
-completely unique.  Changes to the package should come along with changes
+completely unique. Changes to the package should come along with changes
 to the version. If you don't plan to publish your package, the name and
 version fields are optional.
 
@@ -26,24 +26,24 @@ The name is what your thing is called.
 
 Some rules:
 
-* The name must be less than or equal to 214 characters. This includes the
+- The name must be less than or equal to 214 characters. This includes the
   scope for scoped packages.
-* The names of scoped packages can begin with a dot or an underscore. This
+- The names of scoped packages can begin with a dot or an underscore. This
   is not permitted without a scope.
-* New packages must not have uppercase letters in the name.
-* The name ends up being part of a URL, an argument on the command line,
+- New packages must not have uppercase letters in the name.
+- The name ends up being part of a URL, an argument on the command line,
   and a folder name. Therefore, the name can't contain any non-URL-safe
   characters.
 
 Some tips:
 
-* Don't use the same name as a core Node module.
-* Don't put "js" or "node" in the name.  It's assumed that it's js, since
+- Don't use the same name as a core Node module.
+- Don't put "js" or "node" in the name. It's assumed that it's js, since
   you're writing a package.json file, and you can specify the engine using
-  the "engines" field.  (See below.)
-* The name will probably be passed as an argument to require(), so it
+  the "engines" field. (See below.)
+- The name will probably be passed as an argument to require(), so it
   should be something short, but also reasonably descriptive.
-* You may want to check the npm registry to see if there's something by
+- You may want to check the npm registry to see if there's something by
   that name already, before you get too attached to it.
   <https://www.npmjs.com/>
 
@@ -52,25 +52,25 @@ A name can be optionally prefixed by a scope, e.g. `@myorg/mypackage`. See
 
 ### version
 
-If you plan to publish your package, the *most* important things in your
+If you plan to publish your package, the _most_ important things in your
 package.json are the name and version fields as they will be required. The
 name and version together form an identifier that is assumed to be
-completely unique.  Changes to the package should come along with changes
+completely unique. Changes to the package should come along with changes
 to the version. If you don't plan to publish your package, the name and
 version fields are optional.
 
 Version must be parseable by
 [node-semver](https://github.com/npm/node-semver), which is bundled with
-npm as a dependency.  (`npm install semver` to use it yourself.)
+npm as a dependency. (`npm install semver` to use it yourself.)
 
 ### description
 
-Put a description in it.  It's a string.  This helps people discover your
+Put a description in it. It's a string. This helps people discover your
 package, as it's listed in `npm search`.
 
 ### keywords
 
-Put keywords in it.  It's an array of strings.  This helps people discover
+Put keywords in it. It's an array of strings. This helps people discover
 your package as it's listed in `npm search`.
 
 ### homepage
@@ -93,8 +93,8 @@ It should look like this:
 
 ```json
 {
-  "url" : "https://github.com/owner/project/issues",
-  "email" : "project@hostname.com"
+  "url": "https://github.com/owner/project/issues",
+  "email": "project@hostname.com"
 }
 ```
 
@@ -114,12 +114,12 @@ SPDX license identifier for the license you're using, like this:
 
 ```json
 {
-  "license" : "BSD-3-Clause"
+  "license": "BSD-3-Clause"
 }
 ```
 
 You can check [the full list of SPDX license
-IDs](https://spdx.org/licenses/).  Ideally you should pick one that is
+IDs](https://spdx.org/licenses/). Ideally you should pick one that is
 [OSI](https://opensource.org/licenses/alphabetical) approved.
 
 If your package is licensed under multiple common licenses, use an [SPDX
@@ -128,17 +128,19 @@ string](https://spdx.dev/specifications/), like this:
 
 ```json
 {
-  "license" : "(ISC OR GPL-3.0)"
+  "license": "(ISC OR GPL-3.0)"
 }
 ```
+
 If you are using a license that hasn't been assigned an SPDX identifier, or if
 you are using a custom license, use a string value like this one:
 
 ```json
 {
-  "license" : "SEE LICENSE IN <filename>"
+  "license": "SEE LICENSE IN <filename>"
 }
 ```
+
 Then include a file named `<filename>` at the top level of the package.
 
 Some old packages used license objects or a "licenses" property containing
@@ -195,15 +197,15 @@ Consider also setting `"private": true` to prevent accidental publication.
 
 ### people fields: author, contributors
 
-The "author" is one person.  "contributors" is an array of people.  A
+The "author" is one person. "contributors" is an array of people. A
 "person" is an object with a "name" field and optionally "url" and "email",
 like this:
 
 ```json
 {
-  "name" : "Barney Rubble",
-  "email" : "b@rubble.com",
-  "url" : "http://barnyrubble.tumblr.com/"
+  "name": "Barney Rubble",
+  "email": "b@rubble.com",
+  "url": "http://barnyrubble.tumblr.com/"
 }
 ```
 
@@ -229,26 +231,26 @@ string URL, or an array of these:
 ```json
 {
   "funding": {
-    "type" : "individual",
-    "url" : "http://example.com/donate"
+    "type": "individual",
+    "url": "http://example.com/donate"
   },
 
   "funding": {
-    "type" : "patreon",
-    "url" : "https://www.patreon.com/my-account"
+    "type": "patreon",
+    "url": "https://www.patreon.com/my-account"
   },
 
   "funding": "http://example.com/donate",
 
   "funding": [
     {
-      "type" : "individual",
-      "url" : "http://example.com/donate"
+      "type": "individual",
+      "url": "http://example.com/donate"
     },
     "http://example.com/donateAlso",
     {
-      "type" : "patreon",
-      "url" : "https://www.patreon.com/my-account"
+      "type": "patreon",
+      "url": "https://www.patreon.com/my-account"
     }
   ]
 }
@@ -284,37 +286,37 @@ through `.npmignore` or `.gitignore`.
 
 Certain files are always included, regardless of settings:
 
-* `package.json`
-* `README`
-* `LICENSE` / `LICENCE`
-* The file in the "main" field
+- `package.json`
+- `README`
+- `LICENSE` / `LICENCE`
+- The file in the "main" field
 
 `README` & `LICENSE` can have any case and extension.
 
 Conversely, some files are always ignored:
 
-* `.git`
-* `CVS`
-* `.svn`
-* `.hg`
-* `.lock-wscript`
-* `.wafpickle-N`
-* `.*.swp`
-* `.DS_Store`
-* `._*`
-* `npm-debug.log`
-* `.npmrc`
-* `node_modules`
-* `config.gypi`
-* `*.orig`
-* `package-lock.json` (use
+- `.git`
+- `CVS`
+- `.svn`
+- `.hg`
+- `.lock-wscript`
+- `.wafpickle-N`
+- `.*.swp`
+- `.DS_Store`
+- `._*`
+- `npm-debug.log`
+- `.npmrc`
+- `node_modules`
+- `config.gypi`
+- `*.orig`
+- `package-lock.json` (use
   [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) if you wish
   it to be published)
 
 ### main
 
 The main field is a module ID that is the primary entry point to your
-program.  That is, if your package is named `foo`, and a user installs it,
+program. That is, if your package is named `foo`, and a user installs it,
 and then does `require("foo")`, then your main module's exports object will
 be returned.
 
@@ -341,13 +343,12 @@ feature to install the "npm" executable.)
 To use this, supply a `bin` field in your package.json which is a map of
 command name to local file name. When this package is installed globally,
 that file will be either linked inside the global bins directory or
-a cmd (Windows Command File) will be created which executes the specified 
+a cmd (Windows Command File) will be created which executes the specified
 file in the `bin` field, so it is available to run by `name` or `name.cmd` (on
-Windows PowerShell). When this package is installed as a dependency in another 
+Windows PowerShell). When this package is installed as a dependency in another
 package, the file will be linked where it will be available to that package
-either directly by `npm exec` or by name in other scripts when invoking them 
+either directly by `npm exec` or by name in other scripts when invoking them
 via `npm run-script`.
-
 
 For example, myapp could have this:
 
@@ -359,13 +360,13 @@ For example, myapp could have this:
 }
 ```
 
-So, when you install myapp, in case of unix-like OS it'll create a symlink 
-from the `cli.js` script to `/usr/local/bin/myapp` and in case of windows it 
+So, when you install myapp, in case of unix-like OS it'll create a symlink
+from the `cli.js` script to `/usr/local/bin/myapp` and in case of windows it
 will create a cmd file usually at `C:\Users\{Username}\AppData\Roaming\npm\myapp.cmd`
-which runs the `cli.js` script. 
+which runs the `cli.js` script.
 
 If you have a single executable, and its name should be the name of the
-package, then you can just supply it as a string.  For example:
+package, then you can just supply it as a string. For example:
 
 ```json
 {
@@ -402,7 +403,7 @@ Specify either a single file or an array of filenames to put in place for
 the `man` program to find.
 
 If only a single file is provided, then it's installed such that it is the
-result from `man <pkgname>`, regardless of its actual filename.  For
+result from `man <pkgname>`, regardless of its actual filename. For
 example:
 
 ```json
@@ -427,17 +428,14 @@ So, this:
   "version": "1.2.3",
   "description": "A packaged foo fooer for fooing foos",
   "main": "foo.js",
-  "man": [
-    "./man/foo.1",
-    "./man/bar.1"
-  ]
+  "man": ["./man/foo.1", "./man/bar.1"]
 }
 ```
 
 will create files to do `man foo` and `man foo-bar`.
 
 Man files must end with a number, and optionally a `.gz` suffix if they are
-compressed.  The number dictates which man section the file is installed
+compressed. The number dictates which man section the file is installed
 into.
 
 ```json
@@ -446,10 +444,7 @@ into.
   "version": "1.2.3",
   "description": "A packaged foo fooer for fooing foos",
   "main": "foo.js",
-  "man": [
-    "./man/foo.1",
-    "./man/foo.2"
-  ]
+  "man": ["./man/foo.1", "./man/foo.2"]
 }
 ```
 
@@ -477,13 +472,13 @@ directory, use `directories.bin`.
 
 #### directories.man
 
-A folder that is full of man pages.  Sugar to generate a "man" array by
+A folder that is full of man pages. Sugar to generate a "man" array by
 walking the folder.
 
 ### repository
 
 Specify the place where your code lives. This is helpful for people who
-want to contribute.  If the git repo is on GitHub, then the `npm docs`
+want to contribute. If the git repo is on GitHub, then the `npm docs`
 command will be able to find you.
 
 Do it like this:
@@ -498,8 +493,8 @@ Do it like this:
 ```
 
 The URL should be a publicly available (perhaps read-only) url that can be
-handed directly to a VCS program without any modification.  It should not
-be a url to an html project page that you put in your browser.  It's for
+handed directly to a VCS program without any modification. It should not
+be a url to an html project page that you put in your browser. It's for
 computers.
 
 For GitHub, GitHub gist, Bitbucket, or GitLab repositories you can use the
@@ -536,7 +531,7 @@ which it lives:
 ### scripts
 
 The "scripts" property is a dictionary containing script commands that are
-run at various times in the lifecycle of your package.  The key is the
+run at various times in the lifecycle of your package. The key is the
 lifecycle event, and the value is the command to run at that point.
 
 See [`scripts`](/using-npm/scripts) to find out more about writing package
@@ -545,7 +540,7 @@ scripts.
 ### config
 
 A "config" object can be used to set configuration parameters used in
-package scripts that persist across upgrades.  For instance, if a package
+package scripts that persist across upgrades. For instance, if a package
 had the following:
 
 ```json
@@ -564,33 +559,33 @@ It could also have a "start" command that referenced the
 
 Dependencies are specified in a simple object that maps a package name to a
 version range. The version range is a string which has one or more
-space-separated descriptors.  Dependencies can also be identified with a
+space-separated descriptors. Dependencies can also be identified with a
 tarball or git URL.
 
 **Please do not put test harnesses or transpilers or other "development"
-time tools in your `dependencies` object.**  See `devDependencies`, below.
+time tools in your `dependencies` object.** See `devDependencies`, below.
 
 See [semver](https://github.com/npm/node-semver#versions) for more details about specifying version ranges.
 
-* `version` Must match `version` exactly
-* `>version` Must be greater than `version`
-* `>=version` etc
-* `<version`
-* `<=version`
-* `~version` "Approximately equivalent to version"  See
+- `version` Must match `version` exactly
+- `>version` Must be greater than `version`
+- `>=version` etc
+- `<version`
+- `<=version`
+- `~version` "Approximately equivalent to version" See
   [semver](https://github.com/npm/node-semver#versions)
-* `^version` "Compatible with version"  See [semver](https://github.com/npm/node-semver#versions)
-* `1.2.x` 1.2.0, 1.2.1, etc., but not 1.3.0
-* `http://...` See 'URLs as Dependencies' below
-* `*` Matches any version
-* `""` (just an empty string) Same as `*`
-* `version1 - version2` Same as `>=version1 <=version2`.
-* `range1 || range2` Passes if either range1 or range2 are satisfied.
-* `git...` See 'Git URLs as Dependencies' below
-* `user/repo` See 'GitHub URLs' below
-* `tag` A specific version tagged and published as `tag`  See [`npm
-  dist-tag`](/commands/npm-dist-tag)
-* `path/path/path` See [Local Paths](#local-paths) below
+- `^version` "Compatible with version" See [semver](https://github.com/npm/node-semver#versions)
+- `1.2.x` 1.2.0, 1.2.1, etc., but not 1.3.0
+- `http://...` See 'URLs as Dependencies' below
+- `*` Matches any version
+- `""` (just an empty string) Same as `*`
+- `version1 - version2` Same as `>=version1 <=version2`.
+- `range1 || range2` Passes if either range1 or range2 are satisfied.
+- `git...` See 'Git URLs as Dependencies' below
+- `user/repo` See 'GitHub URLs' below
+- `tag` A specific version tagged and published as `tag` See [`npm
+dist-tag`](/commands/npm-dist-tag)
+- `path/path/path` See [Local Paths](#local-paths) below
 
 For example, these are all valid:
 
@@ -656,12 +651,12 @@ installed.
 This flow will occur if your git dependency uses `workspaces`, or if any of the
 following scripts are present:
 
-* `build`
-* `prepare`
-* `prepack`
-* `preinstall`
-* `install`
-* `postinstall`
+- `build`
+- `prepare`
+- `prepack`
+- `preinstall`
+- `install`
+- `postinstall`
 
 If your git repository includes pre-built artifacts, you will likely want to
 make sure that none of the above scripts are defined, or your dependency
@@ -670,8 +665,8 @@ will be rebuilt for every installation.
 #### GitHub URLs
 
 As of version 1.1.65, you can refer to GitHub urls as just "foo":
-"user/foo-project".  Just as with git URLs, a `commit-ish` suffix can be
-included.  For example:
+"user/foo-project". Just as with git URLs, a `commit-ish` suffix can be
+included. For example:
 
 ```json
 {
@@ -680,7 +675,7 @@ included.  For example:
   "dependencies": {
     "express": "expressjs/express",
     "mocha": "mochajs/mocha#4727d357ea",
-    "module": "user/repo#feature\/branch"
+    "module": "user/repo#feature/branch"
   }
 }
 ```
@@ -714,8 +709,8 @@ This feature is helpful for local offline development and creating tests
 that require npm installing where you don't want to hit an external server,
 but should not be used when publishing packages to the public registry.
 
-*note*: Packages linked by local path will not have their own
-dependencies installed when `npm install` is ran in this case.  You must
+_note_: Packages linked by local path will not have their own
+dependencies installed when `npm install` is ran in this case. You must
 run `npm install` from inside the local path itself.
 
 ### devDependencies
@@ -729,7 +724,7 @@ In this case, it's best to map these additional items in a
 
 These things will be installed when doing `npm link` or `npm install` from
 the root of a package, and can be managed like any other npm configuration
-param.  See [`config`](/using-npm/config) for more on the topic.
+param. See [`config`](/using-npm/config) for more on the topic.
 
 For build steps that are not platform-specific, such as compiling
 CoffeeScript or other languages to JavaScript, use the `prepare` script to
@@ -761,7 +756,7 @@ well, so that you can test it easily.
 
 In some cases, you want to express the compatibility of your package with a
 host tool or library, while not necessarily doing a `require` of this host.
-This is usually referred to as a *plugin*. Notably, your module may be
+This is usually referred to as a _plugin_. Notably, your module may be
 exposing a specific interface, expected and specified by the host
 documentation.
 
@@ -777,7 +772,7 @@ For example:
 }
 ```
 
-This ensures your package `tea-latte` can be installed *along* with the
+This ensures your package `tea-latte` can be installed _along_ with the
 second major version of the host package `tea` only. `npm install
 tea-latte` could possibly yield the following dependency graph:
 
@@ -788,7 +783,7 @@ tea-latte` could possibly yield the following dependency graph:
 
 In npm versions 3 through 6, `peerDependencies` were not automatically
 installed, and would raise a warning if an invalid version of the peer
-dependency was found in the tree.  As of npm v7, peerDependencies _are_
+dependency was found in the tree. As of npm v7, peerDependencies _are_
 installed by default.
 
 Trying to install another plugin with a conflicting requirement may cause
@@ -851,17 +846,14 @@ If we define a package.json like this:
 {
   "name": "awesome-web-framework",
   "version": "1.0.0",
-  "bundleDependencies": [
-    "renderized",
-    "super-streams"
-  ]
+  "bundleDependencies": ["renderized", "super-streams"]
 }
 ```
 
 we can obtain `awesome-web-framework-1.0.0.tgz` file by running `npm pack`.
 This file contains the dependencies `renderized` and `super-streams` which
 can be installed in a new project by executing `npm install
-awesome-web-framework-1.0.0.tgz`.  Note that the package names do not
+awesome-web-framework-1.0.0.tgz`. Note that the package names do not
 include any versions, as that information is specified in `dependencies`.
 
 If this is spelled `"bundledDependencies"`, then that is also honored.
@@ -874,29 +866,29 @@ none.
 
 If a dependency can be used, but you would like npm to proceed if it cannot
 be found or fails to install, then you may put it in the
-`optionalDependencies` object.  This is a map of package name to version or
-url, just like the `dependencies` object.  The difference is that build
-failures do not cause installation to fail.  Running `npm install
+`optionalDependencies` object. This is a map of package name to version or
+url, just like the `dependencies` object. The difference is that build
+failures do not cause installation to fail. Running `npm install
 --omit=optional` will prevent these dependencies from being installed.
 
 It is still your program's responsibility to handle the lack of the
-dependency.  For example, something like this:
+dependency. For example, something like this:
 
 ```js
 try {
-  var foo = require('foo')
-  var fooVersion = require('foo/package.json').version
+  var foo = require("foo");
+  var fooVersion = require("foo/package.json").version;
 } catch (er) {
-  foo = null
+  foo = null;
 }
-if ( notGoodFooVersion(fooVersion) ) {
-  foo = null
+if (notGoodFooVersion(fooVersion)) {
+  foo = null;
 }
 
 // .. then later in your program ..
 
 if (foo) {
-  foo.doFooThings()
+  foo.doFooThings();
 }
 ```
 
@@ -1022,7 +1014,7 @@ And, like with dependencies, if you don't specify the version (or if you
 specify "\*" as the version), then any version of node will do.
 
 You can also use the "engines" field to specify which versions of npm are
-capable of properly installing your program.  For example:
+capable of properly installing your program. For example:
 
 ```json
 {
@@ -1044,10 +1036,7 @@ module will run on:
 
 ```json
 {
-  "os": [
-    "darwin",
-    "linux"
-  ]
+  "os": ["darwin", "linux"]
 }
 ```
 
@@ -1056,9 +1045,7 @@ blocked os with a '!':
 
 ```json
 {
-  "os": [
-    "!win32"
-  ]
+  "os": ["!win32"]
 }
 ```
 
@@ -1074,10 +1061,7 @@ you can specify which ones.
 
 ```json
 {
-  "cpu": [
-    "x64",
-    "ia32"
-  ]
+  "cpu": ["x64", "ia32"]
 }
 ```
 
@@ -1085,10 +1069,7 @@ Like the `os` option, you can also block architectures:
 
 ```json
 {
-  "cpu": [
-    "!arm",
-    "!mips"
-  ]
+  "cpu": ["!arm", "!mips"]
 }
 ```
 
@@ -1133,9 +1114,7 @@ In the following example, all folders located inside the folder
 ```json
 {
   "name": "workspace-example",
-  "workspaces": [
-    "./packages/*"
-  ]
+  "workspaces": ["./packages/*"]
 }
 ```
 
@@ -1145,31 +1124,31 @@ See [`workspaces`](/using-npm/workspaces) for more examples.
 
 npm will default some values based on package contents.
 
-* `"scripts": {"start": "node server.js"}`
+- `"scripts": {"start": "node server.js"}`
 
   If there is a `server.js` file in the root of your package, then npm will
   default the `start` command to `node server.js`.
 
-* `"scripts":{"install": "node-gyp rebuild"}`
+- `"scripts":{"install": "node-gyp rebuild"}`
 
   If there is a `binding.gyp` file in the root of your package and you have
   not defined an `install` or `preinstall` script, npm will default the
   `install` command to compile using node-gyp.
 
-* `"contributors": [...]`
+- `"contributors": [...]`
 
   If there is an `AUTHORS` file in the root of your package, npm will treat
   each line as a `Name <email> (url)` format, where email and url are
-  optional.  Lines which start with a `#` or are blank, will be ignored.
+  optional. Lines which start with a `#` or are blank, will be ignored.
 
 ### SEE ALSO
 
-* [semver](https://github.com/npm/node-semver#versions)
-* [workspaces](/using-npm/workspaces)
-* [npm init](/commands/npm-init)
-* [npm version](/commands/npm-version)
-* [npm config](/commands/npm-config)
-* [npm help](/commands/npm-help)
-* [npm install](/commands/npm-install)
-* [npm publish](/commands/npm-publish)
-* [npm uninstall](/commands/npm-uninstall)
+- [semver](https://github.com/npm/node-semver#versions)
+- [workspaces](/using-npm/workspaces)
+- [npm init](/commands/npm-init)
+- [npm version](/commands/npm-version)
+- [npm config](/commands/npm-config)
+- [npm help](/commands/npm-help)
+- [npm install](/commands/npm-install)
+- [npm publish](/commands/npm-publish)
+- [npm uninstall](/commands/npm-uninstall)

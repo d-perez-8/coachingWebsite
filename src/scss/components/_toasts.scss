@@ -2,7 +2,6 @@
 // Toasts
 // --------------------------------------------------
 
-
 .toast {
   --#{$prefix}toast-header-font-size: #{$toast-header-font-size};
 }
@@ -22,15 +21,15 @@
     width: calc(100% - (var(--#{$prefix}toast-padding-x) * 2));
     height: var(--#{$prefix}toast-border-width);
     background-color: var(--#{$prefix}toast-header-border-color);
-    content: '';
+    content: "";
   }
 
-  &[class^='bg-']::after,
-  &[class*=' bg-']::after {
+  &[class^="bg-"]::after,
+  &[class*=" bg-"]::after {
     display: none;
   }
   .btn-close {
-    font-size: .875em;
+    font-size: 0.875em;
     margin-right: 0;
     padding-right: 0;
   }

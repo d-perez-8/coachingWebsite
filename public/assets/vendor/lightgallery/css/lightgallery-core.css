@@ -1,5 +1,5 @@
 .lg-group:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -28,10 +28,18 @@
 .lg-hide-sub-html .lg-sub-html {
   opacity: 0;
   will-change: transform, opacity;
-  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  -moz-transition: -moz-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  -o-transition: -o-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
-  transition: transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -webkit-transition:
+    -webkit-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -moz-transition:
+    -moz-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  -o-transition:
+    -o-transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
+  transition:
+    transform 0.25s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.25s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
 .lg-show-in .lg-toolbar,
@@ -100,14 +108,18 @@
   opacity: 1;
 }
 
-.lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-prev-slide, .lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-next-slide, .lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-current {
+.lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-prev-slide,
+.lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-next-slide,
+.lg-outer.lg-css3 .lg-item:not(.lg-start-end-progress).lg-current {
   -webkit-transition-duration: inherit !important;
   transition-duration: inherit !important;
   -webkit-transition-timing-function: inherit !important;
   transition-timing-function: inherit !important;
 }
 
-.lg-outer.lg-css3.lg-dragging .lg-item.lg-prev-slide, .lg-outer.lg-css3.lg-dragging .lg-item.lg-next-slide, .lg-outer.lg-css3.lg-dragging .lg-item.lg-current {
+.lg-outer.lg-css3.lg-dragging .lg-item.lg-prev-slide,
+.lg-outer.lg-css3.lg-dragging .lg-item.lg-next-slide,
+.lg-outer.lg-css3.lg-dragging .lg-item.lg-current {
   -webkit-transition-duration: 0s !important;
   transition-duration: 0s !important;
   opacity: 1;
@@ -155,7 +167,8 @@
 }
 
 .lg-outer .lg-item:not(.lg-start-end-progress) {
-  background: url("../images/loading.gif") no-repeat scroll center center transparent;
+  background: url("../images/loading.gif") no-repeat scroll center center
+    transparent;
 }
 
 .lg-outer.lg-css3 .lg-prev-slide,
@@ -179,7 +192,7 @@
 
 .lg-outer .lg-item:before,
 .lg-outer .lg-img-wrap:before {
-  content: '';
+  content: "";
   display: inline-block;
   height: 100%;
   vertical-align: middle;
@@ -282,7 +295,9 @@
   opacity: 1;
 }
 
-.lg-css3.lg-fade .lg-item.lg-prev-slide, .lg-css3.lg-fade .lg-item.lg-next-slide, .lg-css3.lg-fade .lg-item.lg-current {
+.lg-css3.lg-fade .lg-item.lg-prev-slide,
+.lg-css3.lg-fade .lg-item.lg-next-slide,
+.lg-css3.lg-fade .lg-item.lg-current {
   -webkit-transition: opacity 0.1s ease 0s;
   -moz-transition: opacity 0.1s ease 0s;
   -o-transition: opacity 0.1s ease 0s;
@@ -290,7 +305,8 @@
 }
 
 .lg-css3.lg-use-css3 .lg-item.lg-start-progress {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  -webkit-transition: -webkit-transform 1s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   -moz-transition: -moz-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   -o-transition: -o-transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
   transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
@@ -323,11 +339,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide.lg-use-css3 .lg-item.lg-prev-slide, .lg-css3.lg-slide.lg-use-css3 .lg-item.lg-next-slide, .lg-css3.lg-slide.lg-use-css3 .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide.lg-use-css3 .lg-item.lg-prev-slide,
+.lg-css3.lg-slide.lg-use-css3 .lg-item.lg-next-slide,
+.lg-css3.lg-slide.lg-use-css3 .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-container {
@@ -363,7 +389,7 @@
 }
 
 .lg-inline .lg-maximize:after {
-  content: '\e909';
+  content: "\e909";
 }
 
 .lg-components {

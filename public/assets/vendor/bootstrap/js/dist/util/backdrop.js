@@ -1,18 +1,33 @@
 /*!
-  * Bootstrap backdrop.js v5.2.3 (https://getbootstrap.com/)
-  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
+ * Bootstrap backdrop.js v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('../dom/event-handler'), require('./index'), require('./config')) :
-  typeof define === 'function' && define.amd ? define(['../dom/event-handler', './index', './config'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Backdrop = factory(global.EventHandler, global.Index, global.Config));
-})(this, (function (EventHandler, index, Config) { 'use strict';
+  typeof exports === "object" && typeof module !== "undefined"
+    ? (module.exports = factory(
+        require("../dom/event-handler"),
+        require("./index"),
+        require("./config"),
+      ))
+    : typeof define === "function" && define.amd
+    ? define(["../dom/event-handler", "./index", "./config"], factory)
+    : ((global =
+        typeof globalThis !== "undefined" ? globalThis : global || self),
+      (global.Backdrop = factory(
+        global.EventHandler,
+        global.Index,
+        global.Config,
+      )));
+})(this, function (EventHandler, index, Config) {
+  "use strict";
 
-  const _interopDefaultLegacy = e => e && typeof e === 'object' && 'default' in e ? e : { default: e };
+  const _interopDefaultLegacy = (e) =>
+    e && typeof e === "object" && "default" in e ? e : { default: e };
 
-  const EventHandler__default = /*#__PURE__*/_interopDefaultLegacy(EventHandler);
-  const Config__default = /*#__PURE__*/_interopDefaultLegacy(Config);
+  const EventHandler__default =
+    /*#__PURE__*/ _interopDefaultLegacy(EventHandler);
+  const Config__default = /*#__PURE__*/ _interopDefaultLegacy(Config);
 
   /**
    * --------------------------------------------------------------------------
@@ -24,25 +39,24 @@
    * Constants
    */
 
-  const NAME = 'backdrop';
-  const CLASS_NAME_FADE = 'fade';
-  const CLASS_NAME_SHOW = 'show';
+  const NAME = "backdrop";
+  const CLASS_NAME_FADE = "fade";
+  const CLASS_NAME_SHOW = "show";
   const EVENT_MOUSEDOWN = `mousedown.bs.${NAME}`;
   const Default = {
-    className: 'modal-backdrop',
+    className: "modal-backdrop",
     clickCallback: null,
     isAnimated: false,
     isVisible: true,
     // if false, we use the backdrop helper without adding any element to the dom
-    rootElement: 'body' // give the choice to place backdrop under different elements
-
+    rootElement: "body", // give the choice to place backdrop under different elements
   };
   const DefaultType = {
-    className: 'string',
-    clickCallback: '(function|null)',
-    isAnimated: 'boolean',
-    isVisible: 'boolean',
-    rootElement: '(element|string)'
+    className: "string",
+    clickCallback: "(function|null)",
+    isAnimated: "boolean",
+    isVisible: "boolean",
+    rootElement: "(element|string)",
   };
   /**
    * Class definition
@@ -56,7 +70,6 @@
       this._element = null;
     } // Getters
 
-
     static get Default() {
       return Default;
     }
@@ -68,7 +81,6 @@
     static get NAME() {
       return NAME;
     } // Public
-
 
     show(callback) {
       if (!this._config.isVisible) {
@@ -117,10 +129,9 @@
       this._isAppended = false;
     } // Private
 
-
     _getElement() {
       if (!this._element) {
-        const backdrop = document.createElement('div');
+        const backdrop = document.createElement("div");
         backdrop.className = this._config.className;
 
         if (this._config.isAnimated) {
@@ -155,12 +166,14 @@
     }
 
     _emulateAnimation(callback) {
-      index.executeAfterTransition(callback, this._getElement(), this._config.isAnimated);
+      index.executeAfterTransition(
+        callback,
+        this._getElement(),
+        this._config.isAnimated,
+      );
     }
-
   }
 
   return Backdrop;
-
-}));
+});
 //# sourceMappingURL=backdrop.js.map

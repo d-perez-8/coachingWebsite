@@ -15,77 +15,77 @@ Available for React.js, Angular, Vue.js, and typescript.
 
 ## Core features
 
--   Fully responsive.
--   Modular architecture with built in plugins.
--   Highly optimized for touch devices.
--   Mouse drag supports for desktops.
--   Double-click/Double-tap to see actual size of the image.
--   Animated thumbnails.
--   Social sharing.
--   YouTube Vimeo Wistia and html5 videos Support.
--   20+ Hardware-Accelerated CSS3 transitions.
--   Dynamic mode.
--   Inline gallery.
--   Full screen support.
--   Zoom in/out, Pinch to zoom.
--   Swipe/Drag up/down support to close gallery.
--   Browser history API(deep linking).
--   Responsive images.
--   HTML iframe support.
--   Multiple instances on one page.
--   Easily customizable via CSS (SCSS) and Settings.
--   Smart image preloading and code optimization.
--   Keyboard Navigation for desktop.
--   SVG icons.
--   Accessibility support.
--   Rotate, flip images.
--   And many more.
+- Fully responsive.
+- Modular architecture with built in plugins.
+- Highly optimized for touch devices.
+- Mouse drag supports for desktops.
+- Double-click/Double-tap to see actual size of the image.
+- Animated thumbnails.
+- Social sharing.
+- YouTube Vimeo Wistia and html5 videos Support.
+- 20+ Hardware-Accelerated CSS3 transitions.
+- Dynamic mode.
+- Inline gallery.
+- Full screen support.
+- Zoom in/out, Pinch to zoom.
+- Swipe/Drag up/down support to close gallery.
+- Browser history API(deep linking).
+- Responsive images.
+- HTML iframe support.
+- Multiple instances on one page.
+- Easily customizable via CSS (SCSS) and Settings.
+- Smart image preloading and code optimization.
+- Keyboard Navigation for desktop.
+- SVG icons.
+- Accessibility support.
+- Rotate, flip images.
+- And many more.
 
 ## Documentation
 
--   [Getting started](https://www.lightgalleryjs.com/docs/getting-started/)
--   [Settings](https://www.lightgalleryjs.com/docs/settings/)
--   [React](https://www.lightgalleryjs.com/docs/react/)
--   [Vue.js](https://www.lightgalleryjs.com/docs/vue/)
--   [Angular](https://www.lightgalleryjs.com/docs/angular/)
--   [Demos](https://www.lightgalleryjs.com/demos/thumbnails/)
--   [CodePen](https://codepen.io/collection/BNNjpR)
+- [Getting started](https://www.lightgalleryjs.com/docs/getting-started/)
+- [Settings](https://www.lightgalleryjs.com/docs/settings/)
+- [React](https://www.lightgalleryjs.com/docs/react/)
+- [Vue.js](https://www.lightgalleryjs.com/docs/vue/)
+- [Angular](https://www.lightgalleryjs.com/docs/angular/)
+- [Demos](https://www.lightgalleryjs.com/demos/thumbnails/)
+- [CodePen](https://codepen.io/collection/BNNjpR)
 
 ## Installation
 
 lightGallery is available on NPM, Yarn, Bower, CDNs, and GitHub. You can use any
 of the following method to download lightGallery.
 
--   [NPM](https://www.npmjs.com/) - NPM is a package manager for the JavaScript
-    programming language. You can install `lightgallery` using the following
-    command
+- [NPM](https://www.npmjs.com/) - NPM is a package manager for the JavaScript
+  programming language. You can install `lightgallery` using the following
+  command
 
-    ```sh
-    npm install lightgallery
-    ```
+  ```sh
+  npm install lightgallery
+  ```
 
--   [YARN](https://yarnpkg.com/) - Yarn is another popular package manager for
-    the JavaScript programming language. If you prefer you can use Yarn instead
-    of NPM
+- [YARN](https://yarnpkg.com/) - Yarn is another popular package manager for
+  the JavaScript programming language. If you prefer you can use Yarn instead
+  of NPM
 
-    ```sh
-    yarn add lightgallery
-    ```
+  ```sh
+  yarn add lightgallery
+  ```
 
--   [Bower](http://bower.io) - You can find lightGallery on Bower package
-    manager as well
+- [Bower](http://bower.io) - You can find lightGallery on Bower package
+  manager as well
 
-    ```sh
-    bower install lightgallery --save
-    ```
+  ```sh
+  bower install lightgallery --save
+  ```
 
--   [GitHub](https://github.com/sachinchoolur/lightGallery/archive/master.zip) -
-    You can also directly download lightgallery from GitHub
+- [GitHub](https://github.com/sachinchoolur/lightGallery/archive/master.zip) -
+  You can also directly download lightgallery from GitHub
 
--   CDN - If you prefer to use a CDN, you can load files via
-    [jsdelivr](https://www.jsdelivr.com/projects/lightgallery),
-    [cdnjs](https://cdnjs.com/libraries/lightgallery) or
-    [unpkg](https://unpkg.com/browse/lightgallery@latest/)
+- CDN - If you prefer to use a CDN, you can load files via
+  [jsdelivr](https://www.jsdelivr.com/projects/lightgallery),
+  [cdnjs](https://cdnjs.com/libraries/lightgallery) or
+  [unpkg](https://unpkg.com/browse/lightgallery@latest/)
 
 #### Include CSS and Javascript files
 

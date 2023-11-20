@@ -2,7 +2,6 @@
 // Modal
 // --------------------------------------------------
 
-
 .modal-content {
   padding: {
     right: var(--#{$prefix}modal-padding);
@@ -25,19 +24,19 @@
 @media (max-width: 450px) {
   .modal-header,
   .modal-footer {
-    padding: calc(var(--#{$prefix}modal-header-padding-y) * .875) 0;
+    padding: calc(var(--#{$prefix}modal-header-padding-y) * 0.875) 0;
   }
   .modal-content {
     padding: {
-      right: calc(var(--#{$prefix}modal-padding) * .75);
-      left: calc(var(--#{$prefix}modal-padding) * .75);
+      right: calc(var(--#{$prefix}modal-padding) * 0.75);
+      left: calc(var(--#{$prefix}modal-padding) * 0.75);
     }
   }
   .modal-body {
-    padding: calc(var(--#{$prefix}modal-padding) * .75);
+    padding: calc(var(--#{$prefix}modal-padding) * 0.75);
     margin: {
-      right: calc(var(--#{$prefix}modal-padding) * -.75);
-      left: calc(var(--#{$prefix}modal-padding) * -.75);
+      right: calc(var(--#{$prefix}modal-padding) * -0.75);
+      left: calc(var(--#{$prefix}modal-padding) * -0.75);
     }
-  }  
+  }
 }

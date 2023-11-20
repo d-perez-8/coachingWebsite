@@ -1,27 +1,31 @@
-const promiseSpawn = require('@npmcli/promise-spawn')
+const promiseSpawn = require("@npmcli/promise-spawn");
 
-const { URL } = require('url')
+const { URL } = require("url");
 
 // attempt to open URL in web-browser, print address otherwise:
 const open = async (npm, url, errMsg, isFile) => {
-  url = encodeURI(url)
-  const browser = npm.config.get('browser')
+  url = encodeURI(url);
+  const browser = npm.config.get("browser");
 
-  function printAlternateMsg () {
-    const json = npm.config.get('json')
+  function printAlternateMsg() {
+    const json = npm.config.get("json");
     const alternateMsg = json
-      ? JSON.stringify({
-        title: errMsg,
-        url,
-      }, null, 2)
-      : `${errMsg}:\n  ${url}\n`
+      ? JSON.stringify(
+          {
+            title: errMsg,
+            url,
+          },
+          null,
+          2,
+        )
+      : `${errMsg}:\n  ${url}\n`;
 
-    npm.output(alternateMsg)
+    npm.output(alternateMsg);
   }
 
   if (browser === false) {
-    printAlternateMsg()
-    return
+    printAlternateMsg();
+    return;
   }
 
   // We pass this in as true from the help command so we know we don't have to
@@ -29,22 +33,21 @@ const open = async (npm, url, errMsg, isFile) => {
   if (!isFile) {
     try {
       if (!/^https?:$/.test(new URL(url).protocol)) {
-        throw new Error()
+        throw new Error();
       }
     } catch (_) {
-      throw new Error('Invalid URL: ' + url)
+      throw new Error("Invalid URL: " + url);
     }
   }
 
-  const command = browser === true ? null : browser
-  await promiseSpawn.open(url, { command })
-    .catch((err) => {
-      if (err.code !== 'ENOENT') {
-        throw err
-      }
+  const command = browser === true ? null : browser;
+  await promiseSpawn.open(url, { command }).catch((err) => {
+    if (err.code !== "ENOENT") {
+      throw err;
+    }
 
-      printAlternateMsg()
-    })
-}
+    printAlternateMsg();
+  });
+};
 
-module.exports = open
+module.exports = open;

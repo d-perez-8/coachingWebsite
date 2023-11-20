@@ -29,9 +29,7 @@ Workspaces are usually defined via the `workspaces` property of the
 ```json
 {
   "name": "my-workspaces-powered-project",
-  "workspaces": [
-    "packages/a"
-  ]
+  "workspaces": ["packages/a"]
 }
 ```
 
@@ -177,6 +175,7 @@ npm run test --workspace=a --workspace=b
 ```
 
 Or run the command for each workspace within the 'packages' folder:
+
 ```
 npm run test --workspace=packages
 ```
@@ -219,8 +218,7 @@ npm run test --workspaces --if-present
 
 ### See also
 
-* [npm install](/commands/npm-install)
-* [npm publish](/commands/npm-publish)
-* [npm run-script](/commands/npm-run-script)
-* [config](/using-npm/config)
-
+- [npm install](/commands/npm-install)
+- [npm publish](/commands/npm-publish)
+- [npm run-script](/commands/npm-run-script)
+- [config](/using-npm/config)

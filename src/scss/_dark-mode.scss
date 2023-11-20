@@ -4,15 +4,14 @@
 
 @if $enable-dark-mode {
   .dark-mode {
-
-    --#{$prefix}gray-100: rgba(#{to-rgb($white)}, .025);
-    --#{$prefix}gray-200: rgba(#{to-rgb($white)}, .05);
-    --#{$prefix}gray-300: rgba(#{to-rgb($white)}, .13);
-    --#{$prefix}gray-400: rgba(#{to-rgb($white)}, .25);
-    --#{$prefix}gray-500: rgba(#{to-rgb($white)}, .4);
-    --#{$prefix}gray-600: rgba(#{to-rgb($white)}, .5);
-    --#{$prefix}gray-700: rgba(#{to-rgb($white)}, .7);
-    --#{$prefix}gray-800: rgba(#{to-rgb($white)}, .9);
+    --#{$prefix}gray-100: rgba(#{to-rgb($white)}, 0.025);
+    --#{$prefix}gray-200: rgba(#{to-rgb($white)}, 0.05);
+    --#{$prefix}gray-300: rgba(#{to-rgb($white)}, 0.13);
+    --#{$prefix}gray-400: rgba(#{to-rgb($white)}, 0.25);
+    --#{$prefix}gray-500: rgba(#{to-rgb($white)}, 0.4);
+    --#{$prefix}gray-600: rgba(#{to-rgb($white)}, 0.5);
+    --#{$prefix}gray-700: rgba(#{to-rgb($white)}, 0.7);
+    --#{$prefix}gray-800: rgba(#{to-rgb($white)}, 0.9);
     --#{$prefix}gray-900: #{$white};
     --#{$prefix}body-bg: #{$body-dark-mode-bg};
     --#{$prefix}body-bg-rgb: 18, 21, 25;
@@ -22,7 +21,6 @@
     --#{$prefix}heading-color: var(--#{$prefix}gray-900);
     --#{$prefix}nav-link-color: var(--#{$prefix}gray-800);
 
-    
     // Utilities
 
     .d-dark-mode-none {
@@ -44,10 +42,13 @@
       display: flex !important;
     }
     .border-dashed {
-      border-color: rgba($white, .18) !important;
+      border-color: rgba($white, 0.18) !important;
     }
     .text-dark:not(.badge) {
-      color: rgba(var(--#{$prefix}light-rgb), var(--#{$prefix}text-opacity)) !important
+      color: rgba(
+        var(--#{$prefix}light-rgb),
+        var(--#{$prefix}text-opacity)
+      ) !important;
     }
     .border-dark:not(.badge) {
       border-color: var(--#{$prefix}gray-800) !important;
@@ -55,7 +56,8 @@
     .bg-light:not(.badge) {
       background-color: var(--#{$prefix}dark) !important;
     }
-    .bg-white.badge, .bg-light.badge {
+    .bg-white.badge,
+    .bg-light.badge {
       color: $gray-800;
     }
     .text-dark-mode-dark {
@@ -65,13 +67,13 @@
       background-color: var(--#{$prefix}secondary-bg) !important;
     }
     body.bg-secondary {
-      background-color: rgba(var(--#{$prefix}body-bg-rgb), .975) !important;
+      background-color: rgba(var(--#{$prefix}body-bg-rgb), 0.975) !important;
     }
     .bg-secondary.badge {
       background-color: var(--#{$prefix}gray-200) !important;
     }
     .shadow {
-      box-shadow: 0 .4375rem 1.25rem rgba($black, .4) !important;
+      box-shadow: 0 0.4375rem 1.25rem rgba($black, 0.4) !important;
     }
 
     // Restore to default light mode for particular sections
@@ -89,8 +91,12 @@
       --#{$prefix}body-color: var(--#{$prefix}gray-700);
       --#{$prefix}heading-color: var(--#{$prefix}gray-900);
       --#{$prefix}nav-link-color: var(--#{$prefix}gray-800);
-  
-      p, ul, ol, span, dd {
+
+      p,
+      ul,
+      ol,
+      span,
+      dd {
         color: var(--#{$prefix}body-color);
       }
       .text-dark {
@@ -98,18 +104,22 @@
       }
     }
 
-
     // Tables
 
     .table:not(.ignore-dark-mode) {
-      --#{$prefix}table-striped-bg: rgba(#{to-rgb($white)}, #{$table-striped-bg-factor});
-      --#{$prefix}table-hover-bg: rgba(#{to-rgb($white)}, #{$table-hover-bg-factor});
+      --#{$prefix}table-striped-bg: rgba(
+        #{to-rgb($white)},
+        #{$table-striped-bg-factor}
+      );
+      --#{$prefix}table-hover-bg: rgba(
+        #{to-rgb($white)},
+        #{$table-hover-bg-factor}
+      );
       --#{$prefix}table-hover-color: #{$table-hover-color};
       > :not(:last-child) > :last-child > * {
-        border-bottom-color: rgba($white, .3);
+        border-bottom-color: rgba($white, 0.3);
       }
     }
-
 
     // Buttons
 
@@ -121,16 +131,16 @@
       --#{$prefix}btn-hover-border-color: transparent;
       --#{$prefix}btn-active-border-color: transparent;
       --#{$prefix}btn-bg: var(--#{$prefix}gray-200);
-      --#{$prefix}btn-hover-bg: rgba(#{to-rgb($light)}, .1);
-      --#{$prefix}btn-active-bg: rgba(#{to-rgb($light)}, .1);
+      --#{$prefix}btn-hover-bg: rgba(#{to-rgb($light)}, 0.1);
+      --#{$prefix}btn-active-bg: rgba(#{to-rgb($light)}, 0.1);
     }
     .btn-outline-secondary:not(.ignore-dark-mode) {
       --#{$prefix}btn-color: var(--#{$prefix}gray-800);
       --#{$prefix}btn-hover-color: var(--#{$prefix}gray-800);
       --#{$prefix}btn-active-color: var(--#{$prefix}gray-800);
-      --#{$prefix}btn-border-color: rgba(#{to-rgb($light)}, .18);
-      --#{$prefix}btn-hover-border-color: rgba(#{to-rgb($light)}, .18);
-      --#{$prefix}btn-active-border-color: rgba(#{to-rgb($light)}, .18);
+      --#{$prefix}btn-border-color: rgba(#{to-rgb($light)}, 0.18);
+      --#{$prefix}btn-hover-border-color: rgba(#{to-rgb($light)}, 0.18);
+      --#{$prefix}btn-active-border-color: rgba(#{to-rgb($light)}, 0.18);
       --#{$prefix}btn-hover-bg: var(--#{$prefix}gray-200);
       --#{$prefix}btn-active-bg: var(--#{$prefix}gray-200);
     }
@@ -140,7 +150,6 @@
     .btn-outline-dark:not(.ignore-dark-mode) {
       @extend .btn-outline-light;
     }
-
 
     // Forms
 
@@ -152,7 +161,7 @@
         color: $gray-800;
       }
     }
-  
+
     .form-switch:not(.ignore-dark-mode) {
       .form-check-input {
         background-color: $form-switch-dark-mode-bg;
@@ -172,17 +181,16 @@
       }
     }
     .btn-check:checked + .btn-icon.btn-outline-secondary {
-      --#{$prefix}btn-active-border-color: rgba(#{to-rgb($white)}, .3);
+      --#{$prefix}btn-active-border-color: rgba(#{to-rgb($white)}, 0.3);
     }
 
     .range-slider:not(.ignore-dark-mode) {
-      --#{$prefix}range-slider-pips-border-color: rgba(#{to-rgb($white)}, .2);
+      --#{$prefix}range-slider-pips-border-color: rgba(#{to-rgb($white)}, 0.2);
     }
 
     .credit-card-icon:not(.ignore-dark-mode) {
       background-position: 0 -26px;
     }
-
 
     // Navbar
 
@@ -190,7 +198,6 @@
       --#{$prefix}navbar-stuck-bg: var(--#{$prefix}dark);
       --#{$prefix}navbar-collapse-bg: var(--#{$prefix}dark);
     }
-    
 
     // Dropdowns
 
@@ -212,7 +219,6 @@
       --#{$prefix}dropdown-header-color: #{$dropdown-header-color};
     }
 
-
     // Placeholders
 
     .placeholder {
@@ -224,10 +230,14 @@
       }
     }
     .placeholder-wave {
-      mask-image: linear-gradient(130deg, $black 55%, rgba(0, 0, 0, (1 - $placeholder-dark-mode-opacity-min)) 75%, $black 95%);
+      mask-image: linear-gradient(
+        130deg,
+        $black 55%,
+        rgba(0, 0, 0, (1 - $placeholder-dark-mode-opacity-min)) 75%,
+        $black 95%
+      );
     }
 
- 
     // Cards
 
     .card:not(.ignore-dark-mode) {
@@ -240,16 +250,16 @@
       border-color: var(--#{$prefix}primary) !important;
       background-color: var(--#{$prefix}primary) !important;
     }
-    
 
     // Accordion
 
     .accordion:not(.ignore-dark-mode) {
       --#{$prefix}accordion-bg: #{$accordion-dark-mode-bg};
       --#{$prefix}accordion-btn-color: #{$accordion-dark-mode-button-color};
-      --#{$prefix}accordion-btn-icon: #{escape-svg($accordion-dark-mode-button-icon)};
+      --#{$prefix}accordion-btn-icon: #{escape-svg(
+          $accordion-dark-mode-button-icon
+        )};
     }
-
 
     // Popovers
 
@@ -260,33 +270,30 @@
       box-shadow: $popover-dark-mode-box-shadow;
     }
 
-
     // Modal
     .modal {
       --#{$prefix}modal-bg: var(--#{$prefix}dark);
     }
 
-
     // Alerts
 
     @each $color, $value in $theme-colors {
       .alert-#{$color} {
-        --#{$prefix}alert-bg: rgba(#{to-rgb($value)}, .05);
-        --#{$prefix}alert-border-color: rgba(#{to-rgb($value)}, .25);
+        --#{$prefix}alert-bg: rgba(#{to-rgb($value)}, 0.05);
+        --#{$prefix}alert-border-color: rgba(#{to-rgb($value)}, 0.25);
       }
     }
     .alert-secondary,
     .alert-light,
     .alert-dark {
-      --#{$prefix}alert-border-color: var( --#{$prefix}border-color);
+      --#{$prefix}alert-border-color: var(--#{$prefix}border-color);
     }
     .alert-secondary,
     .alert-light {
-      --#{$prefix}alert-bg: rgba(#{to-rgb($white), .04});
-      --#{$prefix}alert-color: rgba(#{to-rgb($white)}, .8);
+      --#{$prefix}alert-bg: rgba(#{to-rgb($white), 0.04});
+      --#{$prefix}alert-color: rgba(#{to-rgb($white)}, 0.8);
       --#{$prefix}alert-link-color: #{$white};
     }
-
 
     // Progress bars
 
@@ -297,10 +304,18 @@
       background-color: $light !important;
       color: $gray-900;
       &.progress-bar-striped {
-        background-image: linear-gradient(45deg, rgba($dark, .15) 25%, transparent 25%, transparent 50%, rgba($dark, .15) 50%, rgba($dark, .15) 75%, transparent 75%, transparent);
+        background-image: linear-gradient(
+          45deg,
+          rgba($dark, 0.15) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba($dark, 0.15) 50%,
+          rgba($dark, 0.15) 75%,
+          transparent 75%,
+          transparent
+        );
       }
     }
-
 
     // Toasts
 
@@ -315,22 +330,23 @@
       }
     }
 
-
     // Close
 
     .btn-close {
       filter: $btn-close-white-filter;
     }
 
-
     // Offcanvas
-    
-    .offcanvas, .offcanvas-sm, .offcanvas-md,
-    .offcanvas-lg, .offcanvas-xl, .offcanvas-xxl {
+
+    .offcanvas,
+    .offcanvas-sm,
+    .offcanvas-md,
+    .offcanvas-lg,
+    .offcanvas-xl,
+    .offcanvas-xxl {
       --#{$prefix}offcanvas-bg: var(--#{$prefix}dark);
       --#{$prefix}offcanvas-box-shadow: #{$offcanvas-dark-mode-box-shadow};
     }
-    
 
     // Custom scrollbar
 
@@ -339,29 +355,28 @@
       --#{$prefix}scrollbar-track-bg: #{$scrollbar-dark-mode-track-bg};
     }
 
-
     // Date picker
 
     .flatpickr-calendar {
       border-color: $dropdown-dark-border-color;
       background: $dropdown-dark-bg;
-      box-shadow: $dropdown-dark-box-shadow;    
+      box-shadow: $dropdown-dark-box-shadow;
     }
     .flatpickr-day.inRange {
       border-color: transparent !important;
-      box-shadow: -5px 0 0 rgba($white, .025), 5px 0 0 rgba($white, .025);
+      box-shadow:
+        -5px 0 0 rgba($white, 0.025),
+        5px 0 0 rgba($white, 0.025);
     }
-
 
     // Charts
 
     .ct-grid {
-      stroke: rgba($white, .22);
+      stroke: rgba($white, 0.22);
     }
     .ct-label {
-      color: rgba($white, .5);
+      color: rgba($white, 0.5);
     }
-
 
     // Map
 
@@ -370,11 +385,12 @@
       background: $gray-900;
     }
     .leaflet-container a.leaflet-popup-close-button {
-      border-color: rgba($white, .18);
-      color: rgba($white, .65);
-      &:hover { color: $white; }
+      border-color: rgba($white, 0.18);
+      color: rgba($white, 0.65);
+      &:hover {
+        color: $white;
+      }
     }
-
 
     // Calendar
 

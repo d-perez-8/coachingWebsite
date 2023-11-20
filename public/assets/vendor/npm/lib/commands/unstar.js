@@ -1,7 +1,7 @@
-const Star = require('./star.js')
+const Star = require("./star.js");
 
 class Unstar extends Star {
-  static description = 'Remove an item from your favorite packages'
-  static name = 'unstar'
+  static description = "Remove an item from your favorite packages";
+  static name = "unstar";
 }
-module.exports = Unstar
+module.exports = Unstar;

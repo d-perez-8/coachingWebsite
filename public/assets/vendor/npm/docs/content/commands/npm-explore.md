@@ -26,22 +26,22 @@ This is particularly handy in the case of git submodules in the
 npm explore some-dependency -- git pull origin master
 ```
 
-Note that the package is *not* automatically rebuilt afterwards, so be
+Note that the package is _not_ automatically rebuilt afterwards, so be
 sure to use `npm rebuild <pkg>` if you make any changes.
 
 ### Configuration
 
 #### `shell`
 
-* Default: SHELL environment variable, or "bash" on Posix, or "cmd.exe" on
+- Default: SHELL environment variable, or "bash" on Posix, or "cmd.exe" on
   Windows
-* Type: String
+- Type: String
 
 The shell to run for the `npm explore` command.
 
 ### See Also
 
-* [npm folders](/configuring-npm/folders)
-* [npm edit](/commands/npm-edit)
-* [npm rebuild](/commands/npm-rebuild)
-* [npm install](/commands/npm-install)
+- [npm folders](/configuring-npm/folders)
+- [npm edit](/commands/npm-edit)
+- [npm rebuild](/commands/npm-rebuild)
+- [npm install](/commands/npm-install)

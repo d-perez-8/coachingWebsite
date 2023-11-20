@@ -1,26 +1,28 @@
-const log = require('./log-shim.js')
+const log = require("./log-shim.js");
 
-let pulseTimer = null
+let pulseTimer = null;
 const withPromise = async (promise) => {
-  pulseStart()
+  pulseStart();
   try {
-    return await promise
+    return await promise;
   } finally {
-    pulseStop()
+    pulseStop();
   }
-}
+};
 
 const pulseStart = () => {
-  pulseTimer = pulseTimer || setInterval(() => {
-    log.gauge.pulse('')
-  }, 150)
-}
+  pulseTimer =
+    pulseTimer ||
+    setInterval(() => {
+      log.gauge.pulse("");
+    }, 150);
+};
 
 const pulseStop = () => {
-  clearInterval(pulseTimer)
-  pulseTimer = null
-}
+  clearInterval(pulseTimer);
+  pulseTimer = null;
+};
 
 module.exports = {
   withPromise,
-}
+};

@@ -3,20 +3,20 @@
 // Based on https://github.com/nolimits4web/swiper
 // --------------------------------------------------
 
-
 // Navigation (Prev / Next) buttons
 
-.btn-prev, .btn-next {
-  transition: all .25s ease-in-out;
-  > [class^='ai-'],
-  > [class*=' ai-'] {
+.btn-prev,
+.btn-next {
+  transition: all 0.25s ease-in-out;
+  > [class^="ai-"],
+  > [class*=" ai-"] {
     font-size: 1.4em;
   }
 }
 
 .swiper-button-disabled,
 .swiper-button-disabled:disabled {
-  opacity: .55;
+  opacity: 0.55;
 }
 
 .swiper {
@@ -45,11 +45,10 @@
     opacity: 1 !important;
     &.swiper-button-disabled,
     &.swiper-button-disabled:disabled {
-      opacity: .55 !important;
+      opacity: 0.55 !important;
     }
   }
 }
-
 
 // Pagination
 
@@ -79,8 +78,11 @@
   width: var(--#{$prefix}carousel-pagination-bullet-size);
   height: var(--#{$prefix}carousel-pagination-bullet-size);
   transition: $carousel-bullet-transition;
-  border: var(--#{$prefix}carousel-pagination-bullet-border-width) solid var(--#{$prefix}carousel-pagination-bullet-border-color);
-  @include border-radius(var(--#{$prefix}carousel-pagination-bullet-border-radius));
+  border: var(--#{$prefix}carousel-pagination-bullet-border-width) solid
+    var(--#{$prefix}carousel-pagination-bullet-border-color);
+  @include border-radius(
+    var(--#{$prefix}carousel-pagination-bullet-border-radius)
+  );
   background-color: var(--#{$prefix}carousel-pagination-bullet-bg);
   opacity: 1;
 
@@ -90,8 +92,8 @@
 }
 
 .swiper-pagination-bullet-active {
-  border-color: var( --#{$prefix}carousel-pagination-bullet-active-border-color);
-  background-color: var( --#{$prefix}carousel-pagination-bullet-active-bg);
+  border-color: var(--#{$prefix}carousel-pagination-bullet-active-border-color);
+  background-color: var(--#{$prefix}carousel-pagination-bullet-active-bg);
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
@@ -99,8 +101,8 @@
   bottom: $spacer * 1.25;
   .swiper-pagination-bullet {
     margin: {
-      right: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * .5);
-      left: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * .5);
+      right: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * 0.5);
+      left: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * 0.5);
     }
   }
 }
@@ -111,12 +113,11 @@
   right: $spacer * 1.25;
   .swiper-pagination-bullet {
     margin: {
-      top: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * .5);
-      bottom: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * .5);
+      top: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * 0.5);
+      bottom: calc(var(--#{$prefix}carousel-pagination-bullet-spacer) * 0.5);
     }
   }
 }
-
 
 // Thumbnails
 
@@ -130,19 +131,19 @@
   --#{$prefix}carousel-thumbnail-active-border-color: #{$carousel-thumbnail-active-border-color};
   --#{$prefix}carousel-thumbnail-active-opacity: #{$carousel-thumbnail-active-opacity};
   --#{$prefix}carousel-thumbnail-spacer: #{$carousel-thumbnail-spacer};
-  
+
   position: static;
   display: flex;
   flex-wrap: wrap;
 
   &:not(.justify-content-center) {
-    margin-left: calc(var(--#{$prefix}carousel-thumbnail-spacer) * .5 * -1);
+    margin-left: calc(var(--#{$prefix}carousel-thumbnail-spacer) * 0.5 * -1);
     padding-top: var(--#{$prefix}carousel-thumbnail-spacer);
   }
 
   &.justify-content-end {
     margin: {
-      right: calc(var(--#{$prefix}carousel-thumbnail-spacer) * .5 * -1);
+      right: calc(var(--#{$prefix}carousel-thumbnail-spacer) * 0.5 * -1);
       left: 0;
     }
   }
@@ -150,9 +151,10 @@
 
 .swiper-thumbnail {
   width: var(--#{$prefix}carousel-thumbnail-width);
-  margin: calc(var(--#{$prefix}carousel-thumbnail-spacer) * .5) !important;
-  padding: .5rem;
-  border: var(--#{$prefix}carousel-thumbnail-border-width) solid var(--#{$prefix}carousel-thumbnail-border-color);
+  margin: calc(var(--#{$prefix}carousel-thumbnail-spacer) * 0.5) !important;
+  padding: 0.5rem;
+  border: var(--#{$prefix}carousel-thumbnail-border-width) solid
+    var(--#{$prefix}carousel-thumbnail-border-color);
   @include border-radius(var(--#{$prefix}carousel-thumbnail-border-radius));
 
   &:last-child {
@@ -160,8 +162,10 @@
   }
 
   > img {
-    transition: opacity .25s ease-in-out;
-    @include border-radius(calc(var(--#{$prefix}carousel-thumbnail-border-radius) - .25rem));
+    transition: opacity 0.25s ease-in-out;
+    @include border-radius(
+      calc(var(--#{$prefix}carousel-thumbnail-border-radius) - 0.25rem)
+    );
     opacity: var(--#{$prefix}carousel-thumbnail-opacity);
   }
 
@@ -183,7 +187,6 @@
   border-radius: 50%;
 }
 
-
 // Progress bar
 
 .swiper-pagination-progressbar {
@@ -204,7 +207,6 @@
   width: var(--#{$prefix}carousel-pagination-progressbar-height);
 }
 
-
 // Scrollbar
 
 .swiper-scrollbar {
@@ -221,34 +223,36 @@
 }
 
 .swiper-vertical > .swiper-scrollbar {
-  right: .25rem;
+  right: 0.25rem;
   width: var(--#{$prefix}carousel-scrollbar-width);
 
   .swiper-scrollbar-drag {
     left: 50%;
     width: var(--#{$prefix}carousel-scrollbar-drag-width);
-    margin-left: calc(var(--#{$prefix}carousel-scrollbar-drag-width) * -.5);
+    margin-left: calc(var(--#{$prefix}carousel-scrollbar-drag-width) * -0.5);
   }
 }
 
 .swiper-horizontal > .swiper-scrollbar {
-  bottom: .25rem;
+  bottom: 0.25rem;
   height: var(--#{$prefix}carousel-scrollbar-width);
 
   .swiper-scrollbar-drag {
     top: 50%;
     height: var(--#{$prefix}carousel-scrollbar-drag-width);
-    margin-top: calc(var(--#{$prefix}carousel-scrollbar-drag-width) * -.5);
+    margin-top: calc(var(--#{$prefix}carousel-scrollbar-drag-width) * -0.5);
   }
 }
 
-
 // Layer animations
 
-.from-top, .from-bottom,
-.from-start, .from-end,
-.scale-up, .scale-down {
-  transition: all .4s .4s ease-in-out;
+.from-top,
+.from-bottom,
+.from-start,
+.from-end,
+.scale-up,
+.scale-down {
+  transition: all 0.4s 0.4s ease-in-out;
   opacity: 0;
   backface-visibility: hidden;
 }
@@ -270,20 +274,22 @@
 
 .swiper-slide-active,
 .active {
-  .from-top, .from-bottom {
+  .from-top,
+  .from-bottom {
     transform: translateY(0);
     opacity: 1;
   }
-  .from-start, .from-end {
+  .from-start,
+  .from-end {
     transform: translateX(0);
     opacity: 1;
   }
-  .scale-up, .scale-down {
+  .scale-up,
+  .scale-down {
     transform: scale(1);
     opacity: 1;
   }
 }
-
 
 // Swiper scale effect
 

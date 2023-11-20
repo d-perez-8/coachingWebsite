@@ -2,14 +2,14 @@
 // Reboot
 // --------------------------------------------------
 
-
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 // Sticky footer
-html, body {
+html,
+body {
   height: 100%;
 }
 body {
@@ -42,15 +42,16 @@ body {
 // Links
 a {
   transition: $link-transition;
-  &:focus { outline: none; }
+  &:focus {
+    outline: none;
+  }
 }
 
 // Background transition for links
-a[class^='bg-']:not(.btn),
-a[class*='bg-']:not(.btn) {
-  transition: background-color .25s ease;
+a[class^="bg-"]:not(.btn),
+a[class*="bg-"]:not(.btn) {
+  transition: background-color 0.25s ease;
 }
-
 
 // Images
 // Responsive images (ensure images don't scale beyond their parents)
@@ -60,8 +61,12 @@ figure {
   height: auto;
   vertical-align: middle;
 }
-svg { max-width: 100%; }
-.dark-mode-img { display: none; }
+svg {
+  max-width: 100%;
+}
+.dark-mode-img {
+  display: none;
+}
 
 // Responsive iframes
 iframe {
@@ -81,35 +86,44 @@ strong {
   font-weight: $font-weight-bold;
 }
 
-small { font-weight: inherit; }
+small {
+  font-weight: inherit;
+}
 
 // Disable button :focus outline
 button:focus {
   outline: none;
 }
 
-
 // Section that is wider that container on left/right side
 
 .container-start {
-  margin-left: calc((100% - (map-get($container-max-widths, 'xxl') - $grid-gutter-width)) / 2);
+  margin-left: calc(
+    (100% - (map-get($container-max-widths, "xxl") - $grid-gutter-width)) / 2
+  );
 }
 .container-end {
-  margin-right: calc((100% - (map-get($container-max-widths, 'xxl') - $grid-gutter-width)) / 2);
+  margin-right: calc(
+    (100% - (map-get($container-max-widths, "xxl") - $grid-gutter-width)) / 2
+  );
 }
 @include media-breakpoint-down(xxl) {
   .container-start {
-    margin-left: calc((100% - (map-get($container-max-widths, 'xl') - $grid-gutter-width)) / 2);
+    margin-left: calc(
+      (100% - (map-get($container-max-widths, "xl") - $grid-gutter-width)) / 2
+    );
   }
   .container-end {
-    margin-right: calc((100% - (map-get($container-max-widths, 'xl') - $grid-gutter-width)) / 2);
+    margin-right: calc(
+      (100% - (map-get($container-max-widths, "xl") - $grid-gutter-width)) / 2
+    );
   }
 }
 @include media-breakpoint-down(sm) {
   .container-start,
   .container-end {
     width: 100%;
-    padding: 0 $grid-gutter-width * .5;
+    padding: 0 $grid-gutter-width * 0.5;
     margin: {
       right: auto;
       left: auto;

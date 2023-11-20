@@ -7,20 +7,20 @@ Check out the **[demo](http://wagerfield.github.com/parallax/)** to see it in ac
 # Table of Contents
 
 - [1. Getting started](#1-getting-started)
-	- [1.1 Installation](#11-installation)
-	- [1.2 Preparations](#12-preparations)
-	- [1.3 Run Parallax](#13-run-parallax)
+  - [1.1 Installation](#11-installation)
+  - [1.2 Preparations](#12-preparations)
+  - [1.3 Run Parallax](#13-run-parallax)
 - [2. Configuration](#2-configuration)
-	- [2.1 Programmatic vs Declarative](#21-programmatic-vs-declarative)
-	- [2.2 Configuration Options](#22-configuration-options)
+  - [2.1 Programmatic vs Declarative](#21-programmatic-vs-declarative)
+  - [2.2 Configuration Options](#22-configuration-options)
 - [3. Methods](#3-methods)
 - [4. Development](#4-development)
-	- [4.1 Running the Project](#41-running-the-project)
-	- [4.2 Opening an Issue](#42-opening-an-issue)
+  - [4.1 Running the Project](#41-running-the-project)
+  - [4.2 Opening an Issue](#42-opening-an-issue)
 - [5. FAQ](#5-faq)
 - [6. Information](#6-information)
-   - [6.1 License](#61-license)
-   - [6.2 Contributors](#62-authors)
+  - [6.1 License](#61-license)
+  - [6.2 Contributors](#62-authors)
 
 # 1. Getting started
 
@@ -31,8 +31,8 @@ Check out the **[demo](http://wagerfield.github.com/parallax/)** to see it in ac
 1. Head over to the [releases](releases) Section
 2. Download `compiled.zip` from the latest release
 3. Extract the ZIP archive and locate the `parallax.js` and `parallax.min.js` files
-	- Use `parallax.js` if you want to snoop around in the code
-	- Use `parallax.min.js` for deployment, because it has a smaller file size
+   - Use `parallax.js` if you want to snoop around in the code
+   - Use `parallax.min.js` for deployment, because it has a smaller file size
 4. Copy the file of your choice into your project directory
 5. So far, so good!
 
@@ -58,8 +58,7 @@ Of course, when you've installed via npm, and use browserify/babel, you can also
 Each Parallax.js instance needs a container element, the scene. You're free to identify it by any means you want, but for now, let's use an ID:
 
 ```html
-<div id="scene">
-</div>
+<div id="scene"></div>
 ```
 
 Per default, all direct child elements of the scene will become moving objects, the layers. You can change this to a custom query selector, but again, we're going with the easiest approach for now:
@@ -85,7 +84,7 @@ While all other options and parameters are optional, with sane defaults, and can
 As soon as your DOM is ready and loaded, you can create a new Parallax.js instance, providing your scene element as first parameter.
 
 ```javascript
-var scene = document.getElementById('scene');
+var scene = document.getElementById("scene");
 var parallaxInstance = new Parallax(scene);
 ```
 
@@ -110,9 +109,9 @@ Declarative:
 Programmatic:
 
 ```javascript
-var scene = document.getElementById('scene');
+var scene = document.getElementById("scene");
 var parallaxInstance = new Parallax(scene, {
-  relativeInput: true
+  relativeInput: true,
 });
 ```
 
@@ -129,8 +128,8 @@ parallaxInstance.friction(0.2, 0.2);
 Property: **relativeInput**  
 Attribute: **data-relative-input**
 
-Value: *boolean*  
-Default: *false*
+Value: _boolean_  
+Default: _false_
 
 Makes mouse input relative to the position of the scene element.  
 No effect when gyroscope is used.
@@ -140,8 +139,8 @@ No effect when gyroscope is used.
 Property: **clipRelativeInput**  
 Attribute: **data-clip-relative-input**
 
-Value: *boolean*  
-Default: *false*
+Value: _boolean_  
+Default: _false_
 
 Clips mouse input to the bounds of the scene. This means the movement stops as soon as the edge of the scene element is reached by the cursor.  
 No effect when gyroscope is used, or `hoverOnly` is active.
@@ -151,8 +150,8 @@ No effect when gyroscope is used, or `hoverOnly` is active.
 Property: **hoverOnly**  
 Attribute: **data-hover-only**
 
-Value: *boolean*  
-Default: *false*
+Value: _boolean_  
+Default: _false_
 
 Parallax will only be in effect while the cursor is over the scene element, otherwise all layers move back to their initial position. Works best in combination with `relativeInput`.  
 No effect when gyroscope is used.
@@ -163,8 +162,8 @@ Property: **inputElement**
 Attribute: **data-input-element**  
 Method: **setInputElement(HTMLElement)**
 
-Value: *null* or *HTMLElement* / *String*  
-Default: *null*
+Value: _null_ or _HTMLElement_ / _String_  
+Default: _null_
 
 Allows usage of a different element for cursor input.  
 The configuration property expects an HTMLElement, the data value attribute a query selector string.  
@@ -177,8 +176,8 @@ Property: **calibrateX** & **calibrateY**
 Attribute: **data-calibrate-x** & **data-calibrate-y**  
 Method: **calibrate(x, y)**
 
-Value: *boolean*  
-Default: *false* for X, *true* for Y
+Value: _boolean_  
+Default: _false_ for X, _true_ for Y
 
 Caches the initial X/Y axis value on initialization and calculates motion relative to this.  
 No effect when cursor is used.
@@ -189,10 +188,10 @@ Property: **invertX** & **invertY**
 Attribute: **data-invert-x** & **data-invert-y**  
 Method: **invert(x, y)**
 
-Value: *boolean*  
-Default: *true*
+Value: _boolean_  
+Default: _true_
 
-Inverts the movement of the layers relative to the input. Setting both of these values to *false* will cause the layers to move with the device motion or cursor.
+Inverts the movement of the layers relative to the input. Setting both of these values to _false_ will cause the layers to move with the device motion or cursor.
 
 ### limitX & limitY
 
@@ -200,8 +199,8 @@ Property: **limitX** & **limitY**
 Attribute: **data-limit-x** & **data-limit-y**  
 Method: **limit(x, y)**
 
-Value: *false* or *integer*  
-Default: *false*
+Value: _false_ or _integer_  
+Default: _false_
 
 Limits the movement of layers on the respective axis. Leaving this value at false gives complete freedom to the movement.
 
@@ -211,8 +210,8 @@ Property: **scalarX** & **scalarY**
 Attribute: **data-scalar-x** & **data-scalar-y**  
 Method: **scalar(x, y)**
 
-Value: *float*  
-Default: *10.0*
+Value: _float_  
+Default: _10.0_
 
 Multiplies the input motion by this value, increasing or decreasing the movement speed and range.
 
@@ -222,11 +221,11 @@ Property: **frictionX** & **frictionY**
 Attribute: **data-friction-x** & **data-friction-y**  
 Method: **friction(x, y)**
 
-Value: *float* between *0* and *1*  
-Default: *0.1*
+Value: _float_ between _0_ and _1_  
+Default: _0.1_
 
-Amount of friction applied to the layers. At *1* the layers will instantly go to their new positions, everything below 1 adds some easing.  
-The default value of *0.1* adds some sensible easing. Try *0.15* or *0.075* for some difference.
+Amount of friction applied to the layers. At _1_ the layers will instantly go to their new positions, everything below 1 adds some easing.  
+The default value of _0.1_ adds some sensible easing. Try _0.15_ or _0.075_ for some difference.
 
 ### originX & originY
 
@@ -234,10 +233,10 @@ Property: **originX** & **originY**
 Attribute: **data-origin-x** & **data-origin-y**  
 Method: **origin(x, y)**
 
-Value: *float* between *0* and *1*  
-Default: *0.5*
+Value: _float_ between _0_ and _1_  
+Default: _0.5_
 
-X and Y origin of the mouse input. The default of *0.5* refers to the center of the screen or element, *0* is the left (X axis) or top (Y axis) border, 1 the right or bottom.  
+X and Y origin of the mouse input. The default of _0.5_ refers to the center of the screen or element, _0_ is the left (X axis) or top (Y axis) border, 1 the right or bottom.  
 No effect when gyroscope is used.
 
 ### precision
@@ -245,39 +244,39 @@ No effect when gyroscope is used.
 Property: **precision**  
 Attribute: **data-precision**
 
-Value: *integer*  
-Default: *1*
+Value: _integer_  
+Default: _1_
 
-Decimals the element positions will be rounded to. *1* is a sensible default which you should not need to change in the next few years, unless you have a very interesting and unique setup.
+Decimals the element positions will be rounded to. _1_ is a sensible default which you should not need to change in the next few years, unless you have a very interesting and unique setup.
 
 ### selector
 
 Property: **selector**  
 Attribute: **data-selector**
 
-Value: *null* or *string*  
-Default: *null*
+Value: _null_ or _string_  
+Default: _null_
 
-String that will be fed to querySelectorAll on the scene element to select the layer elements. When *null*, will simply select all direct child elements.  
-Use `.layer` for legacy behaviour, selecting only child elements having the class name *layer*.
+String that will be fed to querySelectorAll on the scene element to select the layer elements. When _null_, will simply select all direct child elements.  
+Use `.layer` for legacy behaviour, selecting only child elements having the class name _layer_.
 
 ### pointerEvents
 
 Property: **pointerEvents**  
 Attribute: **data-pointer-events**
 
-Value: *boolean*  
-Default: *false*
+Value: _boolean_  
+Default: _false_
 
-Set to *true* to enable interactions with the scene and layer elements. When set to the default of *false*, the CSS attribute `pointer-events: none` will be applied for performance reasons.  
-Setting this to *true* alone will not be enough to fully interact with all layers, since they will be overlapping. You have to either set `position: absolute` on all layer child elements, or keep **pointerEvents** at *false* and set `pointer-events: all` for the interactable elements only.
+Set to _true_ to enable interactions with the scene and layer elements. When set to the default of _false_, the CSS attribute `pointer-events: none` will be applied for performance reasons.  
+Setting this to _true_ alone will not be enough to fully interact with all layers, since they will be overlapping. You have to either set `position: absolute` on all layer child elements, or keep **pointerEvents** at _false_ and set `pointer-events: all` for the interactable elements only.
 
 ### onReady
 
 Property: **onReady**
 
-Value: *null* or *function*  
-Default: *null*
+Value: _null_ or _function_  
+Default: _null_
 
 Callback function that will be called as soon as the Parallax instance has finished its setup. This might currently take up to 1000ms (`calibrationDelay * 2`).
 
@@ -314,7 +313,7 @@ Returns the version number of the Parallax library.
 ## 4.2 Opening an Issue
 
 If you need help relating the direct usage of this library in a project of yours, provide us with a working, running example of your work. This can be a GitHub repository, a ZIP file containing your work, a project on CodePen or JSFiddle, you name it.  
-*Do not complain about something not working without giving us some way to help you.* Thank you!
+_Do not complain about something not working without giving us some way to help you._ Thank you!
 
 # 5. FAQ
 
@@ -323,7 +322,7 @@ If you need help relating the direct usage of this library in a project of yours
 jQuery will not prevent you from using this library in any way. If you want to use jQuery for selecting your Parallax scene element, you can do so too.
 
 ```javascript
-var scene = $('#scene').get(0);
+var scene = $("#scene").get(0);
 var parallaxInstance = new Parallax(scene);
 ```
 
@@ -335,14 +334,13 @@ Check out the section on the configuration option `pointerEvents` above.
 
 Either download compiled_with_examples.zip from the [GitHub Releases](https://github.com/wagerfield/parallax/releases) section, or follow section 4.1
 
-*More to be added soon...*
-
+_More to be added soon..._
 
 # 6. Information
 
 ## 6.1 License
 
-This project is licensed under the terms of the  [MIT](http://www.opensource.org/licenses/mit-license.php) License. Enjoy!
+This project is licensed under the terms of the [MIT](http://www.opensource.org/licenses/mit-license.php) License. Enjoy!
 
 ## 6.2 Authors
 

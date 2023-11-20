@@ -27,13 +27,13 @@ If logged into a registry that uses Basic Auth, then simply print the
 
 #### `registry`
 
-* Default: "https://registry.npmjs.org/"
-* Type: URL
+- Default: "https://registry.npmjs.org/"
+- Type: URL
 
 The base URL of the npm registry.
 
 ### See Also
 
-* [npm config](/commands/npm-config)
-* [npmrc](/configuring-npm/npmrc)
-* [npm adduser](/commands/npm-adduser)
+- [npm config](/commands/npm-config)
+- [npmrc](/configuring-npm/npmrc)
+- [npm adduser](/commands/npm-adduser)

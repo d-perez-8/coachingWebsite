@@ -16,7 +16,8 @@ makeInstaller = function (options) {
   // List of fields to look for in package.json files to determine the
   // main entry module of the package. The first field listed here whose
   // value is a string will be used to resolve the entry module.
-  var mainFields = options.mainFields ||
+  var mainFields =
+    options.mainFields ||
     // If options.mainFields is absent and options.browser is truthy,
     // package resolution will prefer the "browser" field of package.json
     // files to the "main" field. Note that this only supports
@@ -89,7 +90,7 @@ makeInstaller = function (options) {
 
     function walk(module) {
       var file = getOwn(filesByModuleId, module.id);
-      if (fileIsDynamic(file) && ! file.pending) {
+      if (fileIsDynamic(file) && !file.pending) {
         file.pending = true;
         missing = missing || {};
 
@@ -122,7 +123,7 @@ makeInstaller = function (options) {
           // original entry for this dynamic module. Typically contains
           // "main" and/or "browser" fields for package.json files, and is
           // otherwise undefined.
-          stub: file.stub
+          stub: file.stub,
         };
 
         each(file.deps, function (parentId, id) {
@@ -133,11 +134,10 @@ makeInstaller = function (options) {
       }
     }
 
-    return lastPrefetchPromise = new Promise(function (resolve) {
+    return (lastPrefetchPromise = new Promise(function (resolve) {
       var absChildId = module.resolve(id);
       each(module.childrenById, walk);
       resolve(absChildId);
-
     }).then(function (absChildId) {
       // Grab the current missing object and fetch its contents.
       var toBeFetched = missing;
@@ -158,29 +158,30 @@ makeInstaller = function (options) {
         // installed. As an optimization, if there were no missing dynamic
         // modules, then we can skip calling install.fetch entirely.
         resolve(toBeFetched && install.fetch(toBeFetched));
+      }).then(
+        function (tree) {
+          function both() {
+            install(tree);
+            clearPending();
+            return absChildId;
+          }
 
-      }).then(function (tree) {
-        function both() {
-          install(tree);
+          // Although we want multiple install.fetch calls to run in
+          // parallel, it is important that the promises returned by
+          // module.prefetch are resolved in the same order as the original
+          // calls to module.prefetch, because previous fetches may include
+          // modules assumed to exist by more recent module.prefetch calls.
+          // Whether previousPromise was resolved or rejected, carry on with
+          // the installation regardless.
+          return previousPromise.then(both, both);
+        },
+        function (error) {
+          // Fixes https://github.com/meteor/meteor/issues/10182.
           clearPending();
-          return absChildId;
-        }
-
-        // Although we want multiple install.fetch calls to run in
-        // parallel, it is important that the promises returned by
-        // module.prefetch are resolved in the same order as the original
-        // calls to module.prefetch, because previous fetches may include
-        // modules assumed to exist by more recent module.prefetch calls.
-        // Whether previousPromise was resolved or rejected, carry on with
-        // the installation regardless.
-        return previousPromise.then(both, both);
-
-      }, function (error) {
-        // Fixes https://github.com/meteor/meteor/issues/10182.
-        clearPending();
-        throw error;
-      });
-    });
+          throw error;
+        },
+      );
+    }));
   };
 
   install.Module = Module;
@@ -227,7 +228,7 @@ makeInstaller = function (options) {
       return fallback(
         id, // The missing module identifier.
         this.id, // ID of the parent module.
-        error // The error we would have thrown.
+        error, // The error we would have thrown.
       );
     }
 
@@ -291,9 +292,9 @@ makeInstaller = function (options) {
 
   function fileEvaluate(file, parentModule) {
     var module = file.module;
-    if (! strictHasOwn(module, "exports")) {
+    if (!strictHasOwn(module, "exports")) {
       var contents = file.contents;
-      if (! contents) {
+      if (!contents) {
         // If this file was installed with array notation, and the array
         // contained one or more objects but no functions, then the combined
         // properties of the objects are treated as a temporary stub for
@@ -319,10 +320,10 @@ makeInstaller = function (options) {
       contents(
         makeRequire(file),
         // If the file had a .stub, reuse the same object for exports.
-        module.exports = file.stub || {},
+        (module.exports = file.stub || {}),
         module,
         file.module.id,
-        file.parent.module.id
+        file.parent.module.id,
       );
 
       module.loaded = true;
@@ -361,14 +362,15 @@ makeInstaller = function (options) {
         }
       });
 
-      if (! isFunction(contents)) {
+      if (!isFunction(contents)) {
         // If the array did not contain a function, merge nothing.
         contents = null;
       }
-
-    } else if (! isFunction(contents) &&
-               ! isString(contents) &&
-               ! isObject(contents)) {
+    } else if (
+      !isFunction(contents) &&
+      !isString(contents) &&
+      !isObject(contents)
+    ) {
       // If contents is neither an array nor a function nor a string nor
       // an object, just give up and merge nothing.
       contents = null;
@@ -380,14 +382,13 @@ makeInstaller = function (options) {
         each(contents, function (value, key) {
           if (key === "..") {
             child = file.parent;
-
           } else {
             var child = getOwn(file.contents, key);
 
-            if (! child) {
+            if (!child) {
               child = file.contents[key] = new File(
                 file.module.id.replace(/\/*$/, "/") + key,
-                file
+                file,
               );
 
               child.options = options;
@@ -407,18 +408,16 @@ makeInstaller = function (options) {
   }
 
   function fileGetExtensions(file) {
-    return file.options
-      && file.options.extensions
-      || defaultExtensions;
+    return (file.options && file.options.extensions) || defaultExtensions;
   }
 
   function fileAppendIdPart(file, part, extensions) {
     // Always append relative to a directory.
-    while (file && ! fileIsDirectory(file)) {
+    while (file && !fileIsDirectory(file)) {
       file = file.parent;
     }
 
-    if (! file || ! part || part === ".") {
+    if (!file || !part || part === ".") {
       return file;
     }
 
@@ -431,10 +430,10 @@ makeInstaller = function (options) {
     // Only consider multiple file extensions if this part is the last
     // part of a module identifier and not equal to `.` or `..`, and there
     // was no exact match or the exact match was a directory.
-    if (extensions && (! exactChild || fileIsDirectory(exactChild))) {
+    if (extensions && (!exactChild || fileIsDirectory(exactChild))) {
       for (var e = 0; e < extensions.length; ++e) {
         var child = getOwn(file.contents, part + extensions[e]);
-        if (child && ! fileIsDirectory(child)) {
+        if (child && !fileIsDirectory(child)) {
           return child;
         }
       }
@@ -449,9 +448,10 @@ makeInstaller = function (options) {
     // Use `Array.prototype.every` to terminate iteration early if
     // `fileAppendIdPart` returns a falsy value.
     parts.every(function (part, i) {
-      return file = i < parts.length - 1
-        ? fileAppendIdPart(file, part)
-        : fileAppendIdPart(file, part, extensions);
+      return (file =
+        i < parts.length - 1
+          ? fileAppendIdPart(file, part)
+          : fileAppendIdPart(file, part, extensions));
     });
 
     return file;
@@ -473,13 +473,15 @@ makeInstaller = function (options) {
       // character) are interpreted relative to the root directory, which
       // is a slight deviation from Node, which has access to the entire
       // file system.
-      id.charAt(0) === "/" ? fileAppendId(root, id, extensions) :
-      // Relative module identifiers are interpreted relative to the
-      // current file, naturally.
-      id.charAt(0) === "." ? fileAppendId(file, id, extensions) :
-      // Top-level module identifiers are interpreted as referring to
-      // packages in `node_modules` directories.
-      nodeModulesLookup(file, id, extensions);
+      id.charAt(0) === "/"
+        ? fileAppendId(root, id, extensions)
+        : // Relative module identifiers are interpreted relative to the
+        // current file, naturally.
+        id.charAt(0) === "."
+        ? fileAppendId(file, id, extensions)
+        : // Top-level module identifiers are interpreted as referring to
+          // packages in `node_modules` directories.
+          nodeModulesLookup(file, id, extensions);
 
     // If the identifier resolves to a directory, we use the same logic as
     // Node to find an `index.js` or `package.json` file to evaluate.
@@ -497,18 +499,22 @@ makeInstaller = function (options) {
 
         var pkgJsonFile = fileAppendIdPart(file, "package.json");
         var pkg = pkgJsonFile && fileEvaluate(pkgJsonFile, parentModule);
-        var mainFile, resolved = pkg && mainFields.some(function (name) {
-          var main = pkg[name];
-          if (isString(main)) {
-            // The "main" field of package.json does not have to begin
-            // with ./ to be considered relative, so first we try
-            // simply appending it to the directory path before
-            // falling back to a full fileResolve, which might return
-            // a package from a node_modules directory.
-            return mainFile = fileAppendId(file, main, extensions) ||
-              fileResolve(file, main, parentModule, seenDirFiles);
-          }
-        });
+        var mainFile,
+          resolved =
+            pkg &&
+            mainFields.some(function (name) {
+              var main = pkg[name];
+              if (isString(main)) {
+                // The "main" field of package.json does not have to begin
+                // with ./ to be considered relative, so first we try
+                // simply appending it to the directory path before
+                // falling back to a full fileResolve, which might return
+                // a package from a node_modules directory.
+                return (mainFile =
+                  fileAppendId(file, main, extensions) ||
+                  fileResolve(file, main, parentModule, seenDirFiles));
+              }
+            });
 
         if (resolved && mainFile) {
           file = mainFile;
@@ -538,11 +544,12 @@ makeInstaller = function (options) {
     recordChild(parentModule, file);
 
     return file;
-  };
+  }
 
   function nodeModulesLookup(file, id, extensions) {
-    for (var resolved; file && ! resolved; file = file.parent) {
-      resolved = fileIsDirectory(file) &&
+    for (var resolved; file && !resolved; file = file.parent) {
+      resolved =
+        fileIsDirectory(file) &&
         fileAppendId(file, "node_modules/" + id, extensions);
     }
     return resolved;

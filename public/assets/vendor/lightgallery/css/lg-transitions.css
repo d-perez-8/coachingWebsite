@@ -18,11 +18,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-zoom-in .lg-item.lg-prev-slide, .lg-css3.lg-zoom-in .lg-item.lg-next-slide, .lg-css3.lg-zoom-in .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-zoom-in .lg-item.lg-prev-slide,
+.lg-css3.lg-zoom-in .lg-item.lg-next-slide,
+.lg-css3.lg-zoom-in .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-lollipop-rev .lg-item {
@@ -48,11 +58,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-lollipop-rev .lg-item.lg-prev-slide, .lg-css3.lg-lollipop-rev .lg-item.lg-next-slide, .lg-css3.lg-lollipop-rev .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-lollipop-rev .lg-item.lg-prev-slide,
+.lg-css3.lg-lollipop-rev .lg-item.lg-next-slide,
+.lg-css3.lg-lollipop-rev .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-ver-cross .lg-item {
@@ -84,11 +104,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-ver-cross .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-ver-cross .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-ver-cross .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-ver-cross .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-ver-cross .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-ver-cross .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-lollipop .lg-item {
@@ -114,11 +144,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-lollipop .lg-item.lg-prev-slide, .lg-css3.lg-lollipop .lg-item.lg-next-slide, .lg-css3.lg-lollipop .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-lollipop .lg-item.lg-prev-slide,
+.lg-css3.lg-lollipop .lg-item.lg-next-slide,
+.lg-css3.lg-lollipop .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-ver-rev .lg-item {
@@ -150,11 +190,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-ver-rev .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-ver-rev .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-ver-rev .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-ver-rev .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-ver-rev .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-ver-rev .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-rotate-rev .lg-item {
@@ -186,11 +236,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-rotate-rev .lg-item.lg-prev-slide, .lg-css3.lg-rotate-rev .lg-item.lg-next-slide, .lg-css3.lg-rotate-rev .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-rotate-rev .lg-item.lg-prev-slide,
+.lg-css3.lg-rotate-rev .lg-item.lg-next-slide,
+.lg-css3.lg-rotate-rev .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-ver .lg-item {
@@ -222,11 +282,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-ver .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-ver .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-ver .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-ver .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-ver .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-ver .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-rotate .lg-item {
@@ -258,11 +328,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-rotate .lg-item.lg-prev-slide, .lg-css3.lg-rotate .lg-item.lg-next-slide, .lg-css3.lg-rotate .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-rotate .lg-item.lg-prev-slide,
+.lg-css3.lg-rotate .lg-item.lg-next-slide,
+.lg-css3.lg-rotate .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew .lg-item {
@@ -294,11 +374,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew .lg-item.lg-next-slide, .lg-css3.lg-slide-skew .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-scale-up .lg-item {
@@ -330,11 +420,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-scale-up .lg-item.lg-prev-slide, .lg-css3.lg-scale-up .lg-item.lg-next-slide, .lg-css3.lg-scale-up .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-scale-up .lg-item.lg-prev-slide,
+.lg-css3.lg-scale-up .lg-item.lg-next-slide,
+.lg-css3.lg-scale-up .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-slide-vertical-growth .lg-item {
@@ -366,11 +466,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-vertical-growth .lg-item.lg-prev-slide, .lg-css3.lg-slide-vertical-growth .lg-item.lg-next-slide, .lg-css3.lg-slide-vertical-growth .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-vertical-growth .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-vertical-growth .lg-item.lg-next-slide,
+.lg-css3.lg-slide-vertical-growth .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-slide-circular-vertical .lg-item {
@@ -402,11 +512,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-circular-vertical .lg-item.lg-prev-slide, .lg-css3.lg-slide-circular-vertical .lg-item.lg-next-slide, .lg-css3.lg-slide-circular-vertical .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-slide-circular-vertical .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-circular-vertical .lg-item.lg-next-slide,
+.lg-css3.lg-slide-circular-vertical .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-slide-vertical .lg-item {
@@ -429,11 +549,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-vertical .lg-item.lg-prev-slide, .lg-css3.lg-slide-vertical .lg-item.lg-next-slide, .lg-css3.lg-slide-vertical .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-vertical .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-vertical .lg-item.lg-next-slide,
+.lg-css3.lg-slide-vertical .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-slide-circular .lg-item {
@@ -465,11 +595,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-circular .lg-item.lg-prev-slide, .lg-css3.lg-slide-circular .lg-item.lg-next-slide, .lg-css3.lg-slide-circular .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-slide-circular .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-circular .lg-item.lg-next-slide,
+.lg-css3.lg-slide-circular .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-soft-zoom .lg-item {
@@ -492,11 +632,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-soft-zoom .lg-item.lg-prev-slide, .lg-css3.lg-soft-zoom .lg-item.lg-next-slide, .lg-css3.lg-soft-zoom .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-soft-zoom .lg-item.lg-prev-slide,
+.lg-css3.lg-soft-zoom .lg-item.lg-next-slide,
+.lg-css3.lg-soft-zoom .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-cross-rev .lg-item {
@@ -528,11 +678,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-cross-rev .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-cross-rev .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-cross-rev .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-cross-rev .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-cross-rev .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-cross-rev .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-tube .lg-item {
@@ -564,11 +724,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-tube .lg-item.lg-prev-slide, .lg-css3.lg-tube .lg-item.lg-next-slide, .lg-css3.lg-tube .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-tube .lg-item.lg-prev-slide,
+.lg-css3.lg-tube .lg-item.lg-next-slide,
+.lg-css3.lg-tube .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-cross .lg-item {
@@ -600,11 +770,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-cross .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-cross .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-cross .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-cross .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-cross .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-cross .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-zoom-in-big .lg-item {
@@ -627,11 +807,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-zoom-in-big .lg-item.lg-prev-slide, .lg-css3.lg-zoom-in-big .lg-item.lg-next-slide, .lg-css3.lg-zoom-in-big .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-zoom-in-big .lg-item.lg-prev-slide,
+.lg-css3.lg-zoom-in-big .lg-item.lg-next-slide,
+.lg-css3.lg-zoom-in-big .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-only-rev .lg-item {
@@ -663,11 +853,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-only-rev .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-only-rev .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-only-rev .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-only-rev .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-only-rev .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-only-rev .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-zoom-in-out .lg-item {
@@ -690,11 +890,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-zoom-in-out .lg-item.lg-prev-slide, .lg-css3.lg-zoom-in-out .lg-item.lg-next-slide, .lg-css3.lg-zoom-in-out .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-zoom-in-out .lg-item.lg-prev-slide,
+.lg-css3.lg-zoom-in-out .lg-item.lg-next-slide,
+.lg-css3.lg-zoom-in-out .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-only-y-rev .lg-item {
@@ -726,11 +936,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-only-y-rev .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-only-y-rev .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-only-y-rev .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-only-y-rev .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-only-y-rev .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-only-y-rev .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-only-y .lg-item {
@@ -762,11 +982,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-only-y .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-only-y .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-only-y .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-only-y .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-only-y .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-only-y .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-zoom-out-big .lg-item {
@@ -789,11 +1019,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-zoom-out-big .lg-item.lg-prev-slide, .lg-css3.lg-zoom-out-big .lg-item.lg-next-slide, .lg-css3.lg-zoom-out-big .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-zoom-out-big .lg-item.lg-prev-slide,
+.lg-css3.lg-zoom-out-big .lg-item.lg-next-slide,
+.lg-css3.lg-zoom-out-big .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-only .lg-item {
@@ -825,11 +1065,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-only .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-only .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-only .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-only .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-only .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-only .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-zoom-out-in .lg-item {
@@ -852,11 +1102,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-zoom-out-in .lg-item.lg-prev-slide, .lg-css3.lg-zoom-out-in .lg-item.lg-next-slide, .lg-css3.lg-zoom-out-in .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-zoom-out-in .lg-item.lg-prev-slide,
+.lg-css3.lg-zoom-out-in .lg-item.lg-next-slide,
+.lg-css3.lg-zoom-out-in .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-rev .lg-item {
@@ -888,11 +1148,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-rev .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-rev .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-rev .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-rev .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-rev .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-rev .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }
 
 .lg-css3.lg-zoom-out .lg-item {
@@ -915,11 +1185,21 @@
   opacity: 1;
 }
 
-.lg-css3.lg-zoom-out .lg-item.lg-prev-slide, .lg-css3.lg-zoom-out .lg-item.lg-next-slide, .lg-css3.lg-zoom-out .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 1s ease 0s;
+.lg-css3.lg-zoom-out .lg-item.lg-prev-slide,
+.lg-css3.lg-zoom-out .lg-item.lg-next-slide,
+.lg-css3.lg-zoom-out .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 1s ease 0s;
 }
 
 .lg-css3.lg-slide-skew-ver-cross-rev .lg-item {
@@ -951,9 +1231,19 @@
   opacity: 1;
 }
 
-.lg-css3.lg-slide-skew-ver-cross-rev .lg-item.lg-prev-slide, .lg-css3.lg-slide-skew-ver-cross-rev .lg-item.lg-next-slide, .lg-css3.lg-slide-skew-ver-cross-rev .lg-item.lg-current {
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -moz-transition: -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  -o-transition: -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
-  transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s;
+.lg-css3.lg-slide-skew-ver-cross-rev .lg-item.lg-prev-slide,
+.lg-css3.lg-slide-skew-ver-cross-rev .lg-item.lg-next-slide,
+.lg-css3.lg-slide-skew-ver-cross-rev .lg-item.lg-current {
+  -webkit-transition:
+    -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -moz-transition:
+    -moz-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  -o-transition:
+    -o-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
+  transition:
+    transform 1s cubic-bezier(0, 0, 0.25, 1) 0s,
+    opacity 0.1s ease 0s;
 }

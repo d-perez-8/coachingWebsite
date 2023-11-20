@@ -7,7 +7,7 @@ app.use(express.static("public"));
 const YOUR_DOMAIN = "http://localhost:3000";
 // This is your test secret API key.
 const stripe = require("stripe")(
-  "pk_test_51NZLHbJDAvhaBoGUEm2FIyGv5MyBq9S1mwHNVmc3P1nDv7qZtRkyp2Up7zpfMeIoYoLF1JArM4jc9PCYDVQxFBYd00WMdZXjAT"
+  "pk_test_51NZLHbJDAvhaBoGUEm2FIyGv5MyBq9S1mwHNVmc3P1nDv7qZtRkyp2Up7zpfMeIoYoLF1JArM4jc9PCYDVQxFBYd00WMdZXjAT",
 );
 
 app.post("/create-checkout-session", async (req, res) => {

@@ -1,17 +1,20 @@
-const { dirname } = require('path')
-const { commands } = require('./cmd-list')
+const { dirname } = require("path");
+const { commands } = require("./cmd-list");
 
-const COL_MAX = 60
-const COL_MIN = 24
-const COL_GUTTER = 16
-const INDENT = 4
+const COL_MAX = 60;
+const COL_MIN = 24;
+const COL_GUTTER = 16;
+const INDENT = 4;
 
-const indent = (repeat = INDENT) => ' '.repeat(repeat)
-const indentNewline = (repeat) => `\n${indent(repeat)}`
+const indent = (repeat = INDENT) => " ".repeat(repeat);
+const indentNewline = (repeat) => `\n${indent(repeat)}`;
 
 module.exports = async (npm) => {
-  const browser = npm.config.get('viewer') === 'browser' ? ' (in a browser)' : ''
-  const allCommands = npm.config.get('long') ? await cmdUsages(npm) : cmdNames()
+  const browser =
+    npm.config.get("viewer") === "browser" ? " (in a browser)" : "";
+  const allCommands = npm.config.get("long")
+    ? await cmdUsages(npm)
+    : cmdNames();
 
   return `npm <command>
 
@@ -30,47 +33,50 @@ All commands:
 ${allCommands}
 
 Specify configs in the ini-formatted file:
-${indent() + npm.config.get('userconfig')}
+${indent() + npm.config.get("userconfig")}
 or on the command line via: npm <command> --key=value
 
 More configuration info: npm help config
 Configuration fields: npm help 7 config
 
-npm@${npm.version} ${dirname(dirname(__dirname))}`
-}
+npm@${npm.version} ${dirname(dirname(__dirname))}`;
+};
 
 const cmdNames = () => {
-  const out = ['']
+  const out = [""];
 
-  const line = !process.stdout.columns ? COL_MAX
-    : Math.min(COL_MAX, Math.max(process.stdout.columns - COL_GUTTER, COL_MIN))
+  const line = !process.stdout.columns
+    ? COL_MAX
+    : Math.min(COL_MAX, Math.max(process.stdout.columns - COL_GUTTER, COL_MIN));
 
-  let l = 0
+  let l = 0;
   for (const c of commands) {
     if (out[l].length + c.length + 2 < line) {
-      out[l] += ', ' + c
+      out[l] += ", " + c;
     } else {
-      out[l++] += ','
-      out[l] = c
+      out[l++] += ",";
+      out[l] = c;
     }
   }
 
-  return indentNewline() + out.join(indentNewline()).slice(2)
-}
+  return indentNewline() + out.join(indentNewline()).slice(2);
+};
 
 const cmdUsages = async (npm) => {
   // return a string of <command>: <usage>
-  let maxLen = 0
-  const set = []
+  let maxLen = 0;
+  const set = [];
   for (const c of commands) {
-    const { usage } = await npm.cmd(c)
-    set.push([c, usage.split('\n')])
-    maxLen = Math.max(maxLen, c.length)
+    const { usage } = await npm.cmd(c);
+    set.push([c, usage.split("\n")]);
+    maxLen = Math.max(maxLen, c.length);
   }
 
-  return set.map(([name, usageLines]) => {
-    const gutter = indent(maxLen - name.length + 1)
-    const usage = usageLines.join(indentNewline(INDENT + maxLen + 1))
-    return indentNewline() + name + gutter + usage
-  }).join('\n')
-}
+  return set
+    .map(([name, usageLines]) => {
+      const gutter = indent(maxLen - name.length + 1);
+      const usage = usageLines.join(indentNewline(INDENT + maxLen + 1));
+      return indentNewline() + name + gutter + usage;
+    })
+    .join("\n");
+};

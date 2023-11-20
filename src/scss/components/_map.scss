@@ -3,11 +3,9 @@
 // Based on https://github.com/Leaflet/Leaflet
 // --------------------------------------------------
 
-
 .interactive-map:focus {
   outline: none;
 }
-
 
 // Zoom controls
 
@@ -38,7 +36,7 @@
     }
     &.leaflet-disabled {
       background-color: $white;
-      color: rgba($gray-600, .8);
+      color: rgba($gray-600, 0.8);
     }
   }
 }
@@ -50,14 +48,12 @@
   margin-top: $spacer;
 }
 
-
 // Link color
 
 .leaflet-container a {
   color: var(--#{$prefix}primary);
   font-weight: $font-weight-medium;
 }
-
 
 // Popup
 
@@ -74,27 +70,31 @@
 }
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  box-shadow: 0 .1875rem .875rem rgba($gray-900, .32);
+  box-shadow: 0 0.1875rem 0.875rem rgba($gray-900, 0.32);
 }
 .leaflet-container {
   font-family: $font-family-sans-serif;
   a.leaflet-popup-close-button {
-    top: .5rem;
-    right: .5rem;
+    top: 0.5rem;
+    right: 0.5rem;
     width: 1.5rem;
     height: 1.5rem;
     padding: 0;
     border: $border-width solid $border-color;
     border-radius: 50%;
-    color: rgba($gray-800, .7);
+    color: rgba($gray-800, 0.7);
     font-size: 1rem;
     line-height: 1.25rem;
     text-align: center;
-    &:hover { color: $gray-800; }
+    &:hover {
+      color: $gray-800;
+    }
   }
 }
 .leaflet-popup:focus,
-.leaflet-marker-icon:focus { outline: none; }
+.leaflet-marker-icon:focus {
+  outline: none;
+}
 .leaflet-popup-tip-container {
   backface-visibility: hidden;
 }

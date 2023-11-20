@@ -24,8 +24,8 @@ versions, so you can do something like this:
 npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
 ```
 
-SemVer ranges passed to this command are interpreted such that they *do*
-include prerelease versions.  For example:
+SemVer ranges passed to this command are interpreted such that they _do_
+include prerelease versions. For example:
 
 ```bash
 npm deprecate my-thing@1.x "1.x is no longer supported"
@@ -33,7 +33,7 @@ npm deprecate my-thing@1.x "1.x is no longer supported"
 
 In this case, a version `my-thing@1.0.0-beta.0` will also be deprecated.
 
-You must be the package owner to deprecate something.  See the `owner` and
+You must be the package owner to deprecate something. See the `owner` and
 `adduser` help topics.
 
 To un-deprecate a package, specify an empty string (`""`) for the `message`
@@ -44,15 +44,15 @@ format an empty string.
 
 #### `registry`
 
-* Default: "https://registry.npmjs.org/"
-* Type: URL
+- Default: "https://registry.npmjs.org/"
+- Type: URL
 
 The base URL of the npm registry.
 
 #### `otp`
 
-* Default: null
-* Type: null or String
+- Default: null
+- Type: null or String
 
 This is a one-time password from a two-factor authenticator. It's needed
 when publishing or changing package permissions with `npm access`.
@@ -62,8 +62,8 @@ password, npm will prompt on the command line for one.
 
 ### See Also
 
-* [package spec](/using-npm/package-spec)
-* [npm publish](/commands/npm-publish)
-* [npm registry](/using-npm/registry)
-* [npm owner](/commands/npm-owner)
-* [npm adduser](/commands/npm-adduser)
+- [package spec](/using-npm/package-spec)
+- [npm publish](/commands/npm-publish)
+- [npm registry](/using-npm/registry)
+- [npm owner](/commands/npm-owner)
+- [npm adduser](/commands/npm-adduser)

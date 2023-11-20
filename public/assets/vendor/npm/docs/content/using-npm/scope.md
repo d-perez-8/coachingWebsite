@@ -60,7 +60,7 @@ Because scoped packages are installed into a scope folder, you have to
 include the name of the scope when requiring them in your code, e.g.
 
 ```javascript
-require('@myorg/mypackage')
+require("@myorg/mypackage");
 ```
 
 There is nothing special about the way Node treats scope folders. This
@@ -87,14 +87,14 @@ Publishing to a scope, you have two options:
 If publishing a public module to an organization scope, you must
 first either create an organization with the name of the scope
 that you'd like to publish to or be added to an existing organization
-with the appropriate permissions. For example, if you'd like to 
-publish to `@org`, you would  need to create the `org` organization 
+with the appropriate permissions. For example, if you'd like to
+publish to `@org`, you would need to create the `org` organization
 on npmjs.com prior to trying to publish.
 
-Scoped packages are not public by default.  You will need to specify
-`--access public` with the initial `npm publish` command.  This will publish
+Scoped packages are not public by default. You will need to specify
+`--access public` with the initial `npm publish` command. This will publish
 the package and set access to `public` as if you had run `npm access public`
-after publishing.  You do not need to do this when publishing new versions of
+after publishing. You do not need to do this when publishing new versions of
 an existing scoped package.
 
 #### Publishing private scoped packages to the npm registry
@@ -137,7 +137,7 @@ that registry instead.
 
 ### See also
 
-* [npm install](/commands/npm-install)
-* [npm publish](/commands/npm-publish)
-* [npm access](/commands/npm-access)
-* [npm registry](/using-npm/registry)
+- [npm install](/commands/npm-install)
+- [npm publish](/commands/npm-publish)
+- [npm access](/commands/npm-access)
+- [npm registry](/using-npm/registry)

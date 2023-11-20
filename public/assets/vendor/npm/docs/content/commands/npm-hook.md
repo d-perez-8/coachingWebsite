@@ -87,15 +87,15 @@ $ npm hook rm id-deadbeef
 
 #### `registry`
 
-* Default: "https://registry.npmjs.org/"
-* Type: URL
+- Default: "https://registry.npmjs.org/"
+- Type: URL
 
 The base URL of the npm registry.
 
 #### `otp`
 
-* Default: null
-* Type: null or String
+- Default: null
+- Type: null or String
 
 This is a one-time password from a two-factor authenticator. It's needed
 when publishing or changing package permissions with `npm access`.
@@ -105,4 +105,4 @@ password, npm will prompt on the command line for one.
 
 ### See Also
 
-* ["Introducing Hooks" blog post](https://blog.npmjs.org/post/145260155635/introducing-hooks-get-notifications-of-npm)
+- ["Introducing Hooks" blog post](https://blog.npmjs.org/post/145260155635/introducing-hooks-get-notifications-of-npm)

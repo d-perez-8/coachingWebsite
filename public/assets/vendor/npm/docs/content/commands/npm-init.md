@@ -26,11 +26,11 @@ running any other initialization-related operations.
 The init command is transformed to a corresponding `npm exec` operation as
 follows:
 
-* `npm init foo` -> `npm exec create-foo`
-* `npm init @usr/foo` -> `npm exec @usr/create-foo`
-* `npm init @usr` -> `npm exec @usr/create`
-* `npm init @usr@2.0.0` -> `npm exec @usr/create@2.0.0`
-* `npm init @usr/foo@2.0.0` -> `npm exec @usr/create-foo@2.0.0`
+- `npm init foo` -> `npm exec create-foo`
+- `npm init @usr/foo` -> `npm exec @usr/create-foo`
+- `npm init @usr` -> `npm exec @usr/create`
+- `npm init @usr@2.0.0` -> `npm exec @usr/create@2.0.0`
+- `npm init @usr/foo@2.0.0` -> `npm exec @usr/create-foo@2.0.0`
 
 If the initializer is omitted (by just calling `npm init`), init will fall
 back to legacy init behavior. It will ask you a bunch of questions, and
@@ -40,14 +40,14 @@ strictly additive, so it will keep any fields and values that were already
 set. You can also use `-y`/`--yes` to skip the questionnaire altogether. If
 you pass `--scope`, it will create a scoped package.
 
-*Note:* if a user already has the `create-<initializer>` package
-globally installed, that will be what `npm init` uses.  If you want npm
+_Note:_ if a user already has the `create-<initializer>` package
+globally installed, that will be what `npm init` uses. If you want npm
 to use the latest version, or another specific version you must specify
 it:
 
-* `npm init foo@latest` # fetches and runs the latest `create-foo` from
-    the registry
-* `npm init foo@1.2.3` #  runs `create-foo@1.2.3` specifically
+- `npm init foo@latest` # fetches and runs the latest `create-foo` from
+  the registry
+- `npm init foo@1.2.3` # runs `create-foo@1.2.3` specifically
 
 #### Forwarding additional options
 
@@ -158,42 +158,42 @@ dot to represent the current directory in that context, e.g: `react-app .`:
 
 #### `yes`
 
-* Default: null
-* Type: null or Boolean
+- Default: null
+- Type: null or Boolean
 
 Automatically answer "yes" to any prompts that npm might print on the
 command line.
 
 #### `force`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Removes various protections against unfortunate side effects, common
 mistakes, unnecessary performance degradation, and malicious input.
 
-* Allow clobbering non-npm files in global installs.
-* Allow the `npm version` command to work on an unclean git repository.
-* Allow deleting the cache folder with `npm cache clean`.
-* Allow installing packages that have an `engines` declaration requiring a
+- Allow clobbering non-npm files in global installs.
+- Allow the `npm version` command to work on an unclean git repository.
+- Allow deleting the cache folder with `npm cache clean`.
+- Allow installing packages that have an `engines` declaration requiring a
   different version of npm.
-* Allow installing packages that have an `engines` declaration requiring a
+- Allow installing packages that have an `engines` declaration requiring a
   different version of `node`, even if `--engine-strict` is enabled.
-* Allow `npm audit fix` to install modules outside your stated dependency
+- Allow `npm audit fix` to install modules outside your stated dependency
   range (including SemVer-major changes).
-* Allow unpublishing all versions of a published package.
-* Allow conflicting peerDependencies to be installed in the root project.
-* Implicitly set `--yes` during `npm init`.
-* Allow clobbering existing values in `npm pkg`
-* Allow unpublishing of entire packages (not just a single version).
+- Allow unpublishing all versions of a published package.
+- Allow conflicting peerDependencies to be installed in the root project.
+- Implicitly set `--yes` during `npm init`.
+- Allow clobbering existing values in `npm pkg`
+- Allow unpublishing of entire packages (not just a single version).
 
 If you don't have a clear idea of what you want to do, it is strongly
 recommended that you do not use this option!
 
 #### `scope`
 
-* Default: the scope of the current project, if any, or ""
-* Type: String
+- Default: the scope of the current project, if any, or ""
+- Type: String
 
 Associate an operation with a scope for a scoped registry.
 
@@ -219,11 +219,10 @@ This will also cause `npm init` to create a scoped package.
 npm init --scope=@foo --yes
 ```
 
-
 #### `workspace`
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 Enable running a command in the context of the configured workspaces of the
 current project while filtering by running only the workspaces defined by
@@ -231,9 +230,9 @@ this configuration option.
 
 Valid values for the `workspace` config are either:
 
-* Workspace names
-* Path to a workspace directory
-* Path to a parent workspace directory (will result in selecting all
+- Workspace names
+- Path to a workspace directory
+- Path to a parent workspace directory (will result in selecting all
   workspaces within that folder)
 
 When set for the `npm init` command, this may be set to the folder of a
@@ -244,8 +243,8 @@ This value is not exported to the environment for child processes.
 
 #### `workspaces`
 
-* Default: null
-* Type: null or Boolean
+- Default: null
+- Type: null or Boolean
 
 Set to true to run the command in the context of **all** configured
 workspaces.
@@ -254,24 +253,24 @@ Explicitly setting this to false will cause commands like `install` to
 ignore workspaces altogether. When not set explicitly:
 
 - Commands that operate on the `node_modules` tree (install, update, etc.)
-will link workspaces into the `node_modules` folder. - Commands that do
-other things (test, exec, publish, etc.) will operate on the root project,
-_unless_ one or more workspaces are specified in the `workspace` config.
+  will link workspaces into the `node_modules` folder. - Commands that do
+  other things (test, exec, publish, etc.) will operate on the root project,
+  _unless_ one or more workspaces are specified in the `workspace` config.
 
 This value is not exported to the environment for child processes.
 
 #### `workspaces-update`
 
-* Default: true
-* Type: Boolean
+- Default: true
+- Type: Boolean
 
 If set to true, the npm cli will run an update after operations that may
 possibly change the workspaces installed to the `node_modules` folder.
 
 #### `include-workspace-root`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Include the workspace root when workspaces are enabled for a command.
 
@@ -283,10 +282,10 @@ This value is not exported to the environment for child processes.
 
 ### See Also
 
-* [package spec](/using-npm/package-spec)
-* [init-package-json module](http://npm.im/init-package-json)
-* [package.json](/configuring-npm/package-json)
-* [npm version](/commands/npm-version)
-* [npm scope](/using-npm/scope)
-* [npm exec](/commands/npm-exec)
-* [npm workspaces](/using-npm/workspaces)
+- [package spec](/using-npm/package-spec)
+- [init-package-json module](http://npm.im/init-package-json)
+- [package.json](/configuring-npm/package-json)
+- [npm version](/commands/npm-version)
+- [npm scope](/using-npm/scope)
+- [npm exec](/commands/npm-exec)
+- [npm workspaces](/using-npm/workspaces)

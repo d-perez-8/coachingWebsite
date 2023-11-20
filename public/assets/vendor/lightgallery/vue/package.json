@@ -1,7 +1,7 @@
 {
-    "name": "lightgallery/vue",
-    "private": true,
-    "main": "LightGalleryVue.umd.js",
-    "module": "LightGalleryVue.common.js",
-    "typings": "LightGallery.vue.d.ts"
+  "name": "lightgallery/vue",
+  "private": true,
+  "main": "LightGalleryVue.umd.js",
+  "module": "LightGalleryVue.common.js",
+  "typings": "LightGallery.vue.d.ts"
 }

@@ -2,7 +2,6 @@
 // Nav (Navigation components)
 // --------------------------------------------------
 
-
 // Base styles
 
 .nav {
@@ -19,8 +18,9 @@
   background: none;
   border: 0;
 
-  [class^='opacity-'], [class*=' opacity-'] {
-    transition: opacity .2s ease-in-out;
+  [class^="opacity-"],
+  [class*=" opacity-"] {
+    transition: opacity 0.2s ease-in-out;
   }
 
   &:hover *,
@@ -31,7 +31,7 @@
   &.active {
     color: var(--#{$prefix}nav-link-active-color);
   }
-  &.active:not([data-bs-toggle='dropdown']) {
+  &.active:not([data-bs-toggle="dropdown"]) {
     pointer-events: none;
     cursor: default;
   }
@@ -48,7 +48,6 @@
 .nav-item.active > .nav-link * {
   opacity: 1 !important;
 }
-
 
 // Tabs and Pills
 
@@ -67,21 +66,23 @@
   margin-bottom: $spacer;
   .nav-item {
     margin: {
-      right: ($spacer * .375);
-      bottom: $spacer * .375;
+      right: ($spacer * 0.375);
+      bottom: $spacer * 0.375;
     }
-    &:last-child { margin-right: 0; }
+    &:last-child {
+      margin-right: 0;
+    }
   }
   &.justify-content-center .nav-item {
     margin: {
-      right: ($spacer * .1875);
-      left: ($spacer * .1875);
+      right: ($spacer * 0.1875);
+      left: ($spacer * 0.1875);
     }
   }
   &.justify-content-end .nav-item {
     margin: {
       right: 0;
-      left: ($spacer * .375);
+      left: ($spacer * 0.375);
     }
   }
   &.flex-column {
@@ -90,7 +91,9 @@
         right: 0;
         left: 0;
       }
-      &:last-child { margin-bottom: 0; }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   .nav-link {
@@ -100,18 +103,20 @@
 }
 
 .nav-pills {
-  margin-bottom: ($spacer * .625);
+  margin-bottom: ($spacer * 0.625);
   .nav-item {
     margin: {
-      right: ($spacer * .875);
-      bottom: ($spacer * .875);
+      right: ($spacer * 0.875);
+      bottom: ($spacer * 0.875);
     }
-    &:last-child { margin-right: 0; }
+    &:last-child {
+      margin-right: 0;
+    }
   }
   &.justify-content-center .nav-item {
     margin: {
-      right: ($spacer * .4375);
-      left: ($spacer * .4375);
+      right: ($spacer * 0.4375);
+      left: ($spacer * 0.4375);
     }
   }
   &.justify-content-end .nav-item {
@@ -126,7 +131,9 @@
         right: 0;
         left: 0;
       }
-      &:last-child { margin-bottom: 0; }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   .nav-link {

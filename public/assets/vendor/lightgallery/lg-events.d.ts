@@ -1,12 +1,12 @@
-import { LightGallery } from './lightgallery';
-import { VideoSource } from './plugins/video/types';
+import { LightGallery } from "./lightgallery";
+import { VideoSource } from "./plugins/video/types";
 /**
  * List of lightGallery events
  * All events should be documented here
  * Below interfaces are used to build the website documentations
  * */
 export declare const lGEvents: {
-    [key: string]: string;
+  [key: string]: string;
 };
 /**
  * Fired only once when lightGallery is initialized
@@ -24,10 +24,10 @@ export declare const lGEvents: {
  * @see <a href="/docs/methods">Methods<a>
  */
 export interface InitDetail {
-    /**
-     * lightGallery plugin instance
-     */
-    instance: LightGallery;
+  /**
+   * lightGallery plugin instance
+   */
+  instance: LightGallery;
 }
 /**
  * Fired when the slide content has been inserted into it's slide container.
@@ -35,42 +35,40 @@ export interface InitDetail {
  * @method onAfterAppendSlide
  */
 export interface AfterAppendSlideEventDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
 }
 /**
  * Fired immediately before opening the gallery
  * @name lgBeforeOpen
  * @method onBeforeOpen
  */
-export interface BeforeOpenDetail {
-}
+export interface BeforeOpenDetail {}
 /**
  * Fired immediately after opening the gallery
  * @name lgAfterOpen
  * @method onAfterOpen
  */
-export interface AfterOpenDetail {
-}
+export interface AfterOpenDetail {}
 /**
  * Fired once the media inside the slide has been completely loaded .
  * @name lgSlideItemLoad
  * @method onSlideItemLoad
  */
 export interface SlideItemLoadDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
-    /**
-     * For the first slide, lightGallery adds some delay for displaying the loaded slide item.
-     * This delay is required for the transition effect when the slide item is displayed
-     * Respect the delay when you use this event
-     */
-    delay: number;
-    isFirstSlide: boolean;
+  /**
+   * Index of the slide
+   */
+  index: number;
+  /**
+   * For the first slide, lightGallery adds some delay for displaying the loaded slide item.
+   * This delay is required for the transition effect when the slide item is displayed
+   * Respect the delay when you use this event
+   */
+  delay: number;
+  isFirstSlide: boolean;
 }
 /**
  * Fired immediately before each slide transition.
@@ -86,22 +84,22 @@ export interface SlideItemLoadDetail {
  *   lightGallery(lg);
  */
 export interface BeforeSlideDetail {
-    /**
-     * Index of the previous slide
-     */
-    prevIndex: number;
-    /**
-     * Index of the slide
-     */
-    index: number;
-    /**
-     * true if slide function called via touch event or mouse drag
-     */
-    fromTouch: boolean;
-    /**
-     * true if slide function called via thumbnail click
-     */
-    fromThumb: boolean;
+  /**
+   * Index of the previous slide
+   */
+  prevIndex: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
+  /**
+   * true if slide function called via touch event or mouse drag
+   */
+  fromTouch: boolean;
+  /**
+   * true if slide function called via thumbnail click
+   */
+  fromThumb: boolean;
 }
 /**
  * Fired immediately after each slide transition.
@@ -109,68 +107,63 @@ export interface BeforeSlideDetail {
  * @method onAfterSlide
  */
 export interface AfterSlideDetail {
-    /**
-     * Index of the previous slide
-     */
-    prevIndex: number;
-    /**
-     * Index of the slide
-     */
-    index: number;
-    /**
-     * true if slide function called via touch event or mouse drag
-     */
-    fromTouch: boolean;
-    /**
-     * true if slide function called via thumbnail click
-     */
-    fromThumb: boolean;
+  /**
+   * Index of the previous slide
+   */
+  prevIndex: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
+  /**
+   * true if slide function called via touch event or mouse drag
+   */
+  fromTouch: boolean;
+  /**
+   * true if slide function called via thumbnail click
+   */
+  fromThumb: boolean;
 }
 /**
  * Fired when the video poster is clicked.
  * @name lgPosterClick
  * @method onPosterClick
  */
-export interface PosterClickDetail {
-}
+export interface PosterClickDetail {}
 /**
  * Fired when the drag event to move to different slide starts.
  * @name lgDragStart
  * @method onDragStart
  */
-export interface DragStartDetail {
-}
+export interface DragStartDetail {}
 /**
  * Fired periodically during the drag operation.
  * @name lgDragMove
  * @method onDragMove
  */
-export interface DragMoveDetail {
-}
+export interface DragMoveDetail {}
 /**
  * Fired when the user has finished the drag operation
  * @name lgDragEnd
  * @method onDragEnd
  */
-export interface DragEndDetail {
-}
+export interface DragEndDetail {}
 /**
  * Fired immediately before the start of the close process.
  * @name lgBeforeClose
  * @method onBeforeClose
  */
-export interface BeforeCloseDetail {
-}
+export interface BeforeCloseDetail {}
 /**
  * Fired immediately once lightGallery is closed.
  * @name lgAfterClose
  * @method onAfterClose
  */
 export interface AfterCloseDetail {
-    /**
-     * lightGallery plugin instance
-     */
-    instance: LightGallery;
+  /**
+   * lightGallery plugin instance
+   */
+  instance: LightGallery;
 }
 /**
  * Fired immediately before each "next" slide transition
@@ -178,14 +171,14 @@ export interface AfterCloseDetail {
  * @method onBeforeNextSlide
  */
 export interface BeforeNextSlideDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
-    /**
-     * true if slide function called via touch event or mouse drag
-     */
-    fromTouch: boolean;
+  /**
+   * Index of the slide
+   */
+  index: number;
+  /**
+   * true if slide function called via touch event or mouse drag
+   */
+  fromTouch: boolean;
 }
 /**
  * Fired immediately before each "prev" slide transition
@@ -193,14 +186,14 @@ export interface BeforeNextSlideDetail {
  * @method onBeforePrevSlide
  */
 export interface BeforePrevSlideDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
-    /**
-     * true if slide function called via touch event or mouse drag
-     */
-    fromTouch: boolean;
+  /**
+   * Index of the slide
+   */
+  index: number;
+  /**
+   * true if slide function called via touch event or mouse drag
+   */
+  fromTouch: boolean;
 }
 /**
  * Fired when the sub-html content (ex : title/ description) has been appended into the slide.
@@ -208,10 +201,10 @@ export interface BeforePrevSlideDetail {
  * @method onAfterAppendSubHtml
  */
 export interface AfterAppendSubHtmlDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
 }
 /**
  * Fired when the lightGallery container has been resized.
@@ -219,10 +212,10 @@ export interface AfterAppendSubHtmlDetail {
  * @method onContainerResize
  */
 export interface ContainerResizeDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
 }
 /**
  * Fired when lightGallery detects video slide
@@ -230,15 +223,15 @@ export interface ContainerResizeDetail {
  * @method onHasVideo
  */
 export interface HasVideoDetail {
-    /**
-     * Index of the slide,
-     */
-    index: number;
-    /**
-     * Video source
-     */
-    src: string;
-    /**
+  /**
+   * Index of the slide,
+   */
+  index: number;
+  /**
+   * Video source
+   */
+  src: string;
+  /**
      * HTML5 video source if available
      * <p>
        HTML5 video source = source: {
@@ -248,11 +241,11 @@ export interface HasVideoDetail {
         attributes: HTMLVideoElement;
      * </p>
      */
-    html5Video: VideoSource;
-    /**
-     * True if video has poster
-     */
-    hasPoster: boolean;
+  html5Video: VideoSource;
+  /**
+   * True if video has poster
+   */
+  hasPoster: boolean;
 }
 /**
  * Fired when the image is rotated in anticlockwise direction
@@ -260,10 +253,10 @@ export interface HasVideoDetail {
  * @method onRotateLeft
  */
 export interface RotateLeftDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
 }
 /**
  * Fired when the image is rotated in clockwise direction
@@ -271,10 +264,10 @@ export interface RotateLeftDetail {
  * @method onRotateRight
  */
 export interface RotateRightDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
 }
 /**
  * Fired when the image is flipped horizontally
@@ -282,10 +275,10 @@ export interface RotateRightDetail {
  * @method onFlipHorizontal
  */
 export interface FlipHorizontalDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
 }
 /**
  * Fired when the image is flipped vertically
@@ -293,8 +286,8 @@ export interface FlipHorizontalDetail {
  * @method onFlipVertical
  */
 export interface FlipVerticalDetail {
-    /**
-     * Index of the slide
-     */
-    index: number;
+  /**
+   * Index of the slide
+   */
+  index: number;
 }

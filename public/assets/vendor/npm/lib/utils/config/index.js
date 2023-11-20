@@ -1,4 +1,4 @@
-const definitions = require('./definitions.js')
+const definitions = require("./definitions.js");
 
 // use the defined flattening function, and copy over any scoped
 // registries and registry-specific "nerfdart" configs verbatim
@@ -11,25 +11,26 @@ const definitions = require('./definitions.js')
 // is only passed along to paths that end up calling npm-registry-fetch.
 const flatten = (obj, flat = {}) => {
   for (const [key, val] of Object.entries(obj)) {
-    const def = definitions[key]
+    const def = definitions[key];
     if (def && def.flatten) {
-      def.flatten(key, obj, flat)
+      def.flatten(key, obj, flat);
     } else if (/@.*:registry$/i.test(key) || /^\/\//.test(key)) {
-      flat[key] = val
+      flat[key] = val;
     }
   }
 
   // XXX make this the bin/npm-cli.js file explicitly instead
   // otherwise using npm programmatically is a bit of a pain.
-  flat.npmBin = require.main ? require.main.filename
-    : /* istanbul ignore next - not configurable property */ undefined
-  flat.nodeBin = process.env.NODE || process.execPath
+  flat.npmBin = require.main
+    ? require.main.filename
+    : /* istanbul ignore next - not configurable property */ undefined;
+  flat.nodeBin = process.env.NODE || process.execPath;
 
   // XXX should this be sha512?  is it even relevant?
-  flat.hashAlgorithm = 'sha1'
+  flat.hashAlgorithm = "sha1";
 
-  return flat
-}
+  return flat;
+};
 
 // aliases where they get expanded into a completely different thing
 // these are NOT supported in the environment or npmrc files, only
@@ -37,42 +38,42 @@ const flatten = (obj, flat = {}) => {
 // TODO: when we switch off of nopt, use an arg parser that supports
 // more reasonable aliasing and short opts right in the definitions set.
 const shorthands = {
-  'enjoy-by': ['--before'],
-  d: ['--loglevel', 'info'],
-  dd: ['--loglevel', 'verbose'],
-  ddd: ['--loglevel', 'silly'],
-  quiet: ['--loglevel', 'warn'],
-  q: ['--loglevel', 'warn'],
-  s: ['--loglevel', 'silent'],
-  silent: ['--loglevel', 'silent'],
-  verbose: ['--loglevel', 'verbose'],
-  desc: ['--description'],
-  help: ['--usage'],
-  local: ['--no-global'],
-  n: ['--no-yes'],
-  no: ['--no-yes'],
-  porcelain: ['--parseable'],
-  readonly: ['--read-only'],
-  reg: ['--registry'],
-  iwr: ['--include-workspace-root'],
+  "enjoy-by": ["--before"],
+  d: ["--loglevel", "info"],
+  dd: ["--loglevel", "verbose"],
+  ddd: ["--loglevel", "silly"],
+  quiet: ["--loglevel", "warn"],
+  q: ["--loglevel", "warn"],
+  s: ["--loglevel", "silent"],
+  silent: ["--loglevel", "silent"],
+  verbose: ["--loglevel", "verbose"],
+  desc: ["--description"],
+  help: ["--usage"],
+  local: ["--no-global"],
+  n: ["--no-yes"],
+  no: ["--no-yes"],
+  porcelain: ["--parseable"],
+  readonly: ["--read-only"],
+  reg: ["--registry"],
+  iwr: ["--include-workspace-root"],
   ...Object.entries(definitions).reduce((acc, [key, { short = [] }]) => {
     // can be either an array or string
     for (const s of [].concat(short)) {
-      acc[s] = [`--${key}`]
+      acc[s] = [`--${key}`];
     }
-    return acc
+    return acc;
   }, {}),
-}
+};
 
 module.exports = {
-  get defaults () {
+  get defaults() {
     // NB: 'default' is a reserved word
     return Object.entries(definitions).reduce((acc, [key, { default: d }]) => {
-      acc[key] = d
-      return acc
-    }, {})
+      acc[key] = d;
+      return acc;
+    }, {});
   },
   definitions,
   flatten,
   shorthands,
-}
+};

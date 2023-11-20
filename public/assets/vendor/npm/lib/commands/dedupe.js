@@ -1,36 +1,36 @@
 // dedupe duplicated packages, or find them in the tree
-const Arborist = require('@npmcli/arborist')
-const reifyFinish = require('../utils/reify-finish.js')
+const Arborist = require("@npmcli/arborist");
+const reifyFinish = require("../utils/reify-finish.js");
 
-const ArboristWorkspaceCmd = require('../arborist-cmd.js')
+const ArboristWorkspaceCmd = require("../arborist-cmd.js");
 
 class Dedupe extends ArboristWorkspaceCmd {
-  static description = 'Reduce duplication in the package tree'
-  static name = 'dedupe'
+  static description = "Reduce duplication in the package tree";
+  static name = "dedupe";
   static params = [
-    'install-strategy',
-    'legacy-bundling',
-    'global-style',
-    'strict-peer-deps',
-    'package-lock',
-    'omit',
-    'ignore-scripts',
-    'audit',
-    'bin-links',
-    'fund',
-    'dry-run',
+    "install-strategy",
+    "legacy-bundling",
+    "global-style",
+    "strict-peer-deps",
+    "package-lock",
+    "omit",
+    "ignore-scripts",
+    "audit",
+    "bin-links",
+    "fund",
+    "dry-run",
     ...super.params,
-  ]
+  ];
 
-  async exec (args) {
+  async exec(args) {
     if (this.npm.global) {
-      const er = new Error('`npm dedupe` does not work in global mode.')
-      er.code = 'EDEDUPEGLOBAL'
-      throw er
+      const er = new Error("`npm dedupe` does not work in global mode.");
+      er.code = "EDEDUPEGLOBAL";
+      throw er;
     }
 
-    const dryRun = this.npm.config.get('dry-run')
-    const where = this.npm.prefix
+    const dryRun = this.npm.config.get("dry-run");
+    const where = this.npm.prefix;
     const opts = {
       ...this.npm.flatOptions,
       path: where,
@@ -41,11 +41,11 @@ class Dedupe extends ArboristWorkspaceCmd {
       // order to reduce potential confusion we set this to false.
       save: false,
       workspaces: this.workspaceNames,
-    }
-    const arb = new Arborist(opts)
-    await arb.dedupe(opts)
-    await reifyFinish(this.npm, arb)
+    };
+    const arb = new Arborist(opts);
+    await arb.dedupe(opts);
+    await reifyFinish(this.npm, arb);
   }
 }
 
-module.exports = Dedupe
+module.exports = Dedupe;

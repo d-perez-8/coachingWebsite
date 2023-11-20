@@ -21,8 +21,8 @@ takes exactly the same arguments as `npm install`.
 
 #### `save`
 
-* Default: `true` unless when using `npm update` where it defaults to `false`
-* Type: Boolean
+- Default: `true` unless when using `npm update` where it defaults to `false`
+- Type: Boolean
 
 Save installed packages to a `package.json` file as dependencies.
 
@@ -33,30 +33,30 @@ Will also prevent writing to `package-lock.json` if set to `false`.
 
 #### `save-exact`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Dependencies saved to package.json will be configured with an exact version
 rather than using npm's default semver range operator.
 
 #### `global`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Operates in "global" mode, so that packages are installed into the `prefix`
 folder instead of the current working directory. See
 [folders](/configuring-npm/folders) for more on the differences in behavior.
 
-* packages are installed into the `{prefix}/lib/node_modules` folder, instead
+- packages are installed into the `{prefix}/lib/node_modules` folder, instead
   of the current working directory.
-* bin files are linked to `{prefix}/bin`
-* man pages are linked to `{prefix}/share/man`
+- bin files are linked to `{prefix}/bin`
+- man pages are linked to `{prefix}/share/man`
 
 #### `install-strategy`
 
-* Default: "hoisted"
-* Type: "hoisted", "nested", or "shallow"
+- Default: "hoisted"
+- Type: "hoisted", "nested", or "shallow"
 
 Sets the strategy for installing packages in node_modules. hoisted
 (default): Install non-duplicated in top-level, and duplicated as necessary
@@ -67,9 +67,9 @@ link in place, unhoisted.
 
 #### `legacy-bundling`
 
-* Default: false
-* Type: Boolean
-* DEPRECATED: This option has been deprecated in favor of
+- Default: false
+- Type: Boolean
+- DEPRECATED: This option has been deprecated in favor of
   `--install-strategy=nested`
 
 Instead of hoisting package installs in `node_modules`, install packages in
@@ -79,9 +79,9 @@ de-duplicating. Sets `--install-strategy=nested`.
 
 #### `global-style`
 
-* Default: false
-* Type: Boolean
-* DEPRECATED: This option has been deprecated in favor of
+- Default: false
+- Type: Boolean
+- DEPRECATED: This option has been deprecated in favor of
   `--install-strategy=shallow`
 
 Only install direct dependencies in the top level `node_modules`, but hoist
@@ -89,9 +89,9 @@ on deeper dependendencies. Sets `--install-strategy=shallow`.
 
 #### `omit`
 
-* Default: 'dev' if the `NODE_ENV` environment variable is set to
+- Default: 'dev' if the `NODE_ENV` environment variable is set to
   'production', otherwise empty.
-* Type: "dev", "optional", or "peer" (can be set multiple times)
+- Type: "dev", "optional", or "peer" (can be set multiple times)
 
 Dependency types to omit from the installation tree on disk.
 
@@ -107,8 +107,8 @@ variable will be set to `'production'` for all lifecycle scripts.
 
 #### `strict-peer-deps`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 If set to `true`, and `--legacy-peer-deps` is not set, then _any_
 conflicting `peerDependencies` will be treated as an install failure, even
@@ -126,8 +126,8 @@ this warning is treated as a failure.
 
 #### `package-lock`
 
-* Default: true
-* Type: Boolean
+- Default: true
+- Type: Boolean
 
 If set to false, then ignore `package-lock.json` files when installing. This
 will also prevent _writing_ `package-lock.json` if `save` is true.
@@ -136,8 +136,8 @@ This configuration does not affect `npm ci`.
 
 #### `foreground-scripts`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Run all build scripts (ie, `preinstall`, `install`, and `postinstall`)
 scripts for installed packages in the foreground process, sharing standard
@@ -148,20 +148,20 @@ but can be useful for debugging.
 
 #### `ignore-scripts`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 If true, npm does not run scripts specified in package.json files.
 
 Note that commands explicitly intended to run a particular script, such as
 `npm start`, `npm stop`, `npm restart`, `npm test`, and `npm run-script`
 will still run their intended script if `ignore-scripts` is set, but they
-will *not* run any pre- or post-scripts.
+will _not_ run any pre- or post-scripts.
 
 #### `audit`
 
-* Default: true
-* Type: Boolean
+- Default: true
+- Type: Boolean
 
 When "true" submit audit reports alongside the current npm command to the
 default registry and all registries configured for scopes. See the
@@ -170,8 +170,8 @@ submitted.
 
 #### `bin-links`
 
-* Default: true
-* Type: Boolean
+- Default: true
+- Type: Boolean
 
 Tells npm to create symlinks (or `.cmd` shims on Windows) for package
 executables.
@@ -182,8 +182,8 @@ systems.
 
 #### `fund`
 
-* Default: true
-* Type: Boolean
+- Default: true
+- Type: Boolean
 
 When "true" displays the message at the end of each `npm install`
 acknowledging the number of dependencies looking for funding. See [`npm
@@ -191,8 +191,8 @@ fund`](/commands/npm-fund) for details.
 
 #### `dry-run`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Indicates that you don't want npm to make any changes and that it should
 only report what it would have done. This can be passed into any of the
@@ -204,8 +204,8 @@ Note: This is NOT honored by other network related commands, eg `dist-tags`,
 
 #### `workspace`
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 Enable running a command in the context of the configured workspaces of the
 current project while filtering by running only the workspaces defined by
@@ -213,9 +213,9 @@ this configuration option.
 
 Valid values for the `workspace` config are either:
 
-* Workspace names
-* Path to a workspace directory
-* Path to a parent workspace directory (will result in selecting all
+- Workspace names
+- Path to a workspace directory
+- Path to a parent workspace directory (will result in selecting all
   workspaces within that folder)
 
 When set for the `npm init` command, this may be set to the folder of a
@@ -226,8 +226,8 @@ This value is not exported to the environment for child processes.
 
 #### `workspaces`
 
-* Default: null
-* Type: null or Boolean
+- Default: null
+- Type: null or Boolean
 
 Set to true to run the command in the context of **all** configured
 workspaces.
@@ -236,16 +236,16 @@ Explicitly setting this to false will cause commands like `install` to
 ignore workspaces altogether. When not set explicitly:
 
 - Commands that operate on the `node_modules` tree (install, update, etc.)
-will link workspaces into the `node_modules` folder. - Commands that do
-other things (test, exec, publish, etc.) will operate on the root project,
-_unless_ one or more workspaces are specified in the `workspace` config.
+  will link workspaces into the `node_modules` folder. - Commands that do
+  other things (test, exec, publish, etc.) will operate on the root project,
+  _unless_ one or more workspaces are specified in the `workspace` config.
 
 This value is not exported to the environment for child processes.
 
 #### `include-workspace-root`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Include the workspace root when workspaces are enabled for a command.
 
@@ -257,8 +257,8 @@ This value is not exported to the environment for child processes.
 
 #### `install-links`
 
-* Default: true
-* Type: Boolean
+- Default: true
+- Type: Boolean
 
 When set file: protocol dependencies will be packed and installed as regular
 dependencies instead of creating a symlink. This option has no effect on
@@ -266,6 +266,6 @@ workspaces.
 
 ### See Also
 
-* [npm install](/commands/npm-install)
-* [npm install-ci-test](/commands/npm-install-ci-test)
-* [npm test](/commands/npm-test)
+- [npm install](/commands/npm-install)
+- [npm install-ci-test](/commands/npm-install-ci-test)
+- [npm test](/commands/npm-test)

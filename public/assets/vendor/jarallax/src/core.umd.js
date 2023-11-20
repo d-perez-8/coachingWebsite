@@ -1,15 +1,15 @@
-import domReady from './utils/ready';
-import global from './utils/global';
-import jarallax from './core';
+import domReady from "./utils/ready";
+import global from "./utils/global";
+import jarallax from "./core";
 
 const $ = global.jQuery;
 
 // jQuery support
-if ('undefined' !== typeof $) {
+if ("undefined" !== typeof $) {
   const $Plugin = function (...args) {
     Array.prototype.unshift.call(args, this);
     const res = jarallax.apply(global, args);
-    return 'object' !== typeof res ? res : this;
+    return "object" !== typeof res ? res : this;
   };
   $Plugin.constructor = jarallax.constructor;
 
@@ -24,7 +24,7 @@ if ('undefined' !== typeof $) {
 
 // data-jarallax initialization
 domReady(() => {
-  jarallax(document.querySelectorAll('[data-jarallax]'));
+  jarallax(document.querySelectorAll("[data-jarallax]"));
 });
 
 export default jarallax;

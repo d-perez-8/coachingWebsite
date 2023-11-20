@@ -18,18 +18,18 @@ alias: dist-tags
 
 Add, remove, and enumerate distribution tags on a package:
 
-* add: Tags the specified version of the package with the specified tag,
+- add: Tags the specified version of the package with the specified tag,
   or the [`--tag` config](/using-npm/config#tag) if not specified. If you have
   two-factor authentication on auth-and-writes then you’ll need to include a
   one-time password on the command line with
   `--otp <one-time password>`, or at the OTP prompt.
 
-* rm: Clear a tag that is no longer in use from the package. If you have
+- rm: Clear a tag that is no longer in use from the package. If you have
   two-factor authentication on auth-and-writes then you’ll need to include
   a one-time password on the command line with `--otp <one-time password>`,
   or at the OTP prompt.
 
-* ls: Show all of the dist-tags for a package, defaulting to the package in
+- ls: Show all of the dist-tags for a package, defaulting to the package in
   the current prefix. This is the default action if none is specified.
 
 A tag can be used when installing packages as a reference to a version instead
@@ -83,7 +83,7 @@ specified in the same slot: `npm install <pkg>@<version>` vs
 
 Tags that can be interpreted as valid semver ranges will be rejected. For
 example, `v1.4` cannot be used as a tag, because it is interpreted by
-semver as `>=1.4.0 <1.5.0`.  See <https://github.com/npm/npm/issues/6082>.
+semver as `>=1.4.0 <1.5.0`. See <https://github.com/npm/npm/issues/6082>.
 
 The simplest way to avoid semver problems with tags is to use tags that do
 not begin with a number or the letter `v`.
@@ -92,8 +92,8 @@ not begin with a number or the letter `v`.
 
 #### `workspace`
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 Enable running a command in the context of the configured workspaces of the
 current project while filtering by running only the workspaces defined by
@@ -101,9 +101,9 @@ this configuration option.
 
 Valid values for the `workspace` config are either:
 
-* Workspace names
-* Path to a workspace directory
-* Path to a parent workspace directory (will result in selecting all
+- Workspace names
+- Path to a workspace directory
+- Path to a parent workspace directory (will result in selecting all
   workspaces within that folder)
 
 When set for the `npm init` command, this may be set to the folder of a
@@ -114,8 +114,8 @@ This value is not exported to the environment for child processes.
 
 #### `workspaces`
 
-* Default: null
-* Type: null or Boolean
+- Default: null
+- Type: null or Boolean
 
 Set to true to run the command in the context of **all** configured
 workspaces.
@@ -124,16 +124,16 @@ Explicitly setting this to false will cause commands like `install` to
 ignore workspaces altogether. When not set explicitly:
 
 - Commands that operate on the `node_modules` tree (install, update, etc.)
-will link workspaces into the `node_modules` folder. - Commands that do
-other things (test, exec, publish, etc.) will operate on the root project,
-_unless_ one or more workspaces are specified in the `workspace` config.
+  will link workspaces into the `node_modules` folder. - Commands that do
+  other things (test, exec, publish, etc.) will operate on the root project,
+  _unless_ one or more workspaces are specified in the `workspace` config.
 
 This value is not exported to the environment for child processes.
 
 #### `include-workspace-root`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Include the workspace root when workspaces are enabled for a command.
 
@@ -145,10 +145,10 @@ This value is not exported to the environment for child processes.
 
 ### See Also
 
-* [package spec](/using-npm/package-spec)
-* [npm publish](/commands/npm-publish)
-* [npm install](/commands/npm-install)
-* [npm dedupe](/commands/npm-dedupe)
-* [npm registry](/using-npm/registry)
-* [npm config](/commands/npm-config)
-* [npmrc](/configuring-npm/npmrc)
+- [package spec](/using-npm/package-spec)
+- [npm publish](/commands/npm-publish)
+- [npm install](/commands/npm-install)
+- [npm dedupe](/commands/npm-dedupe)
+- [npm registry](/using-npm/registry)
+- [npm config](/commands/npm-config)
+- [npmrc](/configuring-npm/npmrc)

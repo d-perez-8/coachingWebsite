@@ -6,49 +6,51 @@
  A comment before a mixin usage prevents the latter to be properly highlighted.
  */
 
-Prism.languages.less = Prism.languages.extend('css', {
-	'comment': [
-		/\/\*[\s\S]*?\*\//,
-		{
-			pattern: /(^|[^\\])\/\/.*/,
-			lookbehind: true
-		}
-	],
-	'atrule': {
-		pattern: /@[\w-](?:\((?:[^(){}]|\([^(){}]*\))*\)|[^(){};\s]|\s+(?!\s))*?(?=\s*\{)/,
-		inside: {
-			'punctuation': /[:()]/
-		}
-	},
-	// selectors and mixins are considered the same
-	'selector': {
-		pattern: /(?:@\{[\w-]+\}|[^{};\s@])(?:@\{[\w-]+\}|\((?:[^(){}]|\([^(){}]*\))*\)|[^(){};@\s]|\s+(?!\s))*?(?=\s*\{)/,
-		inside: {
-			// mixin parameters
-			'variable': /@+[\w-]+/
-		}
-	},
+Prism.languages.less = Prism.languages.extend("css", {
+  comment: [
+    /\/\*[\s\S]*?\*\//,
+    {
+      pattern: /(^|[^\\])\/\/.*/,
+      lookbehind: true,
+    },
+  ],
+  atrule: {
+    pattern:
+      /@[\w-](?:\((?:[^(){}]|\([^(){}]*\))*\)|[^(){};\s]|\s+(?!\s))*?(?=\s*\{)/,
+    inside: {
+      punctuation: /[:()]/,
+    },
+  },
+  // selectors and mixins are considered the same
+  selector: {
+    pattern:
+      /(?:@\{[\w-]+\}|[^{};\s@])(?:@\{[\w-]+\}|\((?:[^(){}]|\([^(){}]*\))*\)|[^(){};@\s]|\s+(?!\s))*?(?=\s*\{)/,
+    inside: {
+      // mixin parameters
+      variable: /@+[\w-]+/,
+    },
+  },
 
-	'property': /(?:@\{[\w-]+\}|[\w-])+(?:\+_?)?(?=\s*:)/,
-	'operator': /[+\-*\/]/
+  property: /(?:@\{[\w-]+\}|[\w-])+(?:\+_?)?(?=\s*:)/,
+  operator: /[+\-*\/]/,
 });
 
-Prism.languages.insertBefore('less', 'property', {
-	'variable': [
-		// Variable declaration (the colon must be consumed!)
-		{
-			pattern: /@[\w-]+\s*:/,
-			inside: {
-				'punctuation': /:/
-			}
-		},
+Prism.languages.insertBefore("less", "property", {
+  variable: [
+    // Variable declaration (the colon must be consumed!)
+    {
+      pattern: /@[\w-]+\s*:/,
+      inside: {
+        punctuation: /:/,
+      },
+    },
 
-		// Variable usage
-		/@@?[\w-]+/
-	],
-	'mixin-usage': {
-		pattern: /([{;]\s*)[.#](?!\d)[\w-].*?(?=[(;])/,
-		lookbehind: true,
-		alias: 'function'
-	}
+    // Variable usage
+    /@@?[\w-]+/,
+  ],
+  "mixin-usage": {
+    pattern: /([{;]\s*)[.#](?!\d)[\w-].*?(?=[(;])/,
+    lookbehind: true,
+    alias: "function",
+  },
 });

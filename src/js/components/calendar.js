@@ -1,10 +1,9 @@
 /**
  * FullCalendar plugin initialization (Schedule)
  * @requires https://github.com/fullcalendar/fullcalendar
-*/
+ */
 
 const calendar = (() => {
-
   // forEach function
   const forEach = (array, callback, scope) => {
     for (let i = 0; i < array.length; i++) {
@@ -13,21 +12,19 @@ const calendar = (() => {
   };
 
   // Calendar initialisation
-  const calendars = document.querySelectorAll('.calendar');
+  const calendars = document.querySelectorAll(".calendar");
   forEach(calendars, (index, value) => {
-    
     let userOptions;
-    if(value.dataset.calendarOptions != undefined) userOptions = JSON.parse(value.dataset.calendarOptions);
+    if (value.dataset.calendarOptions != undefined)
+      userOptions = JSON.parse(value.dataset.calendarOptions);
     let options = {
-      themeSystem: 'bootstrap5',
-      ...userOptions
-    }
+      themeSystem: "bootstrap5",
+      ...userOptions,
+    };
 
     const calendarInstance = new FullCalendar.Calendar(value, options);
     calendarInstance.render();
-
   });
-
 })();
 
 export default calendar;

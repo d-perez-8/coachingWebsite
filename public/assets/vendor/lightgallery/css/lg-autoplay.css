@@ -29,11 +29,11 @@
 }
 
 .lg-autoplay-button:after {
-  content: '\e01d';
+  content: "\e01d";
 }
 
 .lg-show-autoplay .lg-autoplay-button:after {
-  content: '\e01a';
+  content: "\e01a";
 }
 
 .lg-single-item .lg-autoplay-button {

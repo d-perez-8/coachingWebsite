@@ -1,13 +1,18 @@
 /*!
-  * Bootstrap data.js v5.2.3 (https://getbootstrap.com/)
-  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
+ * Bootstrap data.js v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Data = factory());
-})(this, (function () { 'use strict';
+  typeof exports === "object" && typeof module !== "undefined"
+    ? (module.exports = factory())
+    : typeof define === "function" && define.amd
+    ? define(factory)
+    : ((global =
+        typeof globalThis !== "undefined" ? globalThis : global || self),
+      (global.Data = factory()));
+})(this, function () {
+  "use strict";
 
   /**
    * --------------------------------------------------------------------------
@@ -31,7 +36,11 @@
 
       if (!instanceMap.has(key) && instanceMap.size !== 0) {
         // eslint-disable-next-line no-console
-        console.error(`Bootstrap doesn't allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
+        console.error(
+          `Bootstrap doesn't allow more than one instance per element. Bound instance: ${
+            Array.from(instanceMap.keys())[0]
+          }.`,
+        );
         return;
       }
 
@@ -57,11 +66,9 @@
       if (instanceMap.size === 0) {
         elementMap.delete(element);
       }
-    }
-
+    },
   };
 
   return data;
-
-}));
+});
 //# sourceMappingURL=data.js.map

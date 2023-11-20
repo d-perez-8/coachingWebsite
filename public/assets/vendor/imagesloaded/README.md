@@ -10,12 +10,12 @@ Detect when images have been loaded.
 
 ### Download
 
-+ [imagesloaded.pkgd.min.js](https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js) minified
-+ [imagesloaded.pkgd.js](https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js) un-minified
+- [imagesloaded.pkgd.min.js](https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js) minified
+- [imagesloaded.pkgd.js](https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js) un-minified
 
 ### CDN
 
-``` html
+```html
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <!-- or -->
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js"></script>
@@ -31,37 +31,39 @@ Install via Yarn: `yarn add imagesloaded`
 
 You can use imagesLoaded as a jQuery Plugin.
 
-``` js
-$('#container').imagesLoaded( function() {
+```js
+$("#container").imagesLoaded(function () {
   // images have loaded
 });
 
 // options
-$('#container').imagesLoaded( {
-  // options...
+$("#container").imagesLoaded(
+  {
+    // options...
   },
-  function() {
+  function () {
     // images have loaded
-  }
+  },
 );
 ```
 
 `.imagesLoaded()` returns a [jQuery Deferred object](https://api.jquery.com/category/deferred-object/). This allows you to use `.always()`, `.done()`, `.fail()` and `.progress()`.
 
-``` js
-$('#container').imagesLoaded()
-  .always( function( instance ) {
-    console.log('all images loaded');
+```js
+$("#container")
+  .imagesLoaded()
+  .always(function (instance) {
+    console.log("all images loaded");
   })
-  .done( function( instance ) {
-    console.log('all images successfully loaded');
+  .done(function (instance) {
+    console.log("all images successfully loaded");
   })
-  .fail( function() {
-    console.log('all images loaded, at least one is broken');
+  .fail(function () {
+    console.log("all images loaded, at least one is broken");
   })
-  .progress( function( instance, image ) {
-    var result = image.isLoaded ? 'loaded' : 'broken';
-    console.log( 'image is ' + result + ' for ' + image.img.src );
+  .progress(function (instance, image) {
+    var result = image.isLoaded ? "loaded" : "broken";
+    console.log("image is " + result + " for " + image.img.src);
   });
 ```
 
@@ -69,21 +71,21 @@ $('#container').imagesLoaded()
 
 You can use imagesLoaded with vanilla JS.
 
-``` js
-imagesLoaded( elem, callback )
+```js
+imagesLoaded(elem, callback);
 // options
-imagesLoaded( elem, options, callback )
+imagesLoaded(elem, options, callback);
 // you can use `new` if you like
-new imagesLoaded( elem, callback )
+new imagesLoaded(elem, callback);
 ```
 
-+ `elem` _Element, NodeList, Array, or Selector String_
-+ `options` _Object_
-+ `callback` _Function_ - function triggered after all images have been loaded
+- `elem` _Element, NodeList, Array, or Selector String_
+- `options` _Object_
+- `callback` _Function_ - function triggered after all images have been loaded
 
 Using a callback function is the same as binding it to the `always` event (see below).
 
-``` js
+```js
 // element
 imagesLoaded( document.querySelector('#container'), function( instance ) {
   console.log('all images are loaded');
@@ -97,15 +99,15 @@ imagesLoaded( posts, function() {...});
 
 Bind events with vanilla JS with .on(), .off(), and .once() methods.
 
-``` js
-var imgLoad = imagesLoaded( elem );
-function onAlways( instance ) {
-  console.log('all images are loaded');
+```js
+var imgLoad = imagesLoaded(elem);
+function onAlways(instance) {
+  console.log("all images are loaded");
 }
 // bind with .on()
-imgLoad.on( 'always', onAlways );
+imgLoad.on("always", onAlways);
 // unbind with .off()
-imgLoad.off( 'always', onAlways );
+imgLoad.off("always", onAlways);
 ```
 
 ## Background
@@ -114,15 +116,15 @@ Detect when background images have loaded, in addition to `<img>`s.
 
 Set `{ background: true }` to detect when the element's background image has loaded.
 
-``` js
+```js
 // jQuery
-$('#container').imagesLoaded( { background: true }, function() {
-  console.log('#container background image loaded');
+$("#container").imagesLoaded({ background: true }, function () {
+  console.log("#container background image loaded");
 });
 
 // vanilla JS
-imagesLoaded( '#container', { background: true }, function() {
-  console.log('#container background image loaded');
+imagesLoaded("#container", { background: true }, function () {
+  console.log("#container background image loaded");
 });
 ```
 
@@ -130,15 +132,15 @@ imagesLoaded( '#container', { background: true }, function() {
 
 Set to a selector string like `{ background: '.item' }` to detect when the background images of child elements have loaded.
 
-``` js
+```js
 // jQuery
-$('#container').imagesLoaded( { background: '.item' }, function() {
-  console.log('all .item background images loaded');
+$("#container").imagesLoaded({ background: ".item" }, function () {
+  console.log("all .item background images loaded");
 });
 
 // vanilla JS
-imagesLoaded( '#container', { background: '.item' }, function() {
-  console.log('all .item background images loaded');
+imagesLoaded("#container", { background: ".item" }, function () {
+  console.log("all .item background images loaded");
 });
 ```
 
@@ -148,33 +150,37 @@ imagesLoaded( '#container', { background: '.item' }, function() {
 
 ### always
 
-``` js
+```js
 // jQuery
-$('#container').imagesLoaded().always( function( instance ) {
-  console.log('ALWAYS - all images have been loaded');
-});
+$("#container")
+  .imagesLoaded()
+  .always(function (instance) {
+    console.log("ALWAYS - all images have been loaded");
+  });
 
 // vanilla JS
-imgLoad.on( 'always', function( instance ) {
-  console.log('ALWAYS - all images have been loaded');
+imgLoad.on("always", function (instance) {
+  console.log("ALWAYS - all images have been loaded");
 });
 ```
 
 Triggered after all images have been either loaded or confirmed broken.
 
-+ `instance` _imagesLoaded_ - the imagesLoaded instance
+- `instance` _imagesLoaded_ - the imagesLoaded instance
 
 ### done
 
-``` js
+```js
 // jQuery
-$('#container').imagesLoaded().done( function( instance ) {
-  console.log('DONE  - all images have been successfully loaded');
-});
+$("#container")
+  .imagesLoaded()
+  .done(function (instance) {
+    console.log("DONE  - all images have been successfully loaded");
+  });
 
 // vanilla JS
-imgLoad.on( 'done', function( instance ) {
-  console.log('DONE  - all images have been successfully loaded');
+imgLoad.on("done", function (instance) {
+  console.log("DONE  - all images have been successfully loaded");
 });
 ```
 
@@ -182,14 +188,16 @@ Triggered after all images have successfully loaded without any broken images.
 
 ### fail
 
-``` js
-$('#container').imagesLoaded().fail( function( instance ) {
-  console.log('FAIL - all images loaded, at least one is broken');
-});
+```js
+$("#container")
+  .imagesLoaded()
+  .fail(function (instance) {
+    console.log("FAIL - all images loaded, at least one is broken");
+  });
 
 // vanilla JS
-imgLoad.on( 'fail', function( instance ) {
-  console.log('FAIL - all images loaded, at least one is broken');
+imgLoad.on("fail", function (instance) {
+  console.log("FAIL - all images loaded, at least one is broken");
 });
 ```
 
@@ -197,17 +205,17 @@ Triggered after all images have been loaded with at least one broken image.
 
 ### progress
 
-``` js
-imgLoad.on( 'progress', function( instance, image ) {
-  var result = image.isLoaded ? 'loaded' : 'broken';
-  console.log( 'image is ' + result + ' for ' + image.img.src );
+```js
+imgLoad.on("progress", function (instance, image) {
+  var result = image.isLoaded ? "loaded" : "broken";
+  console.log("image is " + result + " for " + image.img.src);
 });
 ```
 
 Triggered after each image has been loaded.
 
-+ `instance` _imagesLoaded_ - the imagesLoaded instance
-+ `image` _LoadingImage_ - the LoadingImage instance of the loaded image
+- `instance` _imagesLoaded_ - the imagesLoaded instance
+- `image` _LoadingImage_ - the LoadingImage instance of the loaded image
 
 <!-- sponsored -->
 
@@ -225,15 +233,15 @@ _Boolean_ - `true` when the image has successfully loaded
 
 Array of _LoadingImage_ instances for each image detected
 
-``` js
-var imgLoad = imagesLoaded('#container');
-imgLoad.on( 'always', function() {
-  console.log( imgLoad.images.length + ' images loaded' );
+```js
+var imgLoad = imagesLoaded("#container");
+imgLoad.on("always", function () {
+  console.log(imgLoad.images.length + " images loaded");
   // detect which image is broken
-  for ( var i = 0, len = imgLoad.images.length; i < len; i++ ) {
+  for (var i = 0, len = imgLoad.images.length; i < len; i++) {
     var image = imgLoad.images[i];
-    var result = image.isLoaded ? 'loaded' : 'broken';
-    console.log( 'image is ' + result + ' for ' + image.img.src );
+    var result = image.isLoaded ? "loaded" : "broken";
+    console.log("image is " + result + " for " + image.img.src);
   }
 });
 ```
@@ -242,24 +250,24 @@ imgLoad.on( 'always', function() {
 
 Install imagesLoaded with npm.
 
-``` bash
+```bash
 npm install imagesloaded
 ```
 
 You can then `require('imagesloaded')`.
 
-``` js
+```js
 // main.js
-var imagesLoaded = require('imagesloaded');
+var imagesLoaded = require("imagesloaded");
 
-imagesLoaded( '#container', function() {
+imagesLoaded("#container", function () {
   // images have loaded
 });
 ```
 
 Use `.makeJQueryPlugin` to make `.imagesLoaded()` jQuery plugin.
 
-``` js
+```js
 // main.js
 var imagesLoaded = require('imagesloaded');
 var $ = require('jquery');
@@ -272,7 +280,7 @@ $('#container').imagesLoaded( function() {...});
 
 Run webpack.
 
-``` bash
+```bash
 webpack main.js bundle.js
 ```
 
@@ -280,11 +288,11 @@ webpack main.js bundle.js
 
 imagesLoaded works with [Browserify](https://browserify.org/).
 
-``` bash
+```bash
 npm install imagesloaded --save
 ```
 
-``` js
+```js
 var imagesLoaded = require('imagesloaded');
 
 imagesLoaded( elem, function() {...} );
@@ -292,7 +300,7 @@ imagesLoaded( elem, function() {...} );
 
 Use `.makeJQueryPlugin` to make to use `.imagesLoaded()` jQuery plugin.
 
-``` js
+```js
 var $ = require('jquery');
 var imagesLoaded = require('imagesloaded');
 
@@ -302,13 +310,12 @@ imagesLoaded.makeJQueryPlugin( $ );
 $('#container').imagesLoaded( function() {...});
 ```
 
-
 ## Browser support
 
-+ Chrome 49+
-+ Firefox 41+
-+ Edge 14+
-+ iOS Safari 8+
+- Chrome 49+
+- Firefox 41+
+- Edge 14+
+- iOS Safari 8+
 
 Use [imagesLoaded v4](https://github.com/desandro/imagesloaded/tree/v4.1.4) for Internet Explorer and other older browser support.
 
@@ -316,7 +323,7 @@ Use [imagesLoaded v4](https://github.com/desandro/imagesloaded/tree/v4.1.4) for 
 
 Development uses Node.js v16 with npm v8
 
-``` bash
+```bash
 nvm use
 ```
 

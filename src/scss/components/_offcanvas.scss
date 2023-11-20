@@ -2,13 +2,12 @@
 // Offcanvas
 // --------------------------------------------------
 
-
 // Header
 
 .offcanvas-header {
-  padding: calc(var(--#{$prefix}offcanvas-padding-y) * .75) var(--#{$prefix}offcanvas-padding-x);
+  padding: calc(var(--#{$prefix}offcanvas-padding-y) * 0.75)
+    var(--#{$prefix}offcanvas-padding-x);
 }
-
 
 // Body
 
@@ -16,11 +15,14 @@
   display: block !important;
 }
 
-
 // Add shadow when offcanvas is shown
 
-.offcanvas, .offcanvas-sm, .offcanvas-md,
-.offcanvas-lg, .offcanvas-xl, .offcanvas-xxl {
+.offcanvas,
+.offcanvas-sm,
+.offcanvas-md,
+.offcanvas-lg,
+.offcanvas-xl,
+.offcanvas-xxl {
   &.show {
     box-shadow: var(--#{$prefix}offcanvas-box-shadow);
   }

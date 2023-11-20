@@ -2,18 +2,34 @@
 // Typography
 // --------------------------------------------------
 
-
 // Headings line height
 
-h4, .h4, .fs-4,
-h5, .h5, .fs-5,
-h6, .h6, .fs-6 { line-height: $line-height-sm; }
-
+h4,
+.h4,
+.fs-4,
+h5,
+.h5,
+.fs-5,
+h6,
+.h6,
+.fs-6 {
+  line-height: $line-height-sm;
+}
 
 // Link inside headings
 
-h1, .h1, h2, .h2, h3, .h3,
-h4, .h4, h5, .h5, h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   font-weight: var(--#{$prefix}heading-font-weight);
   > a {
     color: var(--#{$prefix}heading-link-color);
@@ -23,7 +39,6 @@ h4, .h4, h5, .h5, h6, .h6 {
     }
   }
 }
-
 
 // Blockquote
 
@@ -36,14 +51,14 @@ h4, .h4, h5, .h5, h6, .h6 {
     position: absolute;
     top: 0;
     left: 0;
-    margin: -.1875rem -.1875rem $spacer -.1875rem;
+    margin: -0.1875rem -0.1875rem $spacer -0.1875rem;
     color: var(--#{$prefix}blockquote-mark-color);
     font: {
       family: $icons-font-family;
       size: var(--#{$prefix}blockquote-mark-size);
     }
     line-height: 1;
-    content: '\ea3f';
+    content: "\ea3f";
   }
 }
 
@@ -51,7 +66,7 @@ h4, .h4, h5, .h5, h6, .h6 {
   display: flex;
   margin: 0;
   padding: {
-    top: $blockquote-margin-y * .5;
+    top: $blockquote-margin-y * 0.5;
     left: calc(var(--#{$prefix}blockquote-mark-size) + 1.75rem);
   }
   color: var(--#{$prefix}blockquote-footer-color);
@@ -60,13 +75,13 @@ h4, .h4, h5, .h5, h6, .h6 {
   &::before {
     display: block;
     width: 2rem;
-    height: .0625rem;
+    height: 0.0625rem;
     margin: {
-      top: $spacer * .75;
+      top: $spacer * 0.75;
       right: $spacer;
     }
     background-color: var(--#{$prefix}blockquote-footer-color);
-    content: '';
+    content: "";
   }
 }
 
@@ -81,7 +96,9 @@ h4, .h4, h5, .h5, h6, .h6 {
   .blockquote-footer {
     justify-content: center;
     padding-left: 0;
-    &::before { display: none; }
+    &::before {
+      display: none;
+    }
   }
 }
 
@@ -107,27 +124,28 @@ h4, .h4, h5, .h5, h6, .h6 {
 
 @include media-breakpoint-down(sm) {
   .blockquote {
-    padding-left: calc((var(--#{$prefix}blockquote-mark-size) * .75) + 1rem);
+    padding-left: calc((var(--#{$prefix}blockquote-mark-size) * 0.75) + 1rem);
     &::before {
-      font-size: calc(var(--#{$prefix}blockquote-mark-size) * .75);
-      margin-bottom: $spacer * .75;
+      font-size: calc(var(--#{$prefix}blockquote-mark-size) * 0.75);
+      margin-bottom: $spacer * 0.75;
     }
   }
   .blockquote-footer {
-    padding-left: calc((var(--#{$prefix}blockquote-mark-size) * .75) + 1rem);
+    padding-left: calc((var(--#{$prefix}blockquote-mark-size) * 0.75) + 1rem);
     &::before {
       width: 1.25rem;
-      margin-right: $spacer * .75;
+      margin-right: $spacer * 0.75;
     }
   }
   .text-end {
     .blockquote,
     .blockquote-footer {
-      padding-right: calc((var(--#{$prefix}blockquote-mark-size) * .75) + 1rem);
+      padding-right: calc(
+        (var(--#{$prefix}blockquote-mark-size) * 0.75) + 1rem
+      );
     }
   }
 }
-
 
 // Description lists
 
@@ -136,17 +154,19 @@ dt {
   font-weight: var(--#{$prefix}heading-font-weight);
 }
 
-
 // Dark mode for general type colors
 
 @if $enable-dark-mode {
   body .dark-mode {
-    p, ul, ol, span, dd {
+    p,
+    ul,
+    ol,
+    span,
+    dd {
       color: var(--#{$prefix}body-color);
     }
   }
 }
-
 
 // Del muted
 

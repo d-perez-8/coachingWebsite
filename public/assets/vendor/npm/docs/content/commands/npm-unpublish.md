@@ -41,8 +41,8 @@ passed.
 
 #### `dry-run`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Indicates that you don't want npm to make any changes and that it should
 only report what it would have done. This can be passed into any of the
@@ -54,34 +54,34 @@ Note: This is NOT honored by other network related commands, eg `dist-tags`,
 
 #### `force`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Removes various protections against unfortunate side effects, common
 mistakes, unnecessary performance degradation, and malicious input.
 
-* Allow clobbering non-npm files in global installs.
-* Allow the `npm version` command to work on an unclean git repository.
-* Allow deleting the cache folder with `npm cache clean`.
-* Allow installing packages that have an `engines` declaration requiring a
+- Allow clobbering non-npm files in global installs.
+- Allow the `npm version` command to work on an unclean git repository.
+- Allow deleting the cache folder with `npm cache clean`.
+- Allow installing packages that have an `engines` declaration requiring a
   different version of npm.
-* Allow installing packages that have an `engines` declaration requiring a
+- Allow installing packages that have an `engines` declaration requiring a
   different version of `node`, even if `--engine-strict` is enabled.
-* Allow `npm audit fix` to install modules outside your stated dependency
+- Allow `npm audit fix` to install modules outside your stated dependency
   range (including SemVer-major changes).
-* Allow unpublishing all versions of a published package.
-* Allow conflicting peerDependencies to be installed in the root project.
-* Implicitly set `--yes` during `npm init`.
-* Allow clobbering existing values in `npm pkg`
-* Allow unpublishing of entire packages (not just a single version).
+- Allow unpublishing all versions of a published package.
+- Allow conflicting peerDependencies to be installed in the root project.
+- Implicitly set `--yes` during `npm init`.
+- Allow clobbering existing values in `npm pkg`
+- Allow unpublishing of entire packages (not just a single version).
 
 If you don't have a clear idea of what you want to do, it is strongly
 recommended that you do not use this option!
 
 #### `workspace`
 
-* Default:
-* Type: String (can be set multiple times)
+- Default:
+- Type: String (can be set multiple times)
 
 Enable running a command in the context of the configured workspaces of the
 current project while filtering by running only the workspaces defined by
@@ -89,9 +89,9 @@ this configuration option.
 
 Valid values for the `workspace` config are either:
 
-* Workspace names
-* Path to a workspace directory
-* Path to a parent workspace directory (will result in selecting all
+- Workspace names
+- Path to a workspace directory
+- Path to a parent workspace directory (will result in selecting all
   workspaces within that folder)
 
 When set for the `npm init` command, this may be set to the folder of a
@@ -102,8 +102,8 @@ This value is not exported to the environment for child processes.
 
 #### `workspaces`
 
-* Default: null
-* Type: null or Boolean
+- Default: null
+- Type: null or Boolean
 
 Set to true to run the command in the context of **all** configured
 workspaces.
@@ -112,18 +112,18 @@ Explicitly setting this to false will cause commands like `install` to
 ignore workspaces altogether. When not set explicitly:
 
 - Commands that operate on the `node_modules` tree (install, update, etc.)
-will link workspaces into the `node_modules` folder. - Commands that do
-other things (test, exec, publish, etc.) will operate on the root project,
-_unless_ one or more workspaces are specified in the `workspace` config.
+  will link workspaces into the `node_modules` folder. - Commands that do
+  other things (test, exec, publish, etc.) will operate on the root project,
+  _unless_ one or more workspaces are specified in the `workspace` config.
 
 This value is not exported to the environment for child processes.
 
 ### See Also
 
-* [package spec](/using-npm/package-spec)
-* [npm deprecate](/commands/npm-deprecate)
-* [npm publish](/commands/npm-publish)
-* [npm registry](/using-npm/registry)
-* [npm adduser](/commands/npm-adduser)
-* [npm owner](/commands/npm-owner)
-* [npm login](/commands/npm-adduser)
+- [package spec](/using-npm/package-spec)
+- [npm deprecate](/commands/npm-deprecate)
+- [npm publish](/commands/npm-publish)
+- [npm registry](/using-npm/registry)
+- [npm adduser](/commands/npm-adduser)
+- [npm owner](/commands/npm-owner)
+- [npm login](/commands/npm-adduser)

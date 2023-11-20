@@ -1,9 +1,9 @@
-import VideoWorker from 'video-worker';
+import VideoWorker from "video-worker";
 
-import global from './utils/global';
+import global from "./utils/global";
 
 function jarallaxVideo(jarallax = global.jarallax) {
-  if ('undefined' === typeof jarallax) {
+  if ("undefined" === typeof jarallax) {
     return;
   }
 
@@ -29,32 +29,32 @@ function jarallaxVideo(jarallax = global.jarallax) {
         const $parent = video.parentNode;
         self.css(video, {
           position: self.image.position,
-          top: '0px',
-          left: '0px',
-          right: '0px',
-          bottom: '0px',
-          width: '100%',
-          height: '100%',
-          maxWidth: 'none',
-          maxHeight: 'none',
-          pointerEvents: 'none',
-          transformStyle: 'preserve-3d',
-          backfaceVisibility: 'hidden',
+          top: "0px",
+          left: "0px",
+          right: "0px",
+          bottom: "0px",
+          width: "100%",
+          height: "100%",
+          maxWidth: "none",
+          maxHeight: "none",
+          pointerEvents: "none",
+          transformStyle: "preserve-3d",
+          backfaceVisibility: "hidden",
           margin: 0,
           zIndex: -1,
         });
         self.$video = video;
 
         // add Poster attribute to self-hosted video
-        if ('local' === self.video.type) {
+        if ("local" === self.video.type) {
           if (self.image.src) {
-            self.$video.setAttribute('poster', self.image.src);
+            self.$video.setAttribute("poster", self.image.src);
           } else if (
             self.image.$item &&
-            'IMG' === self.image.$item.tagName &&
+            "IMG" === self.image.$item.tagName &&
             self.image.$item.src
           ) {
-            self.$video.setAttribute('poster', self.image.$item.src);
+            self.$video.setAttribute("poster", self.image.$item.src);
           }
         }
 
@@ -79,7 +79,12 @@ function jarallaxVideo(jarallax = global.jarallax) {
     const imageData = defCoverImage.apply(self);
     const node = self.image.$item ? self.image.$item.nodeName : false;
 
-    if (imageData && self.video && node && ('IFRAME' === node || 'VIDEO' === node)) {
+    if (
+      imageData &&
+      self.video &&
+      node &&
+      ("IFRAME" === node || "VIDEO" === node)
+    ) {
       let h = imageData.image.height;
       let w = (h * self.image.width) / self.image.height;
       let ml = (imageData.container.width - w) / 2;
@@ -93,7 +98,7 @@ function jarallaxVideo(jarallax = global.jarallax) {
       }
 
       // add video height over than need to hide controls
-      if ('IFRAME' === node) {
+      if ("IFRAME" === node) {
         h += 400;
         mt -= 200;
       }
@@ -116,7 +121,8 @@ function jarallaxVideo(jarallax = global.jarallax) {
     const defaultResult = defInitImg.apply(self);
 
     if (!self.options.videoSrc) {
-      self.options.videoSrc = self.$item.getAttribute('data-jarallax-video') || null;
+      self.options.videoSrc =
+        self.$item.getAttribute("data-jarallax-video") || null;
     }
 
     if (self.options.videoSrc) {
@@ -156,7 +162,7 @@ function jarallaxVideo(jarallax = global.jarallax) {
     function resetDefaultImage() {
       if (self.image.$default_item) {
         self.image.$item = self.image.$default_item;
-        self.image.$item.style.display = 'block';
+        self.image.$item.style.display = "block";
 
         // set image width and height
         self.coverImage();
@@ -170,8 +176,8 @@ function jarallaxVideo(jarallax = global.jarallax) {
       // https://github.com/nk-o/jarallax/issues/159
       if (this.options.disableParallax()) {
         defaultResult = true;
-        self.image.position = 'absolute';
-        self.options.type = 'scroll';
+        self.image.position = "absolute";
+        self.options.type = "scroll";
         self.options.speed = 1;
       }
 
@@ -180,30 +186,34 @@ function jarallaxVideo(jarallax = global.jarallax) {
         if (!self.defaultInitImgResult) {
           video.getImageURL((url) => {
             // save default user styles
-            const curStyle = self.$item.getAttribute('style');
+            const curStyle = self.$item.getAttribute("style");
             if (curStyle) {
-              self.$item.setAttribute('data-jarallax-original-styles', curStyle);
+              self.$item.setAttribute(
+                "data-jarallax-original-styles",
+                curStyle,
+              );
             }
 
             // set new background
             self.css(self.$item, {
-              'background-image': `url("${url}")`,
-              'background-position': 'center',
-              'background-size': 'cover',
+              "background-image": `url("${url}")`,
+              "background-position": "center",
+              "background-size": "cover",
             });
           });
         }
 
         // init video
       } else {
-        video.on('ready', () => {
+        video.on("ready", () => {
           if (self.options.videoPlayOnlyVisible) {
             const oldOnScroll = self.onScroll;
             self.onScroll = function () {
               oldOnScroll.apply(self);
               if (
                 !self.videoError &&
-                (self.options.videoLoop || (!self.options.videoLoop && !self.videoEnded))
+                (self.options.videoLoop ||
+                  (!self.options.videoLoop && !self.videoEnded))
               ) {
                 if (self.isVisible()) {
                   video.play();
@@ -216,7 +226,7 @@ function jarallaxVideo(jarallax = global.jarallax) {
             video.play();
           }
         });
-        video.on('started', () => {
+        video.on("started", () => {
           self.image.$default_item = self.image.$item;
           self.image.$item = self.$video;
 
@@ -228,11 +238,11 @@ function jarallaxVideo(jarallax = global.jarallax) {
 
           // hide image
           if (self.image.$default_item) {
-            self.image.$default_item.style.display = 'none';
+            self.image.$default_item.style.display = "none";
           }
         });
 
-        video.on('ended', () => {
+        video.on("ended", () => {
           self.videoEnded = true;
 
           if (!self.options.videoLoop) {
@@ -240,7 +250,7 @@ function jarallaxVideo(jarallax = global.jarallax) {
             resetDefaultImage();
           }
         });
-        video.on('error', () => {
+        video.on("error", () => {
           self.videoError = true;
 
           // show default image if video loading error.
@@ -253,9 +263,9 @@ function jarallaxVideo(jarallax = global.jarallax) {
         if (!self.defaultInitImgResult) {
           // set empty image on self-hosted video if not defined
           self.image.src =
-            'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+            "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
-          if ('local' !== video.type) {
+          if ("local" !== video.type) {
             video.getImageURL((url) => {
               self.image.bgImage = `url("${url}")`;
               self.init();

@@ -29,15 +29,15 @@ connected to that scope, if set.
 
 #### `registry`
 
-* Default: "https://registry.npmjs.org/"
-* Type: URL
+- Default: "https://registry.npmjs.org/"
+- Type: URL
 
 The base URL of the npm registry.
 
 #### `scope`
 
-* Default: the scope of the current project, if any, or ""
-* Type: String
+- Default: the scope of the current project, if any, or ""
+- Type: String
 
 Associate an operation with a scope for a scoped registry.
 
@@ -63,10 +63,9 @@ This will also cause `npm init` to create a scoped package.
 npm init --scope=@foo --yes
 ```
 
-
 ### See Also
 
-* [npm adduser](/commands/npm-adduser)
-* [npm registry](/using-npm/registry)
-* [npm config](/commands/npm-config)
-* [npm whoami](/commands/npm-whoami)
+- [npm adduser](/commands/npm-adduser)
+- [npm registry](/using-npm/registry)
+- [npm config](/commands/npm-config)
+- [npm whoami](/commands/npm-whoami)

@@ -89,7 +89,7 @@ Deletes the specified keys from all configuration files.
 npm config edit
 ```
 
-Opens the config file in an editor.  Use the `--global` flag to edit the
+Opens the config file in an editor. Use the `--global` flag to edit the
 global config.
 
 #### fix
@@ -98,7 +98,7 @@ global config.
 npm config fix
 ```
 
-Attempts to repair invalid configuration items.  Usually this means
+Attempts to repair invalid configuration items. Usually this means
 attaching authentication config (i.e. `_auth`, `_authToken`) to the
 configured `registry`.
 
@@ -106,43 +106,43 @@ configured `registry`.
 
 #### `json`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Whether or not to output JSON data, rather than the normal output.
 
-* In `npm pkg set` it enables parsing set values with JSON.parse() before
+- In `npm pkg set` it enables parsing set values with JSON.parse() before
   saving them to your `package.json`.
 
 Not supported by all npm commands.
 
 #### `global`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Operates in "global" mode, so that packages are installed into the `prefix`
 folder instead of the current working directory. See
 [folders](/configuring-npm/folders) for more on the differences in behavior.
 
-* packages are installed into the `{prefix}/lib/node_modules` folder, instead
+- packages are installed into the `{prefix}/lib/node_modules` folder, instead
   of the current working directory.
-* bin files are linked to `{prefix}/bin`
-* man pages are linked to `{prefix}/share/man`
+- bin files are linked to `{prefix}/bin`
+- man pages are linked to `{prefix}/share/man`
 
 #### `editor`
 
-* Default: The EDITOR or VISUAL environment variables, or
+- Default: The EDITOR or VISUAL environment variables, or
   '%SYSTEMROOT%\notepad.exe' on Windows, or 'vi' on Unix systems
-* Type: String
+- Type: String
 
 The command to run for `npm edit` and `npm config edit`.
 
 #### `location`
 
-* Default: "user" unless `--global` is passed, which will also set this value
+- Default: "user" unless `--global` is passed, which will also set this value
   to "global"
-* Type: "global", "user", or "project"
+- Type: "global", "user", or "project"
 
 When passed to `npm config` this refers to which config file to use.
 
@@ -150,22 +150,22 @@ When set to "global" mode, packages are installed into the `prefix` folder
 instead of the current working directory. See
 [folders](/configuring-npm/folders) for more on the differences in behavior.
 
-* packages are installed into the `{prefix}/lib/node_modules` folder, instead
+- packages are installed into the `{prefix}/lib/node_modules` folder, instead
   of the current working directory.
-* bin files are linked to `{prefix}/bin`
-* man pages are linked to `{prefix}/share/man`
+- bin files are linked to `{prefix}/bin`
+- man pages are linked to `{prefix}/share/man`
 
 #### `long`
 
-* Default: false
-* Type: Boolean
+- Default: false
+- Type: Boolean
 
 Show extended information in `ls`, `search`, and `help-search`.
 
 ### See Also
 
-* [npm folders](/configuring-npm/folders)
-* [npm config](/commands/npm-config)
-* [package.json](/configuring-npm/package-json)
-* [npmrc](/configuring-npm/npmrc)
-* [npm](/commands/npm)
+- [npm folders](/configuring-npm/folders)
+- [npm config](/commands/npm-config)
+- [package.json](/configuring-npm/package-json)
+- [npmrc](/configuring-npm/npmrc)
+- [npm](/commands/npm)
