@@ -519,19 +519,20 @@
                     required
                     id="name"
                     name="name"
-                    oninput="updateSubject(this.value)"
                   />
                 </div>
                 <div class="col-sm-6">
-                  <label class="form-label fs-base" for="company"
-                    >Company</label
+                  <label class="form-label fs-base" for="subject"
+                    >Subject*</label
                   >
                   <input
                     class="form-control form-control-lg"
                     type="text"
-                    placeholder="Your company name"
-                    id="company"
-                    name="company"
+                    placeholder="Email Subject"
+                    required
+                    id="subject"
+                    name="subject"
+                    oninput="updateSubject(this.value)"
                   />
                 </div>
                 <div class="col-sm-6">
@@ -557,7 +558,7 @@
                 </div>
                 <div class="col-sm-12">
                   <label class="form-label fs-base" for="message"
-                    >How can we help?</label
+                    >How can I help?</label
                   >
                   <textarea
                     class="form-control form-control-lg"
