@@ -209,7 +209,6 @@
           <a
             class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
             href="#pricing"
-            target="_blank"
             rel="noopener"
             ><i class="fs-xl me-2 ms-n1"></i>Schedule</a
           >
@@ -352,7 +351,6 @@
               <a
                 class="btn btn-primary w-100 mb-1"
                 href="#pricing"
-                target="_blank"
                 rel="noopener"
                 ><i class=""></i>Schedule</a
               >
@@ -1205,7 +1203,7 @@
           Schedule
         </h2>
         <!-- Calendly inline widget begin -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/hard_counseling/career-coaching-meeting?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:350px;height:700px;"></div>
+        <div id="cal" class="calendly-inline-widget" data-url="https://calendly.com/hard_counseling/career-coaching-meeting?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:350px;height:700px;"></div>
         <div class="text-center pt-4 pt-md-5 mt-2 mt-sm-3 mt-md-0">
           <a class="btn btn-outline-primary fs-base" href="#pricing"
             >Book an Appointment</a
@@ -1362,12 +1360,14 @@
                       <div class="h3 text-primary mb-0 mb-sm-2">Free</div>
                       <span class="fs-sm">Free session</span>
                     </div>
-                    <button
-                      class="btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto"
-                      type="button"
-                    >
-                      Buy
-                    </button>
+                    <a href="#cal">
+                      <button
+                        class="btn btn-sm btn-outline-primary stretched-link w-100 w-sm-auto"
+                        type="button"
+                      >
+                        Buy
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <!-- Pricing card Single session-->
